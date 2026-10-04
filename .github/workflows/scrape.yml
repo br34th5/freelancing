@@ -33,6 +33,7 @@ jobs:
           PROXY_USER: ${{ secrets.PROXY_USER }}
           PROXY_PASS: ${{ secrets.PROXY_PASS }}
           PROXY_LIST: ${{ secrets.PROXY_LIST }}
+          ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
         run: python scheduled_scraper.py
         working-directory: projects/scraping/scheduled-hn
 

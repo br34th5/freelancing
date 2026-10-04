@@ -33,6 +33,24 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def send_alert(message, webhook_url=None):
+    if webhook_url is None:
+        webhook_url = os.getenv("ALERT_WEBHOOK_URL")
+    if not webhook_url:
+        logger.warning("No ALERT_WEBHOOK_URL configured, skipping alert")
+        return
+
+    payload = {
+        "content": message,
+        "username": "HN Scraper Bot"
+    }
+
+    try:
+        requests.post(webhook_url, json=payload, timeout=10)
+    except Exception as e:
+        logger.error(f"Failed to send alert: {e}")
+
+
 def get_rotator():
     proxy_list = os.getenv("PROXY_LIST", "")
     user = os.getenv("PROXY_USER", "")
@@ -128,7 +146,9 @@ def main():
             logger.info(f"Top story: {stories[0]['title']} ({stories[0]['points']} pts)")
 
     except Exception as e:
+        error_msg = f"❌ HN Scraper failed at {start_time.strftime('%Y-%m-%d %H:%M:%S')}\nError: {str(e)}"
         logger.error(f"Scraper failed: {e}", exc_info=True)
+        send_alert(error_msg)
         raise
 
 

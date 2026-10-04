@@ -36,8 +36,16 @@ Since the repo is public, **never put credentials in the workflow file**. Instea
    - `PROXY_USER` → `your_proxy_username`
    - `PROXY_PASS` → `your_proxy_password`
    - `PROXY_LIST` → comma-separated list of `host:port`
+   - `ALERT_WEBHOOK_URL` → Discord/Slack webhook URL for failure notifications
 
 The workflow reads them automatically via `${{ secrets.PROXY_USER }}` etc.
+
+### Setting up Discord alerts
+
+1. In your Discord server, go to **Server Settings** → **Integrations** → **Webhooks**
+2. Create a new webhook, copy the URL
+3. Add it to your GitHub secrets as `ALERT_WEBHOOK_URL`
+4. You'll get notified in that channel when the scraper fails
 
 ## Scheduling
 
