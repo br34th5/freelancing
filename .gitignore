@@ -7,5 +7,5 @@ __pycache__/
 data/
 *.log
 .learning/
-projects/scraping/scheduled-hn/data/
+projects/scraping/scheduled-hn/data/*.json
 projects/scraping/scheduled-hn/hn_scraper.log
