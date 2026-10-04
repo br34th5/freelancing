@@ -8,6 +8,7 @@ import json
 import logging
 import os
 import random
+import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -15,6 +16,7 @@ from dotenv import load_dotenv
 import requests
 
 from proxy_rotator import ProxyRotator
+from database import init_db, insert_stories
 
 # Load .env
 load_dotenv(Path(__file__).parent.parent.parent.parent / ".env")
@@ -80,9 +82,8 @@ def get_top_stories(count=30, session=None):
         raise
 
 
-def get_story(item_id, session=None):
-    if session is None:
-        session = requests.Session()
+def get_story(item_id, rotator=None):
+    session = rotator.get_session() if rotator else requests.Session()
     session.headers.update({
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     })
@@ -110,13 +111,24 @@ def main():
 
     try:
         rotator = get_rotator()
-        session = rotator.get_session() if rotator else requests.Session()
 
-        story_ids = get_top_stories(50, session)
+        story_ids = None
+        for attempt in range(1, 4):
+            session = rotator.get_session() if rotator else requests.Session()
+            try:
+                story_ids = get_top_stories(50, session)
+                break
+            except Exception as e:
+                logger.warning(f"Top stories attempt {attempt}/3 failed: {e}")
+
+        if story_ids is None:
+            logger.warning("All proxy attempts failed, trying direct connection")
+            session = requests.Session()
+            story_ids = get_top_stories(50, session)
 
         stories = []
         for i, sid in enumerate(story_ids):
-            story = get_story(sid, session)
+            story = get_story(sid, rotator)
             if story and story.get("type") == "story":
                 stories.append({
                     "id": sid,
@@ -140,6 +152,12 @@ def main():
 
         logger.info(f"Saved {len(stories)} stories to {output_file}")
 
+        if os.getenv("DATABASE_URL"):
+            init_db()
+            insert_stories(stories)
+        else:
+            logger.info("DATABASE_URL not set, skipping database insert")
+
         duration = (datetime.now() - start_time).total_seconds()
         logger.info(f"Completed in {duration:.1f}s")
         if stories:
@@ -153,4 +171,12 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--test-alert" in sys.argv:
+        webhook_url = os.getenv("ALERT_WEBHOOK_URL")
+        if not webhook_url:
+            print("ERROR: ALERT_WEBHOOK_URL not set")
+            sys.exit(1)
+        send_alert("✅ Test alert from HN Scraper - alerts are working!", webhook_url)
+        print("Test alert sent - check your Discord channel")
+        sys.exit(0)
     main()

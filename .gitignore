@@ -9,3 +9,5 @@ data/
 .learning/
 projects/scraping/scheduled-hn/data/*.json
 projects/scraping/scheduled-hn/hn_scraper.log
+.neon
+node_modules/

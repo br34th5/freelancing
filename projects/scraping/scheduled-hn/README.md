@@ -47,6 +47,34 @@ The workflow reads them automatically via `${{ secrets.PROXY_USER }}` etc.
 3. Add it to your GitHub secrets as `ALERT_WEBHOOK_URL`
 4. You'll get notified in that channel when the scraper fails
 
+## Database Setup
+
+The scraper can store stories in PostgreSQL (Neon, Supabase, or local).
+
+### Neon (cloud)
+
+1. Sign up at [neon.tech](https://neon.tech) (free tier)
+2. Create a project, copy the connection string
+3. Add to `.env` or GitHub secrets as `DATABASE_URL`:
+   ```
+   postgresql://user:pass@ep-xxx.neon.tech/neondb?sslmode=require
+   ```
+
+### Local PostgreSQL
+
+```bash
+createdb hn_scraper
+# Add to .env:
+DATABASE_URL=postgresql://user:pass@localhost:5432/hn_scraper
+```
+
+### Table schema
+
+Stories are stored in `hn_stories` table (auto-created on first run):
+- `hn_id` - HN story ID
+- `title`, `url`, `points`, `comments`, `author`
+- `scraped_at` - when it was scraped (allows same story on different days)
+
 ## Scheduling
 
 ### GitHub Actions (recommended for public repos)

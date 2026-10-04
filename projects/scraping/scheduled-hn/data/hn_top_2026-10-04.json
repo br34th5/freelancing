@@ -3,271 +3,262 @@
     "id": 49953495,
     "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
     "url": "https://github.com/Niko1221/Strata",
-    "points": 162,
-    "comments": 62,
+    "points": 211,
+    "comments": 100,
     "author": "snehesht",
-    "scraped_at": "2026-10-04T15:03:44.436988"
-  },
-  {
-    "id": 49930439,
-    "title": "Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
-    "url": "https://niklasroy.com/gtc/",
-    "points": 56,
-    "comments": 8,
-    "author": "r0r0",
-    "scraped_at": "2026-10-04T15:03:44.691571"
+    "scraped_at": "2026-10-04T18:46:09.330580"
   },
   {
     "id": 49949438,
     "title": "Tell HN: Bob Cringely has died",
     "url": "https://news.ycombinator.com/item?id=49949438",
-    "points": 619,
-    "comments": 122,
+    "points": 647,
+    "comments": 130,
     "author": "paveworld",
-    "scraped_at": "2026-10-04T15:03:44.941050"
+    "scraped_at": "2026-10-04T18:46:10.868195"
   },
   {
     "id": 49952111,
     "title": "Show HN: AI search for every photo and every frame of video on macOS",
     "url": "https://github.com/allenv0/SCM",
-    "points": 42,
-    "comments": 27,
+    "points": 53,
+    "comments": 33,
     "author": "allenleee",
-    "scraped_at": "2026-10-04T15:03:45.189735"
+    "scraped_at": "2026-10-04T18:46:11.624235"
   },
   {
     "id": 49952029,
     "title": "VGHF Digital Archive passes 5000 magazines. Here's what's next",
     "url": "https://gamehistory.org/5k-magazines/",
-    "points": 66,
-    "comments": 8,
+    "points": 72,
+    "comments": 11,
     "author": "rdmuser",
-    "scraped_at": "2026-10-04T15:03:45.437919"
+    "scraped_at": "2026-10-04T18:46:12.366782"
   },
   {
     "id": 49950554,
     "title": "Why don't more developers \u201cuse the platform\u201d?",
     "url": "https://nolanlawson.com/2026/10/03/why-dont-more-developers-use-the-platform/",
-    "points": 206,
-    "comments": 197,
+    "points": 219,
+    "comments": 216,
     "author": "vinhnx",
-    "scraped_at": "2026-10-04T15:03:45.688547"
+    "scraped_at": "2026-10-04T18:46:13.340258"
   },
   {
     "id": 49946895,
     "title": "The work by Valve's Timur Krist\u00f3f on improving old AMD GPUs on Linux",
     "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
-    "points": 370,
-    "comments": 65,
+    "points": 377,
+    "comments": 66,
     "author": "speckx",
-    "scraped_at": "2026-10-04T15:03:45.939006"
-  },
-  {
-    "id": 49935097,
-    "title": "gpuvis: GPU Trace Visualizer",
-    "url": "https://github.com/mikesart/gpuvis",
-    "points": 49,
-    "comments": 9,
-    "author": "luu",
-    "scraped_at": "2026-10-04T15:03:46.293486"
+    "scraped_at": "2026-10-04T18:46:14.681786"
   },
   {
     "id": 49951218,
     "title": "Emitting metadata early makes building/checking Rust up to twice as fast",
     "url": "https://github.com/PowderworksCode/headstart",
-    "points": 54,
-    "comments": 9,
+    "points": 62,
+    "comments": 11,
     "author": "knuckleheads",
-    "scraped_at": "2026-10-04T15:03:46.589065"
+    "scraped_at": "2026-10-04T18:46:17.802365"
   },
   {
     "id": 49939637,
     "title": "The Heilbronn Problem",
     "url": "https://math.tejstead.com/heilbronn/",
-    "points": 12,
-    "comments": 1,
+    "points": 19,
+    "comments": 2,
     "author": "tejstead",
-    "scraped_at": "2026-10-04T15:03:46.837108"
+    "scraped_at": "2026-10-04T18:46:22.133411"
   },
   {
     "id": 49945933,
     "title": "Agents don't need memory, they need documentation",
     "url": "https://liao.gg/blog/agents-dont-need-memory",
-    "points": 266,
-    "comments": 147,
+    "points": 278,
+    "comments": 156,
     "author": "kmeh",
-    "scraped_at": "2026-10-04T15:03:47.085361"
+    "scraped_at": "2026-10-04T18:46:22.824300"
   },
   {
     "id": 49946355,
     "title": "Treachery in the Rodin Museum 3D scan verdict",
     "url": "https://cosmowenman.substack.com/p/rodin-museum-3d-scan-verdict",
-    "points": 252,
-    "comments": 128,
+    "points": 257,
+    "comments": 130,
     "author": "CosmoWenman",
-    "scraped_at": "2026-10-04T15:03:47.332531"
+    "scraped_at": "2026-10-04T18:46:23.564674"
+  },
+  {
+    "id": 49935097,
+    "title": "gpuvis: GPU Trace Visualizer",
+    "url": "https://github.com/mikesart/gpuvis",
+    "points": 55,
+    "comments": 9,
+    "author": "luu",
+    "scraped_at": "2026-10-04T18:46:25.197120"
+  },
+  {
+    "id": 49935038,
+    "title": "Magic Switch: Share Apple Magic keyboard/track-pad/mouse between two Macs",
+    "url": "https://joshua.hu/magic-switch-easily-switch-magic-keyboard-trackpad-mouse-between-mac-macbook-macos",
+    "points": 37,
+    "comments": 8,
+    "author": "chanux",
+    "scraped_at": "2026-10-04T18:46:25.792091"
   },
   {
     "id": 49946393,
     "title": "Hole Punch: Sling your spaceship around gravitational fields",
     "url": "https://notoriousbfg.com/hole-punch/",
-    "points": 324,
-    "comments": 79,
+    "points": 326,
+    "comments": 80,
     "author": "trwhite",
-    "scraped_at": "2026-10-04T15:03:47.585022"
+    "scraped_at": "2026-10-04T18:46:26.490410"
   },
   {
     "id": 49946228,
     "title": "LeCun has \"zero concerns\" about AI wiping out humanity, recent \"rogue\" incidents",
     "url": "https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/",
-    "points": 238,
-    "comments": 357,
+    "points": 253,
+    "comments": 386,
     "author": "Anon84",
-    "scraped_at": "2026-10-04T15:03:47.835981"
+    "scraped_at": "2026-10-04T18:46:27.125332"
   },
   {
     "id": 49923873,
     "title": "Celebrating the 100th birthday of the kidney donated to him as a teenager",
     "url": "https://www.whec.com/top-news/webster-man-celebrating-the-100th-birthday-of-the-kidney-his-mom-donated-to-him-as-a-teenager/",
-    "points": 223,
-    "comments": 57,
+    "points": 229,
+    "comments": 58,
     "author": "gscott",
-    "scraped_at": "2026-10-04T15:03:48.085010"
-  },
-  {
-    "id": 49910462,
-    "title": "So you think you could be an electrician?",
-    "url": "https://asteriskmag.com/issues/15/so-you-think-you-could-be-an-electrician",
-    "points": 362,
-    "comments": 291,
-    "author": "zdw",
-    "scraped_at": "2026-10-04T15:03:48.333644"
-  },
-  {
-    "id": 49953116,
-    "title": "Rejection Sensitivity in Gifted and Twice-Exceptional Children",
-    "url": "https://teachyourkids.substack.com/p/rejection-sensitivity-in-gifted-and",
-    "points": 59,
-    "comments": 24,
-    "author": "actfrench",
-    "scraped_at": "2026-10-04T15:03:48.581505"
+    "scraped_at": "2026-10-04T18:46:28.994937"
   },
   {
     "id": 49949588,
     "title": "We're working on a new RuneScape MMO",
     "url": "https://play.runescape.com/4",
-    "points": 124,
-    "comments": 61,
+    "points": 131,
+    "comments": 66,
     "author": "droidjj",
-    "scraped_at": "2026-10-04T15:03:48.829326"
+    "scraped_at": "2026-10-04T18:46:29.765221"
+  },
+  {
+    "id": 49910462,
+    "title": "So you think you could be an electrician?",
+    "url": "https://asteriskmag.com/issues/15/so-you-think-you-could-be-an-electrician",
+    "points": 372,
+    "comments": 303,
+    "author": "zdw",
+    "scraped_at": "2026-10-04T18:46:30.390281"
   },
   {
     "id": 49949235,
     "title": "We're going to need default hard budget caps on pretty much everything",
     "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
-    "points": 519,
-    "comments": 269,
+    "points": 528,
+    "comments": 273,
     "author": "elffjs",
-    "scraped_at": "2026-10-04T15:03:49.079577"
+    "scraped_at": "2026-10-04T18:46:31.502410"
   },
   {
     "id": 49947631,
     "title": "Reasons I didn't become an EMT, ranked",
     "url": "https://ben.stolovitz.com/posts/reasons-not-emt-ranked/",
-    "points": 189,
-    "comments": 82,
+    "points": 193,
+    "comments": 84,
     "author": "citelao",
-    "scraped_at": "2026-10-04T15:03:49.332628"
-  },
-  {
-    "id": 49947051,
-    "title": "We want you to build the next Git platform on Cloudflare",
-    "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
-    "points": 168,
-    "comments": 145,
-    "author": "geoffbp",
-    "scraped_at": "2026-10-04T15:03:49.582830"
-  },
-  {
-    "id": 49944227,
-    "title": "I quit OpenAI because its culture is broken",
-    "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA",
-    "points": 340,
-    "comments": 562,
-    "author": "Brajeshwar",
-    "scraped_at": "2026-10-04T15:03:49.830464"
-  },
-  {
-    "id": 49950052,
-    "title": "Religious scholars met with Anthropic",
-    "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
-    "points": 130,
-    "comments": 280,
-    "author": "bookofjoe",
-    "scraped_at": "2026-10-04T15:03:50.079306"
-  },
-  {
-    "id": 49946526,
-    "title": "What Meta got right with Muse",
-    "url": "https://metedata.substack.com/p/what-meta-got-right-with-muse",
-    "points": 81,
-    "comments": 110,
-    "author": "young_mete",
-    "scraped_at": "2026-10-04T15:03:50.408531"
-  },
-  {
-    "id": 49908570,
-    "title": "Your body of work thinks back at you",
-    "url": "https://photoni.st/index.php/2026/09/25/your-body-of-work-thinks-back-at-you/",
-    "points": 83,
-    "comments": 13,
-    "author": "surprisetalk",
-    "scraped_at": "2026-10-04T15:03:50.711749"
-  },
-  {
-    "id": 49940482,
-    "title": "Math's pedagogical curse \u2013 Grant Sanderson [video] (2023)",
-    "url": "https://www.youtube.com/watch?v=UOuxo6SA8Uc",
-    "points": 61,
-    "comments": 28,
-    "author": "bobajeff",
-    "scraped_at": "2026-10-04T15:03:50.961643"
+    "scraped_at": "2026-10-04T18:46:32.676244"
   },
   {
     "id": 49951641,
     "title": "What's the Future for Pure Math Research in the Age of AI?",
     "url": "https://writings.stephenwolfram.com/2026/09/whats-the-future-for-pure-math-research-in-the-age-of-ai/",
-    "points": 11,
+    "points": 19,
     "comments": 1,
     "author": "6bitquant",
-    "scraped_at": "2026-10-04T15:03:51.211702"
+    "scraped_at": "2026-10-04T18:46:41.917203"
   },
   {
-    "id": 49946707,
-    "title": "How to hack time, with C2PA",
-    "url": "https://www.da.vidbuchanan.co.uk/blog/hacking-time.html",
-    "points": 49,
-    "comments": 6,
-    "author": "Retr0id",
-    "scraped_at": "2026-10-04T15:03:51.460065"
+    "id": 49944227,
+    "title": "I quit OpenAI because its culture is broken",
+    "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA",
+    "points": 350,
+    "comments": 588,
+    "author": "Brajeshwar",
+    "scraped_at": "2026-10-04T18:46:42.580010"
   },
   {
     "id": 49936017,
     "title": "Dirty Optimization Secrets (C for Playdate)",
     "url": "https://devforum.play.date/t/dirty-optimization-secrets-c-for-playdate/23011",
-    "points": 36,
-    "comments": 4,
+    "points": 40,
+    "comments": 5,
     "author": "ibobev",
-    "scraped_at": "2026-10-04T15:03:51.710780"
+    "scraped_at": "2026-10-04T18:46:43.143431"
+  },
+  {
+    "id": 49908570,
+    "title": "Your body of work thinks back at you",
+    "url": "https://photoni.st/index.php/2026/09/25/your-body-of-work-thinks-back-at-you/",
+    "points": 87,
+    "comments": 15,
+    "author": "surprisetalk",
+    "scraped_at": "2026-10-04T18:46:43.811976"
+  },
+  {
+    "id": 49950052,
+    "title": "Religious scholars met with Anthropic",
+    "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
+    "points": 138,
+    "comments": 304,
+    "author": "bookofjoe",
+    "scraped_at": "2026-10-04T18:46:49.442196"
+  },
+  {
+    "id": 49946526,
+    "title": "What Meta got right with Muse",
+    "url": "https://metedata.substack.com/p/what-meta-got-right-with-muse",
+    "points": 89,
+    "comments": 117,
+    "author": "young_mete",
+    "scraped_at": "2026-10-04T18:46:50.126857"
+  },
+  {
+    "id": 49940482,
+    "title": "Math's pedagogical curse \u2013 Grant Sanderson [video] (2023)",
+    "url": "https://www.youtube.com/watch?v=UOuxo6SA8Uc",
+    "points": 62,
+    "comments": 31,
+    "author": "bobajeff",
+    "scraped_at": "2026-10-04T18:46:51.343461"
   },
   {
     "id": 49944912,
     "title": "FTL: A new operating system for clouds",
     "url": "https://ftl-os.org/",
-    "points": 189,
+    "points": 190,
     "comments": 74,
     "author": "romac",
-    "scraped_at": "2026-10-04T15:03:51.964894"
+    "scraped_at": "2026-10-04T18:46:52.025991"
+  },
+  {
+    "id": 49946707,
+    "title": "How to hack time, with C2PA",
+    "url": "https://www.da.vidbuchanan.co.uk/blog/hacking-time.html",
+    "points": 53,
+    "comments": 7,
+    "author": "Retr0id",
+    "scraped_at": "2026-10-04T18:46:52.613380"
+  },
+  {
+    "id": 49954243,
+    "title": "GVisor is being donated to CNCF",
+    "url": "https://gvisor.dev/blog/2026/10/02/gvisor-cncf/",
+    "points": 9,
+    "comments": 0,
+    "author": "birdculture",
+    "scraped_at": "2026-10-04T18:46:53.295984"
   },
   {
     "id": 49947472,
@@ -276,43 +267,25 @@
     "points": 101,
     "comments": 56,
     "author": "simonjgreen",
-    "scraped_at": "2026-10-04T15:03:52.215964"
+    "scraped_at": "2026-10-04T18:46:54.428120"
   },
   {
     "id": 49945323,
     "title": "City building games have a Soul Problem pt.2",
     "url": "https://www.radical-elements.com/minor-epiphanies/city-building-games-have-a-soul-problem-pt2",
     "points": 154,
-    "comments": 144,
+    "comments": 147,
     "author": "lexx",
-    "scraped_at": "2026-10-04T15:03:52.473927"
-  },
-  {
-    "id": 49910425,
-    "title": "Thought as a Technology (2016)",
-    "url": "https://cognitivemedium.com/tat/index.html",
-    "points": 7,
-    "comments": 0,
-    "author": "tobr",
-    "scraped_at": "2026-10-04T15:03:52.722027"
+    "scraped_at": "2026-10-04T18:46:55.668442"
   },
   {
     "id": 49942130,
     "title": "Former SR-71 engineer talks NASA's Blackbird revival program",
     "url": "https://www.twz.com/air/former-sr-71-engineer-talks-nasas-blackbird-revival-program",
-    "points": 84,
-    "comments": 47,
+    "points": 86,
+    "comments": 48,
     "author": "rkagerer",
-    "scraped_at": "2026-10-04T15:03:52.977091"
-  },
-  {
-    "id": 49938326,
-    "title": "Three AI agents, two countries, and one uneven world wide web",
-    "url": "https://royapakzad.substack.com/p/multilingual-ai-agents",
-    "points": 38,
-    "comments": 1,
-    "author": "effects",
-    "scraped_at": "2026-10-04T15:03:53.228003"
+    "scraped_at": "2026-10-04T18:46:56.957765"
   },
   {
     "id": 49938399,
@@ -321,7 +294,34 @@
     "points": 143,
     "comments": 30,
     "author": "NaOH",
-    "scraped_at": "2026-10-04T15:03:53.477980"
+    "scraped_at": "2026-10-04T18:46:58.613571"
+  },
+  {
+    "id": 49942103,
+    "title": "Show HN: Thoreau BASIC \u2013\u00a0What if BASIC hadn't gone out of fashion?",
+    "url": "https://thoreaubasic.com/",
+    "points": 77,
+    "comments": 44,
+    "author": "Gorsefound",
+    "scraped_at": "2026-10-04T18:46:59.290720"
+  },
+  {
+    "id": 49928361,
+    "title": "C++ Insights \u2013 See your source code with the eyes of a Compiler",
+    "url": "https://github.com/andreasfertig/cppinsights",
+    "points": 163,
+    "comments": 34,
+    "author": "rramadass",
+    "scraped_at": "2026-10-04T18:47:01.428662"
+  },
+  {
+    "id": 49938326,
+    "title": "Three AI agents, two countries, and one uneven world wide web",
+    "url": "https://royapakzad.substack.com/p/multilingual-ai-agents",
+    "points": 38,
+    "comments": 1,
+    "author": "effects",
+    "scraped_at": "2026-10-04T18:47:02.111151"
   },
   {
     "id": 49937304,
@@ -330,34 +330,25 @@
     "points": 108,
     "comments": 41,
     "author": "edverma2",
-    "scraped_at": "2026-10-04T15:03:53.725565"
-  },
-  {
-    "id": 49928361,
-    "title": "C++ Insights \u2013 See your source code with the eyes of a Compiler",
-    "url": "https://github.com/andreasfertig/cppinsights",
-    "points": 162,
-    "comments": 33,
-    "author": "rramadass",
-    "scraped_at": "2026-10-04T15:03:53.975878"
+    "scraped_at": "2026-10-04T18:47:03.341169"
   },
   {
     "id": 49942706,
     "title": "Kolibri: A Sovereign Open-Weight Model",
     "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
     "points": 631,
-    "comments": 319,
+    "comments": 320,
     "author": "bastitx",
-    "scraped_at": "2026-10-04T15:03:54.474423"
+    "scraped_at": "2026-10-04T18:47:03.947493"
   },
   {
-    "id": 49942103,
-    "title": "Show HN: Thoreau BASIC \u2013\u00a0What if BASIC hadn't gone out of fashion?",
-    "url": "https://thoreaubasic.com/",
-    "points": 73,
-    "comments": 40,
-    "author": "Gorsefound",
-    "scraped_at": "2026-10-04T15:03:54.728173"
+    "id": 49910425,
+    "title": "Thought as a Technology (2016)",
+    "url": "https://cognitivemedium.com/tat/index.html",
+    "points": 8,
+    "comments": 0,
+    "author": "tobr",
+    "scraped_at": "2026-10-04T18:47:04.628079"
   },
   {
     "id": 49945352,
@@ -366,16 +357,16 @@
     "points": 45,
     "comments": 34,
     "author": "avsm",
-    "scraped_at": "2026-10-04T15:03:54.977475"
+    "scraped_at": "2026-10-04T18:47:05.229675"
   },
   {
     "id": 49922074,
     "title": "Amazon introduces a redesigned Kindle family",
     "url": "https://www.aboutamazon.com/news/devices/new-kindle-lineup-2026",
-    "points": 42,
-    "comments": 72,
+    "points": 43,
+    "comments": 75,
     "author": "seam_carver",
-    "scraped_at": "2026-10-04T15:03:55.226000"
+    "scraped_at": "2026-10-04T18:47:06.552690"
   },
   {
     "id": 49941641,
@@ -384,16 +375,7 @@
     "points": 63,
     "comments": 21,
     "author": "computerbuster",
-    "scraped_at": "2026-10-04T15:03:55.475905"
-  },
-  {
-    "id": 49951881,
-    "title": "In Ukraine, distributed renewables foil Russia's assaults",
-    "url": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
-    "points": 145,
-    "comments": 141,
-    "author": "JumpCrisscross",
-    "scraped_at": "2026-10-04T15:03:55.887031"
+    "scraped_at": "2026-10-04T18:47:07.201016"
   },
   {
     "id": 49940877,
@@ -402,7 +384,7 @@
     "points": 76,
     "comments": 15,
     "author": "willmeyers",
-    "scraped_at": "2026-10-04T15:03:56.135855"
+    "scraped_at": "2026-10-04T18:47:07.888734"
   },
   {
     "id": 49946845,
@@ -411,7 +393,7 @@
     "points": 62,
     "comments": 10,
     "author": "KomoD",
-    "scraped_at": "2026-10-04T15:03:56.402069"
+    "scraped_at": "2026-10-04T18:47:08.715647"
   },
   {
     "id": 49931993,
@@ -420,24 +402,15 @@
     "points": 84,
     "comments": 29,
     "author": "nor-and-or-not",
-    "scraped_at": "2026-10-04T15:03:56.660844"
+    "scraped_at": "2026-10-04T18:47:09.934706"
   },
   {
     "id": 49941091,
     "title": "Cloudflare OHTTP gateway",
     "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
-    "points": 197,
+    "points": 198,
     "comments": 94,
     "author": "est",
-    "scraped_at": "2026-10-04T15:03:56.910218"
-  },
-  {
-    "id": 49934351,
-    "title": "Sea Monkeys Show Scientists How to Rewrite a Rule of Turbulence",
-    "url": "https://www.quantamagazine.org/sea-monkeys-show-scientists-how-to-rewrite-a-rule-of-turbulence-20261002/",
-    "points": 10,
-    "comments": 1,
-    "author": "ibobev",
-    "scraped_at": "2026-10-04T15:03:57.162423"
+    "scraped_at": "2026-10-04T18:47:10.535229"
   }
 ]
