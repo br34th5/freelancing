@@ -26,7 +26,6 @@ class ProxyRotator:
         proxy = self.get_proxy()
         if proxy:
             session.proxies.update(proxy)
-            logger.info(f"Using proxy: {proxy['http'].split('@')[1]}")
         return session
 
     def test_proxies(self):

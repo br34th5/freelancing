@@ -39,13 +39,12 @@ def get_rotator():
     password = os.getenv("PROXY_PASS", "")
     if proxy_list and user and password:
         return ProxyRotator(proxy_list, user, password)
-    logger.warning("No proxy credentials found, running without proxies")
     return None
 
 
-def get_top_stories(count=30):
-    rotator = get_rotator()
-    session = rotator.get_session() if rotator else requests.Session()
+def get_top_stories(count=30, session=None):
+    if session is None:
+        session = requests.Session()
     session.headers.update({
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     })
@@ -63,9 +62,9 @@ def get_top_stories(count=30):
         raise
 
 
-def get_story(item_id):
-    rotator = get_rotator()
-    session = rotator.get_session() if rotator else requests.Session()
+def get_story(item_id, session=None):
+    if session is None:
+        session = requests.Session()
     session.headers.update({
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     })
@@ -92,11 +91,14 @@ def main():
     time.sleep(delay)
 
     try:
-        story_ids = get_top_stories(50)
+        rotator = get_rotator()
+        session = rotator.get_session() if rotator else requests.Session()
+
+        story_ids = get_top_stories(50, session)
 
         stories = []
         for i, sid in enumerate(story_ids):
-            story = get_story(sid)
+            story = get_story(sid, session)
             if story and story.get("type") == "story":
                 stories.append({
                     "id": sid,
