@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 import requests
 
 from proxy_rotator import ProxyRotator
-from database import init_db, insert_stories
+from database import save_stories, backfill_local
 
 # Load .env
 load_dotenv(Path(__file__).parent.parent.parent.parent / ".env")
@@ -105,6 +105,8 @@ def main():
     logger.info("=" * 60)
     logger.info(f"Starting HN scraper at {start_time}")
 
+    backfill_local()
+
     delay = random.randint(0, 60)
     logger.info(f"Waiting {delay}s to avoid peak time...")
     time.sleep(delay)
@@ -152,11 +154,7 @@ def main():
 
         logger.info(f"Saved {len(stories)} stories to {output_file}")
 
-        if os.getenv("DATABASE_URL"):
-            init_db()
-            insert_stories(stories)
-        else:
-            logger.info("DATABASE_URL not set, skipping database insert")
+        save_stories(stories)
 
         duration = (datetime.now() - start_time).total_seconds()
         logger.info(f"Completed in {duration:.1f}s")

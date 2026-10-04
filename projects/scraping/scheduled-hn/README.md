@@ -49,7 +49,7 @@ The workflow reads them automatically via `${{ secrets.PROXY_USER }}` etc.
 
 ## Database Setup
 
-The scraper can store stories in PostgreSQL (Neon, Supabase, or local).
+The scraper can store stories in PostgreSQL — Neon (cloud) and/or a local Docker copy (dual-write).
 
 ### Neon (cloud)
 
@@ -60,13 +60,21 @@ The scraper can store stories in PostgreSQL (Neon, Supabase, or local).
    postgresql://user:pass@ep-xxx.neon.tech/neondb?sslmode=require
    ```
 
-### Local PostgreSQL
+### Local PostgreSQL (Docker copy)
 
 ```bash
-createdb hn_scraper
-# Add to .env:
-DATABASE_URL=postgresql://user:pass@localhost:5432/hn_scraper
+docker run -d --name hn-postgres -e POSTGRES_PASSWORD=testpass \
+  -e POSTGRES_DB=hn_scraper -p 5432:5432 postgres:16-alpine
 ```
+
+Add to `.env`:
+```
+LOCAL_DATABASE_URL=postgresql://postgres:testpass@localhost:5432/hn_scraper
+```
+
+Dual-write behavior: `DATABASE_URL` failures raise (alerts fire); `LOCAL_DATABASE_URL` failures only log a warning — the local copy never breaks a run. GitHub Actions skips the local copy (not set there).
+
+**Auto-recovery:** every scraper run first backfills the local copy from `data/*.json` on disk **and** from `origin/main` (fetched via `git show`, working tree untouched) — so the local DB catches up after being offline. Container survives reboots: `docker update --restart unless-stopped hn-postgres`.
 
 ### Table schema
 
