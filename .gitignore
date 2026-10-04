@@ -1,7 +1,11 @@
+.env
+.venv
 venv/
-.learning/
 __pycache__/
 *.pyc
-.env
+.pytest_cache/
+data/
 *.log
-.DS_Store
+.learning/
+projects/scraping/scheduled-hn/data/
+projects/scraping/scheduled-hn/hn_scraper.log

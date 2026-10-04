@@ -1,14 +1,12 @@
 # Freelance Projects Portfolio
 
-This directory contains working projects organized by skill area.
-
 ## Project Structure
 
-Each project should include:
+Each project includes:
 - `README.md` — What it does, tech stack, how to run
 - Source code
 - `requirements.txt` or `package.json` (dependencies)
-- Screenshots or demo link (optional)
+- Screenshots or demo link 
 
 ## Categories
 
@@ -31,5 +29,3 @@ AI engineering: RAG systems, agents, LLM integrations
 Full-stack web applications
 
 ---
-
-**Note:** Learning plans, notes, and job submission tracking are in `.learning/` (gitignored).
