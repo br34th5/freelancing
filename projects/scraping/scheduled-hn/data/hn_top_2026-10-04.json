@@ -1,0 +1,407 @@
+[
+  {
+    "id": 49949438,
+    "title": "Tell HN: Bob Cringely has died",
+    "url": "https://news.ycombinator.com/item?id=49949438",
+    "points": 433,
+    "comments": 87,
+    "author": "paveworld",
+    "scraped_at": "2026-10-04T09:44:57.139804"
+  },
+  {
+    "id": 49950554,
+    "title": "Why don't more developers \u201cuse the platform\u201d?",
+    "url": "https://nolanlawson.com/2026/10/03/why-dont-more-developers-use-the-platform/",
+    "points": 130,
+    "comments": 93,
+    "author": "vinhnx",
+    "scraped_at": "2026-10-04T09:45:00.233144"
+  },
+  {
+    "id": 49910462,
+    "title": "So you think you could be an electrician?",
+    "url": "https://asteriskmag.com/issues/15/so-you-think-you-could-be-an-electrician",
+    "points": 214,
+    "comments": 145,
+    "author": "zdw",
+    "scraped_at": "2026-10-04T09:45:01.461275"
+  },
+  {
+    "id": 49946895,
+    "title": "The work by Valve's Timur Krist\u00f3f on improving old AMD GPUs on Linux",
+    "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
+    "points": 282,
+    "comments": 40,
+    "author": "speckx",
+    "scraped_at": "2026-10-04T09:45:01.944357"
+  },
+  {
+    "id": 49951881,
+    "title": "In Ukraine, distributed renewables foil Russia's assaults",
+    "url": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
+    "points": 45,
+    "comments": 13,
+    "author": "JumpCrisscross",
+    "scraped_at": "2026-10-04T09:45:02.875804"
+  },
+  {
+    "id": 49946355,
+    "title": "Treachery in the Rodin Museum 3D scan verdict",
+    "url": "https://cosmowenman.substack.com/p/rodin-museum-3d-scan-verdict",
+    "points": 194,
+    "comments": 89,
+    "author": "CosmoWenman",
+    "scraped_at": "2026-10-04T09:45:03.385325"
+  },
+  {
+    "id": 49945933,
+    "title": "Agents don't need memory, they need documentation",
+    "url": "https://liao.gg/blog/agents-dont-need-memory",
+    "points": 168,
+    "comments": 96,
+    "author": "kmeh",
+    "scraped_at": "2026-10-04T09:45:04.015196"
+  },
+  {
+    "id": 49949588,
+    "title": "We're working on a new RuneScape MMO",
+    "url": "https://play.runescape.com/4",
+    "points": 64,
+    "comments": 23,
+    "author": "droidjj",
+    "scraped_at": "2026-10-04T09:45:04.657203"
+  },
+  {
+    "id": 49946393,
+    "title": "Hole Punch: Sling your spaceship around gravitational fields",
+    "url": "https://notoriousbfg.com/hole-punch/",
+    "points": 290,
+    "comments": 66,
+    "author": "trwhite",
+    "scraped_at": "2026-10-04T09:45:05.515493"
+  },
+  {
+    "id": 49949235,
+    "title": "We're going to need default hard budget caps on pretty much everything",
+    "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+    "points": 431,
+    "comments": 213,
+    "author": "elffjs",
+    "scraped_at": "2026-10-04T09:45:06.004043"
+  },
+  {
+    "id": 49923873,
+    "title": "Celebrating the 100th birthday of the kidney donated to him as a teenager",
+    "url": "https://www.whec.com/top-news/webster-man-celebrating-the-100th-birthday-of-the-kidney-his-mom-donated-to-him-as-a-teenager/",
+    "points": 195,
+    "comments": 49,
+    "author": "gscott",
+    "scraped_at": "2026-10-04T09:45:07.496209"
+  },
+  {
+    "id": 49947631,
+    "title": "Reasons I didn't become an EMT, ranked",
+    "url": "https://ben.stolovitz.com/posts/reasons-not-emt-ranked/",
+    "points": 149,
+    "comments": 75,
+    "author": "citelao",
+    "scraped_at": "2026-10-04T09:45:07.984954"
+  },
+  {
+    "id": 49950052,
+    "title": "Religious scholars met with Anthropic",
+    "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
+    "points": 77,
+    "comments": 147,
+    "author": "bookofjoe",
+    "scraped_at": "2026-10-04T09:45:08.931013"
+  },
+  {
+    "id": 49946228,
+    "title": "LeCun has \"zero concerns\" about AI wiping out humanity, recent \"rogue\" incidents",
+    "url": "https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/",
+    "points": 125,
+    "comments": 162,
+    "author": "Anon84",
+    "scraped_at": "2026-10-04T09:45:09.528041"
+  },
+  {
+    "id": 49951966,
+    "title": "'This can't go on': thousands protest against housing crisis in Spain",
+    "url": "https://www.theguardian.com/world/2026/oct/03/spain-housing-protest",
+    "points": 17,
+    "comments": 9,
+    "author": "akbarnama",
+    "scraped_at": "2026-10-04T09:45:11.057422"
+  },
+  {
+    "id": 49947051,
+    "title": "We want you to build the next Git platform on Cloudflare",
+    "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare/",
+    "points": 128,
+    "comments": 114,
+    "author": "geoffbp",
+    "scraped_at": "2026-10-04T09:45:11.900406"
+  },
+  {
+    "id": 49951139,
+    "title": "UK Government Body Kept Files on People Criticizing Prevent Program",
+    "url": "https://reclaimthenet.org/uk-prevent-unit-tracked-online-critics",
+    "points": 37,
+    "comments": 6,
+    "author": "latein",
+    "scraped_at": "2026-10-04T09:45:12.947580"
+  },
+  {
+    "id": 49936017,
+    "title": "Dirty Optimization Secrets (C for Playdate)",
+    "url": "https://devforum.play.date/t/dirty-optimization-secrets-c-for-playdate/23011",
+    "points": 12,
+    "comments": 0,
+    "author": "ibobev",
+    "scraped_at": "2026-10-04T09:45:14.041020"
+  },
+  {
+    "id": 49940482,
+    "title": "Math's pedagogical curse \u2013 Grant Sanderson [video]",
+    "url": "https://www.youtube.com/watch?v=UOuxo6SA8Uc",
+    "points": 40,
+    "comments": 18,
+    "author": "bobajeff",
+    "scraped_at": "2026-10-04T09:45:14.530258"
+  },
+  {
+    "id": 49946707,
+    "title": "How to hack time, with C2PA",
+    "url": "https://www.da.vidbuchanan.co.uk/blog/hacking-time.html",
+    "points": 38,
+    "comments": 4,
+    "author": "Retr0id",
+    "scraped_at": "2026-10-04T09:45:15.461129"
+  },
+  {
+    "id": 49908570,
+    "title": "Your body of work thinks back at you",
+    "url": "https://photoni.st/index.php/2026/09/25/your-body-of-work-thinks-back-at-you/",
+    "points": 60,
+    "comments": 7,
+    "author": "surprisetalk",
+    "scraped_at": "2026-10-04T09:45:15.937178"
+  },
+  {
+    "id": 49951684,
+    "title": "\"Torturing\" LLMs in a Robot Prison Has Triggered the Dumbest Debate in AI Yet",
+    "url": "https://www.404media.co/someone-torturing-llms-in-a-robot-prison-has-triggered-the-dumbest-debate-in-ai-yet/",
+    "points": 14,
+    "comments": 5,
+    "author": "airhangerf15",
+    "scraped_at": "2026-10-04T09:45:16.209869"
+  },
+  {
+    "id": 49944912,
+    "title": "FTL: A new operating system for clouds",
+    "url": "https://ftl-os.org/",
+    "points": 173,
+    "comments": 67,
+    "author": "romac",
+    "scraped_at": "2026-10-04T09:45:16.481618"
+  },
+  {
+    "id": 49944227,
+    "title": "I quit OpenAI because its culture is broken",
+    "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA",
+    "points": 223,
+    "comments": 485,
+    "author": "Brajeshwar",
+    "scraped_at": "2026-10-04T09:45:16.965187"
+  },
+  {
+    "id": 49938326,
+    "title": "Three AI agents, two countries, and one uneven world wide web",
+    "url": "https://royapakzad.substack.com/p/multilingual-ai-agents",
+    "points": 29,
+    "comments": 1,
+    "author": "effects",
+    "scraped_at": "2026-10-04T09:45:17.990201"
+  },
+  {
+    "id": 49942130,
+    "title": "Former SR-71 engineer talks NASA's Blackbird revival program",
+    "url": "https://www.twz.com/air/former-sr-71-engineer-talks-nasas-blackbird-revival-program",
+    "points": 59,
+    "comments": 36,
+    "author": "rkagerer",
+    "scraped_at": "2026-10-04T09:45:18.842740"
+  },
+  {
+    "id": 49942103,
+    "title": "Show HN: Thoreau BASIC \u2013\u00a0What if BASIC hadn't gone out of fashion?",
+    "url": "https://thoreaubasic.com/",
+    "points": 60,
+    "comments": 32,
+    "author": "Gorsefound",
+    "scraped_at": "2026-10-04T09:45:19.761580"
+  },
+  {
+    "id": 49946526,
+    "title": "What Meta got right with Muse",
+    "url": "https://metedata.substack.com/p/what-meta-got-right-with-muse",
+    "points": 48,
+    "comments": 55,
+    "author": "young_mete",
+    "scraped_at": "2026-10-04T09:45:20.005900"
+  },
+  {
+    "id": 49945323,
+    "title": "City building games have a Soul Problem pt.2",
+    "url": "https://www.radical-elements.com/minor-epiphanies/city-building-games-have-a-soul-problem-pt2",
+    "points": 134,
+    "comments": 134,
+    "author": "lexx",
+    "scraped_at": "2026-10-04T09:45:21.044358"
+  },
+  {
+    "id": 49947472,
+    "title": "Surely you have ultra-wideband radios on your bins too?",
+    "url": "https://sjg.io/writing/binrange-have-you-actually-put-the-bins-out/",
+    "points": 73,
+    "comments": 37,
+    "author": "simonjgreen",
+    "scraped_at": "2026-10-04T09:45:22.087138"
+  },
+  {
+    "id": 49951218,
+    "title": "Emitting metadata early makes building/checking Rust up to twice as fast",
+    "url": "https://github.com/PowderworksCode/headstart",
+    "points": 4,
+    "comments": 0,
+    "author": "knuckleheads",
+    "scraped_at": "2026-10-04T09:45:23.120449"
+  },
+  {
+    "id": 49938399,
+    "title": "Woking Electrical Control Room (2016)",
+    "url": "http://www.darbiansphotography.com/woking-electrical-control-room-urbex",
+    "points": 142,
+    "comments": 28,
+    "author": "NaOH",
+    "scraped_at": "2026-10-04T09:45:24.397410"
+  },
+  {
+    "id": 49945352,
+    "title": "Docker has always used microVMs (well since 2016)",
+    "url": "https://dave.recoil.org/docker-has-always-used-microvms/",
+    "points": 40,
+    "comments": 30,
+    "author": "avsm",
+    "scraped_at": "2026-10-04T09:45:25.323182"
+  },
+  {
+    "id": 49922074,
+    "title": "Amazon introduces a redesigned Kindle family",
+    "url": "https://www.aboutamazon.com/news/devices/new-kindle-lineup-2026",
+    "points": 33,
+    "comments": 57,
+    "author": "seam_carver",
+    "scraped_at": "2026-10-04T09:45:25.591741"
+  },
+  {
+    "id": 49937304,
+    "title": "Show HN: Pi pod \u2013 Run your pi coding agent in sandboxes on your own server",
+    "url": "https://pipod.dev/",
+    "points": 99,
+    "comments": 39,
+    "author": "edverma2",
+    "scraped_at": "2026-10-04T09:45:26.084279"
+  },
+  {
+    "id": 49928361,
+    "title": "C++ Insights \u2013 See your source code with the eyes of a Compiler",
+    "url": "https://github.com/andreasfertig/cppinsights",
+    "points": 160,
+    "comments": 31,
+    "author": "rramadass",
+    "scraped_at": "2026-10-04T09:45:26.962849"
+  },
+  {
+    "id": 49941641,
+    "title": "Memory-Safe WebP Decoding",
+    "url": "https://halide.cx/blog/wpd/",
+    "points": 57,
+    "comments": 20,
+    "author": "computerbuster",
+    "scraped_at": "2026-10-04T09:45:27.998353"
+  },
+  {
+    "id": 49942706,
+    "title": "Kolibri: A Sovereign Open-Weight Model",
+    "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+    "points": 613,
+    "comments": 315,
+    "author": "bastitx",
+    "scraped_at": "2026-10-04T09:45:28.482882"
+  },
+  {
+    "id": 49940877,
+    "title": "New York City should carefully measure a new tree",
+    "url": "https://blog.willmeye.rs/new-york-city-should-carefully-measure-a-new-tree/",
+    "points": 71,
+    "comments": 15,
+    "author": "willmeyers",
+    "scraped_at": "2026-10-04T09:45:29.415153"
+  },
+  {
+    "id": 49946845,
+    "title": "RSS Feed Best Practices (2022)",
+    "url": "https://kevincox.ca/2022/05/06/rss-feed-best-practices/",
+    "points": 60,
+    "comments": 10,
+    "author": "KomoD",
+    "scraped_at": "2026-10-04T09:45:30.894725"
+  },
+  {
+    "id": 49941764,
+    "title": "The characters of plastics (2024)",
+    "url": "https://yarchive.net/blog/plastics/",
+    "points": 20,
+    "comments": 4,
+    "author": "thelastgallon",
+    "scraped_at": "2026-10-04T09:45:31.168028"
+  },
+  {
+    "id": 49948254,
+    "title": "Federal judge calls Flock 'indiscriminate mass surveillance'",
+    "url": "https://techcrunch.com/2026/10/03/federal-judge-calls-flock-indiscriminate-mass-surveillance/",
+    "points": 426,
+    "comments": 238,
+    "author": "sbulaev",
+    "scraped_at": "2026-10-04T09:45:31.969744"
+  },
+  {
+    "id": 49931993,
+    "title": "Show HN: Our space game has a built-in RISC-V emulator that runs Linux",
+    "url": "https://againstallodds.games/blog/2026/10/03/our-risc-v-emulator-pasriscv/",
+    "points": 77,
+    "comments": 28,
+    "author": "nor-and-or-not",
+    "scraped_at": "2026-10-04T09:45:32.810404"
+  },
+  {
+    "id": 49941091,
+    "title": "Cloudflare OHTTP gateway",
+    "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
+    "points": 193,
+    "comments": 92,
+    "author": "est",
+    "scraped_at": "2026-10-04T09:45:33.054167"
+  },
+  {
+    "id": 49927514,
+    "title": "Gboard Conveyor Belt Version",
+    "url": "https://github.com/google/mozc-devices/tree/main/mozc-conveyorbelt",
+    "points": 32,
+    "comments": 3,
+    "author": "xnx",
+    "scraped_at": "2026-10-04T09:45:34.096131"
+  }
+]
