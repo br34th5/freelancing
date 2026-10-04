@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add projects/scraping/scheduled-hn/data/
+          git add -f projects/scraping/scheduled-hn/data/
           git diff --staged --quiet || git commit -m "chore: update HN data $(date +%Y-%m-%d)"
           git push
         env:
