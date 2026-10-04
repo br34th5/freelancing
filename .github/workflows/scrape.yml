@@ -28,6 +28,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r projects/scraping/scheduled-hn/requirements.txt
 
+      - name: Create data directory
+        run: mkdir -p projects/scraping/scheduled-hn/data
+
       - name: Run scraper
         env:
           PROXY_USER: ${{ secrets.PROXY_USER }}
