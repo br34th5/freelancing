@@ -3,28 +3,28 @@
     "id": 49953495,
     "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
     "url": "https://github.com/Niko1221/Strata",
-    "points": 157,
-    "comments": 60,
+    "points": 162,
+    "comments": 62,
     "author": "snehesht",
-    "scraped_at": "2026-10-04T18:00:38.357762"
+    "scraped_at": "2026-10-04T15:03:44.436988"
   },
   {
     "id": 49930439,
     "title": "Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
     "url": "https://niklasroy.com/gtc/",
-    "points": 55,
+    "points": 56,
     "comments": 8,
     "author": "r0r0",
-    "scraped_at": "2026-10-04T18:00:38.535282"
+    "scraped_at": "2026-10-04T15:03:44.691571"
   },
   {
     "id": 49949438,
     "title": "Tell HN: Bob Cringely has died",
     "url": "https://news.ycombinator.com/item?id=49949438",
-    "points": 616,
+    "points": 619,
     "comments": 122,
     "author": "paveworld",
-    "scraped_at": "2026-10-04T18:00:38.709532"
+    "scraped_at": "2026-10-04T15:03:44.941050"
   },
   {
     "id": 49952111,
@@ -33,7 +33,7 @@
     "points": 39,
     "comments": 24,
     "author": "allenleee",
-    "scraped_at": "2026-10-04T18:00:38.892372"
+    "scraped_at": "2026-10-04T15:03:45.189735"
   },
   {
     "id": 49952029,
@@ -42,25 +42,25 @@
     "points": 63,
     "comments": 8,
     "author": "rdmuser",
-    "scraped_at": "2026-10-04T18:00:39.081239"
+    "scraped_at": "2026-10-04T15:03:45.437919"
   },
   {
     "id": 49950554,
     "title": "Why don't more developers \u201cuse the platform\u201d?",
     "url": "https://nolanlawson.com/2026/10/03/why-dont-more-developers-use-the-platform/",
-    "points": 205,
-    "comments": 194,
+    "points": 206,
+    "comments": 197,
     "author": "vinhnx",
-    "scraped_at": "2026-10-04T18:00:39.256748"
+    "scraped_at": "2026-10-04T15:03:45.688547"
   },
   {
     "id": 49946895,
     "title": "The work by Valve's Timur Krist\u00f3f on improving old AMD GPUs on Linux",
     "url": "https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU",
-    "points": 369,
+    "points": 370,
     "comments": 65,
     "author": "speckx",
-    "scraped_at": "2026-10-04T18:00:39.434752"
+    "scraped_at": "2026-10-04T15:03:45.939006"
   },
   {
     "id": 49935097,
@@ -69,7 +69,7 @@
     "points": 49,
     "comments": 9,
     "author": "luu",
-    "scraped_at": "2026-10-04T18:00:39.629423"
+    "scraped_at": "2026-10-04T15:03:46.293486"
   },
   {
     "id": 49951218,
@@ -78,7 +78,7 @@
     "points": 54,
     "comments": 9,
     "author": "knuckleheads",
-    "scraped_at": "2026-10-04T18:00:39.816735"
+    "scraped_at": "2026-10-04T15:03:46.589065"
   },
   {
     "id": 49939637,
@@ -87,16 +87,16 @@
     "points": 10,
     "comments": 1,
     "author": "tejstead",
-    "scraped_at": "2026-10-04T18:00:39.991210"
+    "scraped_at": "2026-10-04T15:03:46.837108"
   },
   {
     "id": 49945933,
     "title": "Agents don't need memory, they need documentation",
     "url": "https://liao.gg/blog/agents-dont-need-memory",
-    "points": 264,
-    "comments": 146,
+    "points": 266,
+    "comments": 147,
     "author": "kmeh",
-    "scraped_at": "2026-10-04T18:00:40.181285"
+    "scraped_at": "2026-10-04T15:03:47.085361"
   },
   {
     "id": 49946355,
@@ -105,43 +105,34 @@
     "points": 251,
     "comments": 124,
     "author": "CosmoWenman",
-    "scraped_at": "2026-10-04T18:00:40.356263"
+    "scraped_at": "2026-10-04T15:03:47.332531"
   },
   {
     "id": 49946393,
     "title": "Hole Punch: Sling your spaceship around gravitational fields",
     "url": "https://notoriousbfg.com/hole-punch/",
     "points": 324,
-    "comments": 78,
+    "comments": 79,
     "author": "trwhite",
-    "scraped_at": "2026-10-04T18:00:40.528747"
+    "scraped_at": "2026-10-04T15:03:47.585022"
   },
   {
     "id": 49946228,
     "title": "LeCun has \"zero concerns\" about AI wiping out humanity, recent \"rogue\" incidents",
     "url": "https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/",
-    "points": 237,
-    "comments": 355,
+    "points": 238,
+    "comments": 357,
     "author": "Anon84",
-    "scraped_at": "2026-10-04T18:00:40.742382"
-  },
-  {
-    "id": 49949588,
-    "title": "We're working on a new RuneScape MMO",
-    "url": "https://play.runescape.com/4",
-    "points": 124,
-    "comments": 61,
-    "author": "droidjj",
-    "scraped_at": "2026-10-04T18:00:40.915109"
+    "scraped_at": "2026-10-04T15:03:47.835981"
   },
   {
     "id": 49923873,
     "title": "Celebrating the 100th birthday of the kidney donated to him as a teenager",
     "url": "https://www.whec.com/top-news/webster-man-celebrating-the-100th-birthday-of-the-kidney-his-mom-donated-to-him-as-a-teenager/",
-    "points": 222,
+    "points": 223,
     "comments": 57,
     "author": "gscott",
-    "scraped_at": "2026-10-04T18:00:41.082608"
+    "scraped_at": "2026-10-04T15:03:48.085010"
   },
   {
     "id": 49910462,
@@ -150,16 +141,25 @@
     "points": 356,
     "comments": 290,
     "author": "zdw",
-    "scraped_at": "2026-10-04T18:00:41.257168"
+    "scraped_at": "2026-10-04T15:03:48.333644"
   },
   {
     "id": 49953116,
     "title": "Rejection Sensitivity in Gifted and Twice-Exceptional Children",
     "url": "https://teachyourkids.substack.com/p/rejection-sensitivity-in-gifted-and",
     "points": 59,
-    "comments": 22,
+    "comments": 24,
     "author": "actfrench",
-    "scraped_at": "2026-10-04T18:00:41.431729"
+    "scraped_at": "2026-10-04T15:03:48.581505"
+  },
+  {
+    "id": 49949588,
+    "title": "We're working on a new RuneScape MMO",
+    "url": "https://play.runescape.com/4",
+    "points": 124,
+    "comments": 61,
+    "author": "droidjj",
+    "scraped_at": "2026-10-04T15:03:48.829326"
   },
   {
     "id": 49949235,
@@ -168,7 +168,7 @@
     "points": 517,
     "comments": 265,
     "author": "elffjs",
-    "scraped_at": "2026-10-04T18:00:41.627199"
+    "scraped_at": "2026-10-04T15:03:49.079577"
   },
   {
     "id": 49947631,
@@ -177,7 +177,7 @@
     "points": 189,
     "comments": 82,
     "author": "citelao",
-    "scraped_at": "2026-10-04T18:00:41.798795"
+    "scraped_at": "2026-10-04T15:03:49.332628"
   },
   {
     "id": 49947051,
@@ -186,34 +186,34 @@
     "points": 168,
     "comments": 144,
     "author": "geoffbp",
-    "scraped_at": "2026-10-04T18:00:41.966688"
+    "scraped_at": "2026-10-04T15:03:49.582830"
   },
   {
     "id": 49944227,
     "title": "I quit OpenAI because its culture is broken",
     "url": "https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA",
     "points": 340,
-    "comments": 561,
+    "comments": 562,
     "author": "Brajeshwar",
-    "scraped_at": "2026-10-04T18:00:42.162271"
+    "scraped_at": "2026-10-04T15:03:49.830464"
   },
   {
     "id": 49950052,
     "title": "Religious scholars met with Anthropic",
     "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
     "points": 130,
-    "comments": 279,
+    "comments": 280,
     "author": "bookofjoe",
-    "scraped_at": "2026-10-04T18:00:42.327207"
+    "scraped_at": "2026-10-04T15:03:50.079306"
   },
   {
     "id": 49946526,
     "title": "What Meta got right with Muse",
     "url": "https://metedata.substack.com/p/what-meta-got-right-with-muse",
     "points": 81,
-    "comments": 109,
+    "comments": 110,
     "author": "young_mete",
-    "scraped_at": "2026-10-04T18:00:42.497531"
+    "scraped_at": "2026-10-04T15:03:50.408531"
   },
   {
     "id": 49908570,
@@ -222,7 +222,7 @@
     "points": 80,
     "comments": 13,
     "author": "surprisetalk",
-    "scraped_at": "2026-10-04T18:00:42.677146"
+    "scraped_at": "2026-10-04T15:03:50.711749"
   },
   {
     "id": 49940482,
@@ -231,7 +231,7 @@
     "points": 61,
     "comments": 28,
     "author": "bobajeff",
-    "scraped_at": "2026-10-04T18:00:43.112638"
+    "scraped_at": "2026-10-04T15:03:50.961643"
   },
   {
     "id": 49951641,
@@ -240,7 +240,7 @@
     "points": 11,
     "comments": 1,
     "author": "6bitquant",
-    "scraped_at": "2026-10-04T18:00:43.432232"
+    "scraped_at": "2026-10-04T15:03:51.211702"
   },
   {
     "id": 49946707,
@@ -249,7 +249,7 @@
     "points": 49,
     "comments": 6,
     "author": "Retr0id",
-    "scraped_at": "2026-10-04T18:00:43.599626"
+    "scraped_at": "2026-10-04T15:03:51.460065"
   },
   {
     "id": 49936017,
@@ -258,7 +258,7 @@
     "points": 36,
     "comments": 4,
     "author": "ibobev",
-    "scraped_at": "2026-10-04T18:00:43.777110"
+    "scraped_at": "2026-10-04T15:03:51.710780"
   },
   {
     "id": 49944912,
@@ -267,7 +267,7 @@
     "points": 188,
     "comments": 74,
     "author": "romac",
-    "scraped_at": "2026-10-04T18:00:43.952513"
+    "scraped_at": "2026-10-04T15:03:51.964894"
   },
   {
     "id": 49947472,
@@ -276,7 +276,7 @@
     "points": 101,
     "comments": 56,
     "author": "simonjgreen",
-    "scraped_at": "2026-10-04T18:00:44.131805"
+    "scraped_at": "2026-10-04T15:03:52.215964"
   },
   {
     "id": 49945323,
@@ -285,7 +285,7 @@
     "points": 154,
     "comments": 144,
     "author": "lexx",
-    "scraped_at": "2026-10-04T18:00:44.331115"
+    "scraped_at": "2026-10-04T15:03:52.473927"
   },
   {
     "id": 49910425,
@@ -294,7 +294,7 @@
     "points": 7,
     "comments": 0,
     "author": "tobr",
-    "scraped_at": "2026-10-04T18:00:44.516174"
+    "scraped_at": "2026-10-04T15:03:52.722027"
   },
   {
     "id": 49942130,
@@ -303,7 +303,7 @@
     "points": 84,
     "comments": 47,
     "author": "rkagerer",
-    "scraped_at": "2026-10-04T18:00:44.694164"
+    "scraped_at": "2026-10-04T15:03:52.977091"
   },
   {
     "id": 49938326,
@@ -312,7 +312,7 @@
     "points": 38,
     "comments": 1,
     "author": "effects",
-    "scraped_at": "2026-10-04T18:00:44.881064"
+    "scraped_at": "2026-10-04T15:03:53.228003"
   },
   {
     "id": 49938399,
@@ -321,7 +321,7 @@
     "points": 143,
     "comments": 30,
     "author": "NaOH",
-    "scraped_at": "2026-10-04T18:00:45.057168"
+    "scraped_at": "2026-10-04T15:03:53.477980"
   },
   {
     "id": 49937304,
@@ -330,16 +330,16 @@
     "points": 108,
     "comments": 41,
     "author": "edverma2",
-    "scraped_at": "2026-10-04T18:00:45.246253"
+    "scraped_at": "2026-10-04T15:03:53.725565"
   },
   {
     "id": 49928361,
     "title": "C++ Insights \u2013 See your source code with the eyes of a Compiler",
     "url": "https://github.com/andreasfertig/cppinsights",
-    "points": 161,
+    "points": 162,
     "comments": 33,
     "author": "rramadass",
-    "scraped_at": "2026-10-04T18:00:45.422476"
+    "scraped_at": "2026-10-04T15:03:53.975878"
   },
   {
     "id": 49942706,
@@ -348,7 +348,7 @@
     "points": 631,
     "comments": 319,
     "author": "bastitx",
-    "scraped_at": "2026-10-04T18:00:45.598635"
+    "scraped_at": "2026-10-04T15:03:54.474423"
   },
   {
     "id": 49942103,
@@ -357,7 +357,7 @@
     "points": 73,
     "comments": 40,
     "author": "Gorsefound",
-    "scraped_at": "2026-10-04T18:00:45.780016"
+    "scraped_at": "2026-10-04T15:03:54.728173"
   },
   {
     "id": 49945352,
@@ -366,7 +366,7 @@
     "points": 45,
     "comments": 34,
     "author": "avsm",
-    "scraped_at": "2026-10-04T18:00:46.137197"
+    "scraped_at": "2026-10-04T15:03:54.977475"
   },
   {
     "id": 49922074,
@@ -375,7 +375,7 @@
     "points": 42,
     "comments": 72,
     "author": "seam_carver",
-    "scraped_at": "2026-10-04T18:00:46.576578"
+    "scraped_at": "2026-10-04T15:03:55.226000"
   },
   {
     "id": 49941641,
@@ -384,16 +384,16 @@
     "points": 63,
     "comments": 21,
     "author": "computerbuster",
-    "scraped_at": "2026-10-04T18:00:46.781298"
+    "scraped_at": "2026-10-04T15:03:55.475905"
   },
   {
     "id": 49951881,
     "title": "In Ukraine, distributed renewables foil Russia's assaults",
     "url": "https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/",
     "points": 145,
-    "comments": 140,
+    "comments": 141,
     "author": "JumpCrisscross",
-    "scraped_at": "2026-10-04T18:00:46.956612"
+    "scraped_at": "2026-10-04T15:03:55.887031"
   },
   {
     "id": 49940877,
@@ -402,7 +402,7 @@
     "points": 76,
     "comments": 15,
     "author": "willmeyers",
-    "scraped_at": "2026-10-04T18:00:47.135621"
+    "scraped_at": "2026-10-04T15:03:56.135855"
   },
   {
     "id": 49946845,
@@ -411,7 +411,7 @@
     "points": 62,
     "comments": 10,
     "author": "KomoD",
-    "scraped_at": "2026-10-04T18:00:47.308961"
+    "scraped_at": "2026-10-04T15:03:56.402069"
   },
   {
     "id": 49931993,
@@ -420,16 +420,16 @@
     "points": 84,
     "comments": 29,
     "author": "nor-and-or-not",
-    "scraped_at": "2026-10-04T18:00:47.503118"
+    "scraped_at": "2026-10-04T15:03:56.660844"
   },
   {
     "id": 49941091,
     "title": "Cloudflare OHTTP gateway",
     "url": "https://blog.cloudflare.com/announcing-cloudflare-ohttp-gateway/",
     "points": 197,
-    "comments": 93,
+    "comments": 94,
     "author": "est",
-    "scraped_at": "2026-10-04T18:00:47.681070"
+    "scraped_at": "2026-10-04T15:03:56.910218"
   },
   {
     "id": 49934351,
@@ -438,6 +438,6 @@
     "points": 10,
     "comments": 1,
     "author": "ibobev",
-    "scraped_at": "2026-10-04T18:00:47.853500"
+    "scraped_at": "2026-10-04T15:03:57.162423"
   }
 ]
