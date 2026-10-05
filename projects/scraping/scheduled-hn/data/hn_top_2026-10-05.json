@@ -1,0 +1,425 @@
+[
+  {
+    "id": 49963171,
+    "title": "Web Search API",
+    "url": "https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/",
+    "points": 340,
+    "comments": 172,
+    "author": "tosh",
+    "scraped_at": "2026-10-05T18:25:47.190569"
+  },
+  {
+    "id": 49966163,
+    "title": "The future of independence is interdependence",
+    "url": "https://onlys.ky/independence-is-interdependence/",
+    "points": 56,
+    "comments": 30,
+    "author": "eustoria",
+    "scraped_at": "2026-10-05T18:25:48.439547"
+  },
+  {
+    "id": 49965308,
+    "title": "Making a GTK application in Haskell, part 1",
+    "url": "https://floreal.tech/blog/2026/making-a-gtk-app-in-haskell-part-1/",
+    "points": 82,
+    "comments": 12,
+    "author": "Vosporos",
+    "scraped_at": "2026-10-05T18:25:48.617350"
+  },
+  {
+    "id": 49967444,
+    "title": "US closely monitoring case of lab worker who possibly died of plague in Siberia",
+    "url": "https://www.theguardian.com/world/2026/oct/05/russia-lab-worker-possibly-dies-of-plague-siberia-quarantine-measures-irkutsk",
+    "points": 92,
+    "comments": 63,
+    "author": "tosh",
+    "scraped_at": "2026-10-05T18:25:49.291428"
+  },
+  {
+    "id": 49962012,
+    "title": "Denmark Data Breach Exposes 8.8M People's Personal Data",
+    "url": "https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger",
+    "points": 397,
+    "comments": 283,
+    "author": "clan",
+    "scraped_at": "2026-10-05T18:25:49.759441"
+  },
+  {
+    "id": 49963385,
+    "title": "Mold Linker Version 3.0.0 Release \u2013 Rewritten in Rust",
+    "url": "https://github.com/rui314/mold/releases/tag/v3.0.0",
+    "points": 155,
+    "comments": 81,
+    "author": "roflcopter69",
+    "scraped_at": "2026-10-05T18:25:50.211807"
+  },
+  {
+    "id": 49961861,
+    "title": "Huawei and Qualcomm announce broad patent license agreement",
+    "url": "https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement",
+    "points": 150,
+    "comments": 88,
+    "author": "0xedb",
+    "scraped_at": "2026-10-05T18:25:51.435155"
+  },
+  {
+    "id": 49956290,
+    "title": "The technology to eradicate mosquito-borne disease exists",
+    "url": "https://worksinprogress.co/issue/mosquitoes-are-a-choice/",
+    "points": 168,
+    "comments": 131,
+    "author": "benbreen",
+    "scraped_at": "2026-10-05T18:25:52.659786"
+  },
+  {
+    "id": 49917900,
+    "title": "Differences Between `Foldl` and `Foldr`",
+    "url": "https://blog.haskell.org/foldl-and-foldr/",
+    "points": 105,
+    "comments": 22,
+    "author": "signa11",
+    "scraped_at": "2026-10-05T18:25:55.998927"
+  },
+  {
+    "id": 49964303,
+    "title": "Pixel 11 doesn't yet meet the GrapheneOS security standards and may be skipped",
+    "url": "https://discuss.grapheneos.org/d/41564-pixel-11-doesnt-yet-meet-the-grapheneos-security-standards-and-may-be-skipped",
+    "points": 322,
+    "comments": 179,
+    "author": "finnlab",
+    "scraped_at": "2026-10-05T18:25:56.930105"
+  },
+  {
+    "id": 49965118,
+    "title": "Linux containers in 500 lines of code",
+    "url": "https://blog.lizzie.io/linux-containers-in-500-loc.html",
+    "points": 20,
+    "comments": 4,
+    "author": "mkornaukhov",
+    "scraped_at": "2026-10-05T18:25:57.443110"
+  },
+  {
+    "id": 49917784,
+    "title": "Beating the Compiler",
+    "url": "https://www.mattkeeter.com/blog/2024-07-12-interpreter/",
+    "points": 35,
+    "comments": 25,
+    "author": "andsoitis",
+    "scraped_at": "2026-10-05T18:25:59.048564"
+  },
+  {
+    "id": 49962572,
+    "title": "2026 Nobel Prize in Physiology or Medicine: Deisseroth, Hegemann, Nagel",
+    "url": "https://www.nobelprize.org/prizes/medicine/2026/summary/",
+    "points": 58,
+    "comments": 35,
+    "author": "lode",
+    "scraped_at": "2026-10-05T18:25:59.874706"
+  },
+  {
+    "id": 49952148,
+    "title": "Show HN: Nightwatch \u2013 a Mac menu-bar app that tells you when tonight is clear",
+    "url": "https://github.com/rsutcliffe/nightwatch",
+    "points": 9,
+    "comments": 1,
+    "author": "delphidolphin",
+    "scraped_at": "2026-10-05T18:26:00.125666"
+  },
+  {
+    "id": 49965152,
+    "title": "The designer lamps in my house",
+    "url": "https://arslan.io/2026/10/05/the-lamps-in-my-house/",
+    "points": 22,
+    "comments": 9,
+    "author": "farslan",
+    "scraped_at": "2026-10-05T18:26:00.490714"
+  },
+  {
+    "id": 49928862,
+    "title": "Martian chaos terrain",
+    "url": "https://en.wikipedia.org/wiki/Martian_chaos_terrain",
+    "points": 67,
+    "comments": 13,
+    "author": "tiagod",
+    "scraped_at": "2026-10-05T18:26:00.698636"
+  },
+  {
+    "id": 49957812,
+    "title": "In the wake of Tippett Studios\u2019 closure, a digital archive appears online",
+    "url": "https://filmstories.co.uk/news/tippett-studios-in-the-wake-of-its-closure-a-digital-archive-of-animated-materials-appears-online/",
+    "points": 225,
+    "comments": 27,
+    "author": "rdmuser",
+    "scraped_at": "2026-10-05T18:26:01.605073"
+  },
+  {
+    "id": 49965047,
+    "title": "Picard 3.0",
+    "url": "https://blog.metabrainz.org/2026/10/04/picard-3-0-released/",
+    "points": 79,
+    "comments": 33,
+    "author": "Tomte",
+    "scraped_at": "2026-10-05T18:26:02.055633"
+  },
+  {
+    "id": 49935872,
+    "title": "Mystery Function",
+    "url": "https://codeset.ai/function",
+    "points": 28,
+    "comments": 2,
+    "author": "andre15silva",
+    "scraped_at": "2026-10-05T18:26:02.222871"
+  },
+  {
+    "id": 49948300,
+    "title": "We ported the original Doom to SQL",
+    "url": "https://cedardb.com/blog/sqldoom/",
+    "points": 275,
+    "comments": 42,
+    "author": "Vaslo",
+    "scraped_at": "2026-10-05T18:26:02.662406"
+  },
+  {
+    "id": 49956681,
+    "title": "A browser-native classic Visual Basic VB6 IDE",
+    "url": "https://wieslawsoltes.github.io/VB6/",
+    "points": 362,
+    "comments": 122,
+    "author": "wiso",
+    "scraped_at": "2026-10-05T18:26:03.587058"
+  },
+  {
+    "id": 49963366,
+    "title": "Germany\u2019s RobCo hits $1B valuation",
+    "url": "https://techfundingnews.com/europes-new-robotics-unicorn-germanys-robco-hits-1b-valuation/",
+    "points": 314,
+    "comments": 291,
+    "author": "dachworker",
+    "scraped_at": "2026-10-05T18:26:04.570016"
+  },
+  {
+    "id": 49924795,
+    "title": "ExplainDB: A Database System Built for Understandability",
+    "url": "https://github.com/explaindb/explaindb",
+    "points": 63,
+    "comments": 8,
+    "author": "pykello",
+    "scraped_at": "2026-10-05T18:26:04.734909"
+  },
+  {
+    "id": 49966293,
+    "title": "Our approach to EU text provenance rules",
+    "url": "https://openai.com/index/eu-text-provenance/",
+    "points": 33,
+    "comments": 9,
+    "author": "tosh",
+    "scraped_at": "2026-10-05T18:26:04.958896"
+  },
+  {
+    "id": 49943479,
+    "title": "Type Safe Generic Data Structures in C",
+    "url": "https://danielchasehooper.com/posts/typechecked-generic-c-data-structures/",
+    "points": 114,
+    "comments": 80,
+    "author": "AlexeyBrin",
+    "scraped_at": "2026-10-05T18:26:05.190031"
+  },
+  {
+    "id": 49930872,
+    "title": "The Philadelphia Inquirer built Scrape, an AI tool to surface hyperlocal news",
+    "url": "https://www.lenfestinstitute.org/solutions-resources/philadelphia-inquirer-scrape-ai-hyperlocal-news/",
+    "points": 74,
+    "comments": 26,
+    "author": "giuliomagnifico",
+    "scraped_at": "2026-10-05T18:26:06.542515"
+  },
+  {
+    "id": 49965894,
+    "title": "Borland Turbo Basic",
+    "url": "https://dosdays.co.uk/topics/Software/borland_turbo_basic.php",
+    "points": 92,
+    "comments": 50,
+    "author": "sssilver",
+    "scraped_at": "2026-10-05T18:26:07.451788"
+  },
+  {
+    "id": 49963394,
+    "title": "Show HN: Minigraf \u2013 An embedded, bi-temporal graph database in Rust",
+    "url": "https://github.com/project-minigraf/minigraf",
+    "points": 24,
+    "comments": 20,
+    "author": "adityamukho",
+    "scraped_at": "2026-10-05T18:26:08.415034"
+  },
+  {
+    "id": 49943637,
+    "title": "Infidel goes wild",
+    "url": "https://blog.zarfhome.com/2026/10/infidel-goes-wild",
+    "points": 176,
+    "comments": 36,
+    "author": "tobr",
+    "scraped_at": "2026-10-05T18:26:09.326883"
+  },
+  {
+    "id": 49966182,
+    "title": "uBlock Origin Lite is back on Firefox add-ons",
+    "url": "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin-lite/",
+    "points": 14,
+    "comments": 5,
+    "author": "speckx",
+    "scraped_at": "2026-10-05T18:26:10.154329"
+  },
+  {
+    "id": 49957116,
+    "title": "Turn off Apple Intelligence on macOS 27 and get its disk space back",
+    "url": "https://github.com/omlahore/RemoveMacAI",
+    "points": 727,
+    "comments": 490,
+    "author": "privacyisntdead",
+    "scraped_at": "2026-10-05T18:26:10.612454"
+  },
+  {
+    "id": 49967579,
+    "title": "DigitalOcean Ends Open Source Credits Program",
+    "url": "https://itsfoss.com/news/digitalocean-open-source-credits-end/",
+    "points": 5,
+    "comments": 0,
+    "author": "JamesCoyne",
+    "scraped_at": "2026-10-05T18:26:11.635367"
+  },
+  {
+    "id": 49962857,
+    "title": "Apple and a Hacker's Future",
+    "url": "https://stratechery.com/2026/apple-and-a-hackers-future/",
+    "points": 161,
+    "comments": 153,
+    "author": "maguay",
+    "scraped_at": "2026-10-05T18:26:12.642893"
+  },
+  {
+    "id": 49946148,
+    "title": "Automating my 35mm film scanning pipeline",
+    "url": "https://shannadige.com/blog/darkroom/",
+    "points": 116,
+    "comments": 79,
+    "author": "shannadige",
+    "scraped_at": "2026-10-05T18:26:12.813393"
+  },
+  {
+    "id": 49953495,
+    "title": "Run Qwen 3.8 Flash Next (125B) on consumer hardware (RTX 4090) at 100T/s",
+    "url": "https://github.com/Niko1221/Strata",
+    "points": 895,
+    "comments": 406,
+    "author": "snehesht",
+    "scraped_at": "2026-10-05T18:26:13.645721"
+  },
+  {
+    "id": 49965227,
+    "title": "Show HN: Pumpkins.sh \u2013 claim, carve, and display a pumpkin to the world",
+    "url": "https://pumpkins.sh/",
+    "points": 6,
+    "comments": 2,
+    "author": "linesofcode",
+    "scraped_at": "2026-10-05T18:26:13.808988"
+  },
+  {
+    "id": 49965145,
+    "title": "Another step towards Elm 1.0",
+    "url": "https://elm-lang.org/news/another-step-towards-elm-v1",
+    "points": 14,
+    "comments": 1,
+    "author": "wheatBread",
+    "scraped_at": "2026-10-05T18:26:14.818335"
+  },
+  {
+    "id": 49933476,
+    "title": "Decision models like Jev don't beat LLM-as-a-judge or traditional classifiers",
+    "url": "https://developers.redhat.com/articles/2026/10/02/benchmarking-ai-decision-models-against-traditional-guardrails",
+    "points": 149,
+    "comments": 66,
+    "author": "tomncooper",
+    "scraped_at": "2026-10-05T18:26:15.051020"
+  },
+  {
+    "id": 49923125,
+    "title": "Safe Optimistic Lock Coupling",
+    "url": "http://databasearchitects.blogspot.com/2026/04/safe-optimistic-lock-coupling.html",
+    "points": 49,
+    "comments": 9,
+    "author": "greghn",
+    "scraped_at": "2026-10-05T18:26:16.083352"
+  },
+  {
+    "id": 49957068,
+    "title": "Improper redaction reveals Google Data Center water and electricity usage",
+    "url": "https://www.1011now.com/2026/09/30/more-questions-than-answers-about-lincolns-google-data-center-water-electricity-usage/",
+    "points": 495,
+    "comments": 659,
+    "author": "sensanaty",
+    "scraped_at": "2026-10-05T18:26:16.281913"
+  },
+  {
+    "id": 49908055,
+    "title": "Lace and Labor: Lessons from the actual Luddites",
+    "url": "https://articlesofinterest.substack.com/p/lace-and-labor",
+    "points": 51,
+    "comments": 3,
+    "author": "surprisetalk",
+    "scraped_at": "2026-10-05T18:26:17.294763"
+  },
+  {
+    "id": 49930439,
+    "title": "Show HN: Glash\u00fctte Trash Clock \u2013 A 30-minute pendulum clock made from trash",
+    "url": "https://niklasroy.com/gtc/",
+    "points": 223,
+    "comments": 37,
+    "author": "r0r0",
+    "scraped_at": "2026-10-05T18:26:18.142627"
+  },
+  {
+    "id": 49940044,
+    "title": "Demystifying Tufte's data-ink ratio",
+    "url": "https://tuftesrazor.scienceux.org/",
+    "points": 72,
+    "comments": 32,
+    "author": "s4074433",
+    "scraped_at": "2026-10-05T18:26:19.446944"
+  },
+  {
+    "id": 49953288,
+    "title": "Bill Draper has died",
+    "url": "https://www.nytimes.com/2026/09/30/technology/william-draper-dead.html",
+    "points": 136,
+    "comments": 43,
+    "author": "bookofjoe",
+    "scraped_at": "2026-10-05T18:26:20.443995"
+  },
+  {
+    "id": 49966271,
+    "title": "GPT-6 Astra cracks 217-year-old Napoleonic code in six hours",
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/chatgpt-6-astra-cracks-217-year-old-napoleonic-code-in-just-six-hours-single-prompt-ai-run-solves-24-rows-of-custom-symbols-from-a-single-image-reveals-lost-troop-orders",
+    "points": 12,
+    "comments": 9,
+    "author": "ortusdux",
+    "scraped_at": "2026-10-05T18:26:20.764309"
+  },
+  {
+    "id": 49950554,
+    "title": "Why don't more developers \u201cuse the platform\u201d?",
+    "url": "https://nolanlawson.com/2026/10/03/why-dont-more-developers-use-the-platform/",
+    "points": 320,
+    "comments": 336,
+    "author": "vinhnx",
+    "scraped_at": "2026-10-05T18:26:21.857646"
+  },
+  {
+    "id": 49959869,
+    "title": "Powerless F1 drivers frustrated by Bahrain F1 software glitch",
+    "url": "https://www.motorsport.com/f1/news/horrible-totally-unacceptable-powerless-f1-drivers-frustrated-by-bahrain-f1-software-glitch/10861968/",
+    "points": 276,
+    "comments": 232,
+    "author": "llm_nerd",
+    "scraped_at": "2026-10-05T18:26:22.707512"
+  }
+]
