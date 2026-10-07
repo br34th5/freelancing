@@ -1,0 +1,380 @@
+[
+  {
+    "id": 49987076,
+    "title": "Strands Decider 2B: a small, open-source, decision model",
+    "url": "https://strandsagents.com/blog/introducing-strands-decider/",
+    "points": 126,
+    "comments": 25,
+    "author": "gmays",
+    "scraped_at": "2026-10-07T06:51:07.808922"
+  },
+  {
+    "id": 49984025,
+    "title": "Decisions API is in public beta",
+    "url": "https://developers.openai.com/api/docs/guides/decisions",
+    "points": 239,
+    "comments": 109,
+    "author": "chiefstorm",
+    "scraped_at": "2026-10-07T06:51:08.653472"
+  },
+  {
+    "id": 49988709,
+    "title": "Shaders, WebGPU Components for React, Vue, Svelte, Solid, JavaScript and Framer",
+    "url": "https://github.com/shader-effects-inc/shaders",
+    "points": 8,
+    "comments": 2,
+    "author": "jinqueeny",
+    "scraped_at": "2026-10-07T06:51:09.461390"
+  },
+  {
+    "id": 49987675,
+    "title": "La Cueva BBS in Mexico in 1993 (session replay)",
+    "url": "https://nanochess.org/la_cueva_bbs.html",
+    "points": 35,
+    "comments": 9,
+    "author": "nanochess",
+    "scraped_at": "2026-10-07T06:51:09.962244"
+  },
+  {
+    "id": 49977979,
+    "title": "Mistral Large 4",
+    "url": "https://mistral.ai/news/mistral-large-4/\\",
+    "points": 1715,
+    "comments": 1008,
+    "author": "Philpax",
+    "scraped_at": "2026-10-07T06:51:10.842685"
+  },
+  {
+    "id": 49984716,
+    "title": "Penguin Mail \u2013 open-source Rust email client for Linux with AI",
+    "url": "https://penguin-mail.com/",
+    "points": 147,
+    "comments": 79,
+    "author": "kavourias",
+    "scraped_at": "2026-10-07T06:51:11.588475"
+  },
+  {
+    "id": 49986862,
+    "title": "ESP32-C3 Adblock",
+    "url": "https://github.com/M-Abozaid/esp32-c3-adblock",
+    "points": 56,
+    "comments": 17,
+    "author": "jayhoon",
+    "scraped_at": "2026-10-07T06:51:12.526003"
+  },
+  {
+    "id": 49980487,
+    "title": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+    "points": 293,
+    "comments": 31,
+    "author": "ilreb",
+    "scraped_at": "2026-10-07T06:51:13.483465"
+  },
+  {
+    "id": 49978333,
+    "title": "What Is Codemode",
+    "url": "https://lucumr.pocoo.org/2026/10/6/codemode/",
+    "points": 56,
+    "comments": 14,
+    "author": "Tomte",
+    "scraped_at": "2026-10-07T06:51:14.404432"
+  },
+  {
+    "id": 49950865,
+    "title": "The cost of lies: A Mineserver story",
+    "url": "https://www.jeremyreimer.com/rockets-item.lsp?f=true&p=272",
+    "points": 72,
+    "comments": 27,
+    "author": "luu",
+    "scraped_at": "2026-10-07T06:51:14.840721"
+  },
+  {
+    "id": 49981905,
+    "title": "Claude Code\u2019s suggested message feature: I think the real customer is the model",
+    "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature",
+    "points": 170,
+    "comments": 91,
+    "author": "zed_labs_dev",
+    "scraped_at": "2026-10-07T06:51:16.690820"
+  },
+  {
+    "id": 49985664,
+    "title": "AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)",
+    "url": "https://github.com/boykopovar/AnyPS5",
+    "points": 207,
+    "comments": 162,
+    "author": "Fe2O3",
+    "scraped_at": "2026-10-07T06:51:17.126360"
+  },
+  {
+    "id": 49986765,
+    "title": "Jev-Driven SRE Diagnosis: What Worked and What Failed",
+    "url": "https://www.sregym.com/blog/jev-driven-sre-diagnosis",
+    "points": 24,
+    "comments": 6,
+    "author": "matt_d",
+    "scraped_at": "2026-10-07T06:51:17.819153"
+  },
+  {
+    "id": 49988142,
+    "title": "Calling It Quits on ServerFault",
+    "url": "https://sysadmin1138.net/mt/blog/2026/10/calling-it-quits-on-serverfault.shtml",
+    "points": 60,
+    "comments": 27,
+    "author": "zdw",
+    "scraped_at": "2026-10-07T06:51:18.748505"
+  },
+  {
+    "id": 49980715,
+    "title": "OpenTPU \u2013 An open-source AI accelerator, developed by AI",
+    "url": "https://github.com/FeSens/openTPU",
+    "points": 274,
+    "comments": 329,
+    "author": "fsbonetto",
+    "scraped_at": "2026-10-07T06:51:19.189410"
+  },
+  {
+    "id": 49980790,
+    "title": "Treg (OpenRouter for Tools)",
+    "url": "https://github.com/superdesigndev/treg",
+    "points": 16,
+    "comments": 3,
+    "author": "trollied",
+    "scraped_at": "2026-10-07T06:51:19.577869"
+  },
+  {
+    "id": 49982498,
+    "title": "Tell HN: GitHub refuses to remove cracked copies of my software after a month",
+    "url": "https://news.ycombinator.com/item?id=49982498",
+    "points": 130,
+    "comments": 85,
+    "author": "IvanK_net",
+    "scraped_at": "2026-10-07T06:51:20.132433"
+  },
+  {
+    "id": 49977531,
+    "title": "What's Earth's dominant species by mass?",
+    "url": "https://signoregalilei.com/2026/09/27/whats-earths-dominant-species-by-mass/",
+    "points": 206,
+    "comments": 138,
+    "author": "surprisetalk",
+    "scraped_at": "2026-10-07T06:51:21.251078"
+  },
+  {
+    "id": 49988230,
+    "title": "Hackers obtain counterfeit TLS certificates for Google and other large services",
+    "url": "https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services/",
+    "points": 31,
+    "comments": 5,
+    "author": "colinprince",
+    "scraped_at": "2026-10-07T06:51:22.034790"
+  },
+  {
+    "id": 49960290,
+    "title": "Anatomy Unzipped: John of Arderne's Sweden Scroll (Ca. 1425\u201335)",
+    "url": "https://publicdomainreview.org/collection/arderne-scroll/",
+    "points": 4,
+    "comments": 0,
+    "author": "prismatic",
+    "scraped_at": "2026-10-07T06:51:22.850218"
+  },
+  {
+    "id": 49981186,
+    "title": "California closed the Montana license plate loophole",
+    "url": "https://www.thedrive.com/news/heres-how-california-closed-the-montana-license-plate-loophole",
+    "points": 98,
+    "comments": 243,
+    "author": "speckx",
+    "scraped_at": "2026-10-07T06:51:23.291461"
+  },
+  {
+    "id": 49973644,
+    "title": "LLMs may have helped my RSI",
+    "url": "https://vaughanhilts.me/2026/10/05/llms-immensely-helped-my-rsi.html",
+    "points": 80,
+    "comments": 42,
+    "author": "vaughands",
+    "scraped_at": "2026-10-07T06:51:24.815079"
+  },
+  {
+    "id": 49987765,
+    "title": "Show HN: NanoMuse \u2013 An open-source AI agent for your phone and computer",
+    "url": "https://github.com/nano-muse/nanoMuse",
+    "points": 10,
+    "comments": 0,
+    "author": "ilreb",
+    "scraped_at": "2026-10-07T06:51:25.251143"
+  },
+  {
+    "id": 49967427,
+    "title": "Benchmark in Milliseconds",
+    "url": "https://matklad.github.io/2026/10/05/benchmark-milliseconds.html",
+    "points": 135,
+    "comments": 43,
+    "author": "surprisetalk",
+    "scraped_at": "2026-10-07T06:51:26.037301"
+  },
+  {
+    "id": 49983703,
+    "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery",
+    "url": "https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/",
+    "points": 226,
+    "comments": 368,
+    "author": "Mgtyalx",
+    "scraped_at": "2026-10-07T06:51:26.470764"
+  },
+  {
+    "id": 49976265,
+    "title": "Nobel Prize in Physics 2026: Francis Halzen",
+    "url": "https://www.nobelprize.org/prizes/physics/2026/",
+    "points": 547,
+    "comments": 194,
+    "author": "solarist",
+    "scraped_at": "2026-10-07T06:51:27.185465"
+  },
+  {
+    "id": 49985524,
+    "title": "Integer multiplication below n log n",
+    "url": "https://github.com/openai/math/tree/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026",
+    "points": 94,
+    "comments": 63,
+    "author": "E-Reverance",
+    "scraped_at": "2026-10-07T06:51:27.899704"
+  },
+  {
+    "id": 49986223,
+    "title": "Account bans on Reddit",
+    "url": "https://orchidfiles.com/account-bans-on-reddit/",
+    "points": 58,
+    "comments": 49,
+    "author": "theorchid",
+    "scraped_at": "2026-10-07T06:51:28.750830"
+  },
+  {
+    "id": 49985292,
+    "title": "UniEvo-VL: Self-Distillation Training for Multimodal Model Self-Improvement",
+    "url": "https://arxiv.org/abs/2609.38721",
+    "points": 15,
+    "comments": 3,
+    "author": "gmays",
+    "scraped_at": "2026-10-07T06:51:30.235132"
+  },
+  {
+    "id": 49987679,
+    "title": "OpenWAM: An Open Framework for Composable World-Action Models",
+    "url": "https://openwam.stanford.edu/",
+    "points": 4,
+    "comments": 0,
+    "author": "ilreb",
+    "scraped_at": "2026-10-07T06:51:30.754869"
+  },
+  {
+    "id": 49979845,
+    "title": "The Early History of Smalltalk (1993)",
+    "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
+    "points": 119,
+    "comments": 71,
+    "author": "_reza",
+    "scraped_at": "2026-10-07T06:51:31.941276"
+  },
+  {
+    "id": 49978595,
+    "title": "Show HN: I turned my iPhone and a $20 smart plug into an f-stop timer",
+    "url": "https://peterszentkiralyi.eu/darkplug/",
+    "points": 78,
+    "comments": 30,
+    "author": "pentakkusu",
+    "scraped_at": "2026-10-07T06:51:32.132328"
+  },
+  {
+    "id": 49988604,
+    "title": "We Asked Starbucks Why Their 'Sugar-Free' Drinks Have Sugar",
+    "url": "https://gizmodo.com/we-asked-starbucks-why-their-sugar-free-drinks-have-sugar-and-now-were-just-more-confused-2000822422",
+    "points": 10,
+    "comments": 2,
+    "author": "Tomte",
+    "scraped_at": "2026-10-07T06:51:32.892033"
+  },
+  {
+    "id": 49984834,
+    "title": "The Query Transformation Pipeline",
+    "url": "https://readyset.io/blog/how-readyset-rewrites-your-sql-inside-the-query-transformation-pipeline",
+    "points": 14,
+    "comments": 1,
+    "author": "gvsg-rs",
+    "scraped_at": "2026-10-07T06:51:33.072665"
+  },
+  {
+    "id": 49977177,
+    "title": "Polars 2.0",
+    "url": "https://pola.rs/posts/release-polars-2/",
+    "points": 431,
+    "comments": 99,
+    "author": "simicd",
+    "scraped_at": "2026-10-07T06:51:33.260023"
+  },
+  {
+    "id": 49982471,
+    "title": "Toronto-Based VPN Provider Plans to Quit Canada over Lawful-Access Bill",
+    "url": "https://citizenlab.ca/toronto-based-vpn-provider-plans-to-quit-canada-over-lawful-access-bill/",
+    "points": 136,
+    "comments": 51,
+    "author": "speckx",
+    "scraped_at": "2026-10-07T06:51:33.448359"
+  },
+  {
+    "id": 49977689,
+    "title": "Erdosproblems.com Succumbs to the AI Onslaught",
+    "url": "https://www.erdosproblems.com/forum/thread/blog:9",
+    "points": 99,
+    "comments": 40,
+    "author": "pfdietz",
+    "scraped_at": "2026-10-07T06:51:34.261885"
+  },
+  {
+    "id": 49983791,
+    "title": "OpenSSH 10.6",
+    "url": "https://www.openssh.org/releasenotes.html#10.6",
+    "points": 104,
+    "comments": 25,
+    "author": "torcete",
+    "scraped_at": "2026-10-07T06:51:34.698361"
+  },
+  {
+    "id": 49976823,
+    "title": "Nature's capacity to 'bounce back' when species are lost is overestimated: study",
+    "url": "https://phys.org/news/2026-10-nature-capacity-species-lost-vastly.html",
+    "points": 328,
+    "comments": 157,
+    "author": "pseudolus",
+    "scraped_at": "2026-10-07T06:51:35.441977"
+  },
+  {
+    "id": 49978171,
+    "title": "Show HN: Parseable, an open observability datalake, handles 100M time-series/min",
+    "url": "https://www.parseable.com",
+    "points": 82,
+    "comments": 22,
+    "author": "yashdotrv",
+    "scraped_at": "2026-10-07T06:51:35.627250"
+  },
+  {
+    "id": 49982735,
+    "title": "Berthd",
+    "url": "https://berthd.app/",
+    "points": 56,
+    "comments": 70,
+    "author": "handfuloflight",
+    "scraped_at": "2026-10-07T06:51:36.743739"
+  },
+  {
+    "id": 49986882,
+    "title": "I hired an illustrator to draw my house. Now it's my Home Assistant dashboard",
+    "url": "https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my",
+    "points": 23,
+    "comments": 0,
+    "author": "soheilpro",
+    "scraped_at": "2026-10-07T06:51:37.445461"
+  }
+]
