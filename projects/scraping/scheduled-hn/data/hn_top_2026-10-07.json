@@ -1,398 +1,416 @@
 [
   {
-    "id": 49984923,
-    "title": "Sharing AI progress in mathematics",
-    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
-    "points": 798,
-    "comments": 730,
-    "author": "OfficialTurkey",
-    "scraped_at": "2026-10-07T07:29:50.032662"
+    "id": 49994027,
+    "title": "GitHub Incident with Git Operations, Pull Requests and Actions",
+    "url": "https://www.githubstatus.com/incidents/djlmxz2zd0j7",
+    "points": 133,
+    "comments": 95,
+    "author": "gagan2020",
+    "scraped_at": "2026-10-07T16:27:02.957897"
+  },
+  {
+    "id": 49994145,
+    "title": "Navier\u2013Stokes Lost in Translation",
+    "url": "https://arxiv.org/abs/2610.08144",
+    "points": 18,
+    "comments": 4,
+    "author": "nill0",
+    "scraped_at": "2026-10-07T16:27:04.888579"
+  },
+  {
+    "id": 49990224,
+    "title": "A font recreated from photographs of classic Commodore 64 keycaps",
+    "url": "https://github.com/szabadkai/c64-keyboard-font/",
+    "points": 270,
+    "comments": 48,
+    "author": "sohkamyung",
+    "scraped_at": "2026-10-07T16:27:05.603632"
+  },
+  {
+    "id": 49992057,
+    "title": "Show HN: A walkable 3D art history museum built from Wikipedia",
+    "url": "https://artmuseum.artfrompixels.com/",
+    "points": 79,
+    "comments": 40,
+    "author": "jasontr",
+    "scraped_at": "2026-10-07T16:27:05.853369"
+  },
+  {
+    "id": 49990470,
+    "title": "Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai",
+    "url": "https://www.nobelprize.org/prizes/chemistry/2026/press-release/",
+    "points": 203,
+    "comments": 34,
+    "author": "sasvari",
+    "scraped_at": "2026-10-07T16:27:06.083840"
+  },
+  {
+    "id": 49993857,
+    "title": "Animated ASCII Art for Web Pages",
+    "url": "https://ascii.rest/",
+    "points": 35,
+    "comments": 1,
+    "author": "turrini",
+    "scraped_at": "2026-10-07T16:27:07.304911"
+  },
+  {
+    "id": 49993121,
+    "title": "AI-assisted proof of optimal packing for 11 squares",
+    "url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized",
+    "points": 28,
+    "comments": 20,
+    "author": "bluepeter",
+    "scraped_at": "2026-10-07T16:27:08.484062"
+  },
+  {
+    "id": 49994065,
+    "title": "Reverse Engineering of the M-VAVE FM-1 Pocket Synthesizer Firmware",
+    "url": "https://github.com/AL-255/FM-1-RE",
+    "points": 11,
+    "comments": 2,
+    "author": "0bytes",
+    "scraped_at": "2026-10-07T16:27:10.027133"
+  },
+  {
+    "id": 49994206,
+    "title": "AI firm HUMXN offers free plumbing and HVAC service in Minnesota to train robots",
+    "url": "https://humxn.io/humxn-launches-free-home-service-program",
+    "points": 29,
+    "comments": 35,
+    "author": "brunomarsjams",
+    "scraped_at": "2026-10-07T16:27:10.253571"
+  },
+  {
+    "id": 49991580,
+    "title": "Write Like It's 1866: LLMs Relearn Telegraphese",
+    "url": "https://fiveminutesforward.com/post/2026-10-04-telegraph-test/",
+    "points": 58,
+    "comments": 38,
+    "author": "Theory42",
+    "scraped_at": "2026-10-07T16:27:11.433528"
+  },
+  {
+    "id": 49973822,
+    "title": "Mallet Head Angle",
+    "url": "http://www.timberframe-tools.com/tools/mallet-head-angle/",
+    "points": 46,
+    "comments": 12,
+    "author": "frogulis",
+    "scraped_at": "2026-10-07T16:27:12.287895"
+  },
+  {
+    "id": 49992257,
+    "title": "Anti-Patterns in Software Blogging",
+    "url": "https://refactoringenglish.com/blog/anti-patterns-software-blogging/",
+    "points": 34,
+    "comments": 9,
+    "author": "ilreb",
+    "scraped_at": "2026-10-07T16:27:12.515187"
+  },
+  {
+    "id": 49949680,
+    "title": "Rust's derive often implies inline",
+    "url": "https://yossarian.net/til/post/rust-s-derive-often-implies-inline/",
+    "points": 79,
+    "comments": 12,
+    "author": "woodruffw",
+    "scraped_at": "2026-10-07T16:27:12.682485"
+  },
+  {
+    "id": 49974173,
+    "title": "Wood Tape (2004)",
+    "url": "http://gamesbyemail.com/WoodTape/Default.htm",
+    "points": 29,
+    "comments": 4,
+    "author": "NaOH",
+    "scraped_at": "2026-10-07T16:27:12.931235"
+  },
+  {
+    "id": 49994122,
+    "title": "Across the Globe, People Increasingly Say Social Media Is Harming Democracy",
+    "url": "https://www.pewresearch.org/global/2026/10/01/across-the-globe-people-increasingly-say-social-media-is-harming-democracy/",
+    "points": 32,
+    "comments": 15,
+    "author": "karakoram",
+    "scraped_at": "2026-10-07T16:27:13.642285"
+  },
+  {
+    "id": 49993997,
+    "title": "ShinyHunters Extorted Boeing Spin-Off Prior to Arrests",
+    "url": "https://krebsonsecurity.com/2026/10/shinyhunters-extorted-boeing-spin-off-prior-to-arrests/",
+    "points": 7,
+    "comments": 0,
+    "author": "speckx",
+    "scraped_at": "2026-10-07T16:27:14.209478"
+  },
+  {
+    "id": 49991986,
+    "title": "Show HN: Procinsh \u2013 A 3D Linux process inspector",
+    "url": "https://github.com/akawashiro/procinsh",
+    "points": 31,
+    "comments": 6,
+    "author": "a_kawashiro",
+    "scraped_at": "2026-10-07T16:27:15.215050"
+  },
+  {
+    "id": 49993914,
+    "title": "Visa, Mastercard, Major Banks Facing New Litigation over 'Anticompetitive' Fees",
+    "url": "https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees",
+    "points": 8,
+    "comments": 2,
+    "author": "DeepLogin",
+    "scraped_at": "2026-10-07T16:27:16.047524"
+  },
+  {
+    "id": 49955697,
+    "title": "The Auditor's Opinion",
+    "url": "https://www.cringely.com/2026/07/16/the-auditors-opinion/",
+    "points": 4,
+    "comments": 0,
+    "author": "colinprince",
+    "scraped_at": "2026-10-07T16:27:16.224936"
+  },
+  {
+    "id": 49994376,
+    "title": "Thank You Indonesia for the Clean Air",
+    "url": "https://thankyouindoforthecleanair.web.app/",
+    "points": 11,
+    "comments": 1,
+    "author": "water-drummer",
+    "scraped_at": "2026-10-07T16:27:17.057929"
+  },
+  {
+    "id": 49954015,
+    "title": "Show HN: AstroHelm \u2013 Use your phone camera to aim a telescope or telephoto lens",
+    "url": "https://astrohelm.app/",
+    "points": 68,
+    "comments": 20,
+    "author": "HeavenFox",
+    "scraped_at": "2026-10-07T16:27:17.237584"
   },
   {
     "id": 49987076,
     "title": "Strands Decider 2B: a small, open-source, decision model",
     "url": "https://strandsagents.com/blog/introducing-strands-decider/",
-    "points": 138,
-    "comments": 28,
+    "points": 252,
+    "comments": 71,
     "author": "gmays",
-    "scraped_at": "2026-10-07T07:29:50.345672"
+    "scraped_at": "2026-10-07T16:27:18.198970"
   },
   {
-    "id": 49984025,
-    "title": "Decisions API is in public beta",
-    "url": "https://developers.openai.com/api/docs/guides/decisions",
-    "points": 256,
-    "comments": 114,
-    "author": "chiefstorm",
-    "scraped_at": "2026-10-07T07:29:51.605168"
+    "id": 49994746,
+    "title": "Study: Claude, ChatGPT Offer Different Shopping Prices Based on Wealth",
+    "url": "https://www.bloomberg.com/news/newsletters/2026-10-07/study-claude-chatgpt-ai-bots-offer-different-shopping-prices-based-on-wealth",
+    "points": 13,
+    "comments": 1,
+    "author": "sbulaev",
+    "scraped_at": "2026-10-07T16:27:18.668681"
   },
   {
-    "id": 49986862,
-    "title": "ESP32-C3 Adblock",
-    "url": "https://github.com/M-Abozaid/esp32-c3-adblock",
-    "points": 66,
-    "comments": 21,
-    "author": "jayhoon",
-    "scraped_at": "2026-10-07T07:29:57.662611"
+    "id": 49991243,
+    "title": "God of War on PSP, recompiled to WebAssembly and running in the browser",
+    "url": "https://github.com/snuri00/psp-web-recomp",
+    "points": 35,
+    "comments": 16,
+    "author": "sn001",
+    "scraped_at": "2026-10-07T16:27:19.758920"
   },
   {
-    "id": 49987675,
-    "title": "La Cueva BBS in Mexico in 1993 (session replay)",
-    "url": "https://nanochess.org/la_cueva_bbs.html",
-    "points": 40,
-    "comments": 10,
-    "author": "nanochess",
-    "scraped_at": "2026-10-07T07:29:57.962524"
+    "id": 49984923,
+    "title": "Sharing AI progress in mathematics",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "points": 1136,
+    "comments": 1238,
+    "author": "OfficialTurkey",
+    "scraped_at": "2026-10-07T16:27:20.504307"
+  },
+  {
+    "id": 49993188,
+    "title": "SynthID Detector",
+    "url": "https://synthid.com/",
+    "points": 58,
+    "comments": 55,
+    "author": "ilreb",
+    "scraped_at": "2026-10-07T16:27:20.675844"
   },
   {
     "id": 49977979,
     "title": "Mistral Large 4",
     "url": "https://mistral.ai/news/mistral-large-4/\\",
-    "points": 1736,
-    "comments": 1028,
+    "points": 1955,
+    "comments": 1168,
     "author": "Philpax",
-    "scraped_at": "2026-10-07T07:29:59.003423"
+    "scraped_at": "2026-10-07T16:27:21.002459"
   },
   {
-    "id": 49984716,
-    "title": "Penguin Mail \u2013 open-source Rust email client for Linux with AI",
-    "url": "https://penguin-mail.com/",
-    "points": 151,
-    "comments": 82,
-    "author": "kavourias",
-    "scraped_at": "2026-10-07T07:30:00.131533"
-  },
-  {
-    "id": 49980487,
-    "title": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
-    "points": 298,
-    "comments": 31,
-    "author": "ilreb",
-    "scraped_at": "2026-10-07T07:30:02.054792"
-  },
-  {
-    "id": 49978333,
-    "title": "What Is Codemode",
-    "url": "https://lucumr.pocoo.org/2026/10/6/codemode/",
-    "points": 64,
-    "comments": 20,
-    "author": "Tomte",
-    "scraped_at": "2026-10-07T07:30:02.688954"
-  },
-  {
-    "id": 49987858,
-    "title": "The art of defusing a second world war bomb",
-    "url": "https://www.theguardian.com/news/ng-interactive/2026/oct/06/it-could-knock-a-whole-street-down-the-art-of-defusing-a-second-world-war-bomb",
-    "points": 26,
-    "comments": 7,
-    "author": "sandebert",
-    "scraped_at": "2026-10-07T07:30:03.623197"
-  },
-  {
-    "id": 49950865,
-    "title": "The cost of lies: A Mineserver story",
-    "url": "https://www.jeremyreimer.com/rockets-item.lsp?f=true&p=272",
-    "points": 87,
-    "comments": 33,
-    "author": "luu",
-    "scraped_at": "2026-10-07T07:30:04.448194"
-  },
-  {
-    "id": 49953939,
-    "title": "The Legend of the Paper Crane",
-    "url": "https://mazdastories.com/en_us/inspire/paper-cranes-into-the-fold/",
-    "points": 3,
-    "comments": 0,
-    "author": "vismit2000",
-    "scraped_at": "2026-10-07T07:30:05.400773"
-  },
-  {
-    "id": 49985664,
-    "title": "AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)",
-    "url": "https://github.com/boykopovar/AnyPS5",
-    "points": 223,
-    "comments": 172,
-    "author": "Fe2O3",
-    "scraped_at": "2026-10-07T07:30:06.428307"
-  },
-  {
-    "id": 49981905,
-    "title": "Claude Code\u2019s suggested message feature: I think the real customer is the model",
-    "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature",
-    "points": 178,
-    "comments": 91,
-    "author": "zed_labs_dev",
-    "scraped_at": "2026-10-07T07:30:07.332110"
+    "id": 49992125,
+    "title": "House with 15m underground tunnels for sale for 300k",
+    "url": "https://www.readingchronicle.co.uk/news/26612080.house-15m-underground-tunnels-sale-300k/",
+    "points": 100,
+    "comments": 111,
+    "author": "librasteve",
+    "scraped_at": "2026-10-07T16:27:21.210341"
   },
   {
     "id": 49982498,
     "title": "Tell HN: GitHub refuses to remove cracked copies of my software after a month",
     "url": "https://news.ycombinator.com/item?id=49982498",
-    "points": 157,
-    "comments": 92,
+    "points": 457,
+    "comments": 248,
     "author": "IvanK_net",
-    "scraped_at": "2026-10-07T07:30:08.231330"
+    "scraped_at": "2026-10-07T16:27:22.204198"
   },
   {
-    "id": 49986765,
-    "title": "Jev-Driven SRE Diagnosis: What Worked and What Failed",
-    "url": "https://www.sregym.com/blog/jev-driven-sre-diagnosis",
-    "points": 27,
-    "comments": 8,
-    "author": "matt_d",
-    "scraped_at": "2026-10-07T07:30:09.189889"
+    "id": 49986862,
+    "title": "ESP32-C3 Adblock",
+    "url": "https://github.com/M-Abozaid/esp32-c3-adblock",
+    "points": 167,
+    "comments": 63,
+    "author": "jayhoon",
+    "scraped_at": "2026-10-07T16:27:23.156615"
   },
   {
-    "id": 49980715,
-    "title": "OpenTPU \u2013 An open-source AI accelerator, developed by AI",
-    "url": "https://github.com/FeSens/openTPU",
-    "points": 277,
-    "comments": 331,
-    "author": "fsbonetto",
-    "scraped_at": "2026-10-07T07:30:11.177909"
+    "id": 49978333,
+    "title": "What is Codemode",
+    "url": "https://lucumr.pocoo.org/2026/10/6/codemode/",
+    "points": 138,
+    "comments": 63,
+    "author": "Tomte",
+    "scraped_at": "2026-10-07T16:27:24.118289"
   },
   {
-    "id": 49980790,
-    "title": "Treg (OpenRouter for Tools)",
-    "url": "https://github.com/superdesigndev/treg",
-    "points": 19,
-    "comments": 4,
-    "author": "trollied",
-    "scraped_at": "2026-10-07T07:30:12.127886"
+    "id": 49950865,
+    "title": "The cost of lies: A Mineserver story",
+    "url": "https://www.jeremyreimer.com/rockets-item.lsp?f=true&p=272",
+    "points": 167,
+    "comments": 69,
+    "author": "luu",
+    "scraped_at": "2026-10-07T16:27:24.581586"
   },
   {
-    "id": 49977531,
-    "title": "What's Earth's dominant species by mass?",
-    "url": "https://signoregalilei.com/2026/09/27/whats-earths-dominant-species-by-mass/",
-    "points": 212,
-    "comments": 147,
-    "author": "surprisetalk",
-    "scraped_at": "2026-10-07T07:30:13.736353"
+    "id": 49956219,
+    "title": "Gallery of Processor Cache Effects (2010)",
+    "url": "https://igoro.com/archive/gallery-of-processor-cache-effects/",
+    "points": 43,
+    "comments": 5,
+    "author": "porridgeraisin",
+    "scraped_at": "2026-10-07T16:27:25.057202"
   },
   {
-    "id": 49953455,
-    "title": "Improving and Stabilizing the Racoon2 IKE Daemon in NetBSD",
-    "url": "https://blog.netbsd.org/tnf/entry/gsoc2026_racoon2",
-    "points": 15,
-    "comments": 4,
-    "author": "jaypatelani",
-    "scraped_at": "2026-10-07T07:30:14.092160"
-  },
-  {
-    "id": 49981186,
-    "title": "California closed the Montana license plate loophole",
-    "url": "https://www.thedrive.com/news/heres-how-california-closed-the-montana-license-plate-loophole",
-    "points": 100,
-    "comments": 247,
-    "author": "speckx",
-    "scraped_at": "2026-10-07T07:30:15.034521"
-  },
-  {
-    "id": 49988230,
-    "title": "Hackers obtain counterfeit TLS certificates for Google and other large services",
-    "url": "https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services/",
-    "points": 36,
-    "comments": 6,
-    "author": "colinprince",
-    "scraped_at": "2026-10-07T07:30:15.676761"
-  },
-  {
-    "id": 49973644,
-    "title": "LLMs may have helped my RSI",
-    "url": "https://vaughanhilts.me/2026/10/05/llms-immensely-helped-my-rsi.html",
-    "points": 83,
-    "comments": 42,
-    "author": "vaughands",
-    "scraped_at": "2026-10-07T07:30:16.639304"
+    "id": 49991823,
+    "title": "Google Playground: Create and play custom games",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+    "points": 81,
+    "comments": 74,
+    "author": "acossta",
+    "scraped_at": "2026-10-07T16:27:25.298038"
   },
   {
     "id": 49987765,
     "title": "Show HN: NanoMuse \u2013 An open-source AI agent for your phone and computer",
     "url": "https://github.com/nano-muse/nanoMuse",
-    "points": 15,
-    "comments": 0,
+    "points": 53,
+    "comments": 16,
     "author": "ilreb",
-    "scraped_at": "2026-10-07T07:30:17.486755"
+    "scraped_at": "2026-10-07T16:27:25.554318"
   },
   {
-    "id": 49988142,
-    "title": "Calling It Quits on ServerFault",
-    "url": "https://sysadmin1138.net/mt/blog/2026/10/calling-it-quits-on-serverfault.shtml",
-    "points": 66,
-    "comments": 33,
-    "author": "zdw",
-    "scraped_at": "2026-10-07T07:30:18.800185"
+    "id": 49978316,
+    "title": "Southern Olive Oil",
+    "url": "https://ambrook.com/offrange/supply-chain/southern-olive-oil",
+    "points": 25,
+    "comments": 18,
+    "author": "surprisetalk",
+    "scraped_at": "2026-10-07T16:27:26.508273"
   },
   {
-    "id": 49987679,
-    "title": "OpenWAM: An Open Framework for Composable World-Action Models",
-    "url": "https://openwam.stanford.edu/",
+    "id": 49993399,
+    "title": "Plastic Waste and Oceans: Banning Straws Won't Help Much",
+    "url": "https://www.nationalreview.com/2018/09/plastic-bag-straw-bans-ocean-pollution/",
     "points": 7,
     "comments": 1,
-    "author": "ilreb",
-    "scraped_at": "2026-10-07T07:30:19.729978"
+    "author": "bilsbie",
+    "scraped_at": "2026-10-07T16:27:27.197464"
   },
   {
-    "id": 49960290,
-    "title": "Anatomy Unzipped: John of Arderne's Sweden Scroll (Ca. 1425\u201335)",
-    "url": "https://publicdomainreview.org/collection/arderne-scroll/",
-    "points": 6,
-    "comments": 1,
-    "author": "prismatic",
-    "scraped_at": "2026-10-07T07:30:20.634682"
+    "id": 49988709,
+    "title": "Shaders, WebGPU Components for React, Vue, Svelte, Solid, JavaScript and Framer",
+    "url": "https://github.com/shader-effects-inc/shaders",
+    "points": 59,
+    "comments": 28,
+    "author": "jinqueeny",
+    "scraped_at": "2026-10-07T16:27:28.510233"
   },
   {
-    "id": 49967427,
-    "title": "Benchmark in Milliseconds",
-    "url": "https://matklad.github.io/2026/10/05/benchmark-milliseconds.html",
-    "points": 137,
-    "comments": 45,
-    "author": "surprisetalk",
-    "scraped_at": "2026-10-07T07:30:21.559335"
-  },
-  {
-    "id": 49976265,
-    "title": "Nobel Prize in Physics 2026: Francis Halzen",
-    "url": "https://www.nobelprize.org/prizes/physics/2026/",
-    "points": 548,
-    "comments": 194,
-    "author": "solarist",
-    "scraped_at": "2026-10-07T07:30:21.857890"
-  },
-  {
-    "id": 49983703,
-    "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery",
-    "url": "https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/",
-    "points": 226,
-    "comments": 375,
-    "author": "Mgtyalx",
-    "scraped_at": "2026-10-07T07:30:22.814812"
-  },
-  {
-    "id": 49985524,
-    "title": "Integer multiplication below n log n",
-    "url": "https://github.com/openai/math/tree/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026",
-    "points": 97,
-    "comments": 63,
-    "author": "E-Reverance",
-    "scraped_at": "2026-10-07T07:30:23.244601"
-  },
-  {
-    "id": 49985861,
-    "title": "South Korea says AI agents appear to have been used to hack the country's banks",
-    "url": "https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/",
-    "points": 70,
-    "comments": 15,
-    "author": "thoughtpeddler",
-    "scraped_at": "2026-10-07T07:30:24.205855"
-  },
-  {
-    "id": 49986223,
-    "title": "Account bans on Reddit",
-    "url": "https://orchidfiles.com/account-bans-on-reddit/",
-    "points": 62,
-    "comments": 52,
-    "author": "theorchid",
-    "scraped_at": "2026-10-07T07:30:24.504523"
-  },
-  {
-    "id": 49977819,
-    "title": "Mathematics of Geothermal Energy",
-    "url": "https://www.ebsco.com/research-starters/power-and-energy/mathematics-geothermal-energy/",
-    "points": 71,
-    "comments": 42,
-    "author": "srameshc",
-    "scraped_at": "2026-10-07T07:30:25.812474"
-  },
-  {
-    "id": 49979845,
-    "title": "The Early History of Smalltalk (1993)",
-    "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
-    "points": 119,
-    "comments": 75,
-    "author": "_reza",
-    "scraped_at": "2026-10-07T07:30:26.113740"
-  },
-  {
-    "id": 49978595,
-    "title": "Show HN: I turned my iPhone and a $20 smart plug into an f-stop timer",
-    "url": "https://peterszentkiralyi.eu/darkplug/",
-    "points": 80,
-    "comments": 31,
-    "author": "pentakkusu",
-    "scraped_at": "2026-10-07T07:30:27.054184"
-  },
-  {
-    "id": 49977177,
-    "title": "Polars 2.0",
-    "url": "https://pola.rs/posts/release-polars-2/",
-    "points": 432,
-    "comments": 99,
-    "author": "simicd",
-    "scraped_at": "2026-10-07T07:30:27.811468"
-  },
-  {
-    "id": 49984834,
-    "title": "The Query Transformation Pipeline",
-    "url": "https://readyset.io/blog/how-readyset-rewrites-your-sql-inside-the-query-transformation-pipeline",
-    "points": 14,
-    "comments": 1,
-    "author": "gvsg-rs",
-    "scraped_at": "2026-10-07T07:30:28.146345"
-  },
-  {
-    "id": 49977689,
-    "title": "Erdosproblems.com Succumbs to the AI Onslaught",
-    "url": "https://www.erdosproblems.com/forum/thread/blog:9",
-    "points": 100,
-    "comments": 40,
-    "author": "pfdietz",
-    "scraped_at": "2026-10-07T07:30:28.503555"
-  },
-  {
-    "id": 49982471,
-    "title": "Toronto-Based VPN Provider Plans to Quit Canada over Lawful-Access Bill",
-    "url": "https://citizenlab.ca/toronto-based-vpn-provider-plans-to-quit-canada-over-lawful-access-bill/",
-    "points": 136,
-    "comments": 51,
-    "author": "speckx",
-    "scraped_at": "2026-10-07T07:30:28.803297"
-  },
-  {
-    "id": 49976823,
-    "title": "Nature's capacity to 'bounce back' when species are lost is overestimated: study",
-    "url": "https://phys.org/news/2026-10-nature-capacity-species-lost-vastly.html",
-    "points": 329,
-    "comments": 157,
-    "author": "pseudolus",
-    "scraped_at": "2026-10-07T07:30:29.767983"
-  },
-  {
-    "id": 49978171,
-    "title": "Show HN: Parseable, an open observability datalake, handles 100M time-series/min",
-    "url": "https://www.parseable.com",
-    "points": 82,
-    "comments": 22,
-    "author": "yashdotrv",
-    "scraped_at": "2026-10-07T07:30:30.699309"
-  },
-  {
-    "id": 49944369,
-    "title": "Direct retinal projection display for smart glasses using a meta-optic mirror",
-    "url": "https://www.tdk.com/en/news_center/press/20261002_01.html",
-    "points": 130,
-    "comments": 63,
-    "author": "bookofjoe",
-    "scraped_at": "2026-10-07T07:30:31.608922"
-  },
-  {
-    "id": 49986882,
-    "title": "I hired an illustrator to draw my house. Now it's my Home Assistant dashboard",
-    "url": "https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my",
-    "points": 27,
+    "id": 49994267,
+    "title": "SF could have dense, fine-grained, family-friendly Neighborhood, Not Megaproject",
+    "url": "https://urbancourtyard.substack.com/p/san-francisco-could-have-a-dense",
+    "points": 5,
     "comments": 0,
-    "author": "soheilpro",
-    "scraped_at": "2026-10-07T07:30:32.376385"
+    "author": "idbnstra",
+    "scraped_at": "2026-10-07T16:27:28.988830"
+  },
+  {
+    "id": 49994663,
+    "title": "The Dawn of the Age of the Exoskeleton",
+    "url": "https://theconversation.com/the-dawn-of-the-age-of-the-exoskeleton-281804",
+    "points": 5,
+    "comments": 0,
+    "author": "speckx",
+    "scraped_at": "2026-10-07T16:27:29.159635"
+  },
+  {
+    "id": 49994660,
+    "title": "Christa Pike's lawyers hold press conference after she regains consciousness",
+    "url": "https://www.theguardian.com/us-news/live/2026/oct/07/christa-pike-lawyers-live-updates-tennessee-execution",
+    "points": 7,
+    "comments": 2,
+    "author": "MaysonL",
+    "scraped_at": "2026-10-07T16:27:30.092712"
+  },
+  {
+    "id": 49990756,
+    "title": "They solved chemistry's asymmetric mystery [pdf]",
+    "url": "https://www.nobelprize.org/uploads/2026/10/popular-chemistryprize2026.pdf",
+    "points": 8,
+    "comments": 0,
+    "author": "Anon84",
+    "scraped_at": "2026-10-07T16:27:30.262472"
+  },
+  {
+    "id": 49990730,
+    "title": "Spotifast: A native Rust Spotify client with Winamp skins",
+    "url": "https://spotifast.rocks/",
+    "points": 11,
+    "comments": 1,
+    "author": "joshcsimmons",
+    "scraped_at": "2026-10-07T16:27:31.215435"
+  },
+  {
+    "id": 49994020,
+    "title": "GitHub Is Down (Again)",
+    "url": "https://news.ycombinator.com/item?id=49994020",
+    "points": 12,
+    "comments": 0,
+    "author": "Andugal",
+    "scraped_at": "2026-10-07T16:27:32.146825"
+  },
+  {
+    "id": 49953939,
+    "title": "The Legend of the Paper Crane",
+    "url": "https://mazdastories.com/en_us/inspire/paper-cranes-into-the-fold/",
+    "points": 29,
+    "comments": 12,
+    "author": "vismit2000",
+    "scraped_at": "2026-10-07T16:27:32.382908"
+  },
+  {
+    "id": 49982096,
+    "title": "How many GPUs is 1M/B/T tokens?",
+    "url": "https://cedana.com/resources/tokens-to-gpus/",
+    "points": 16,
+    "comments": 4,
+    "author": "kmavm",
+    "scraped_at": "2026-10-07T16:27:32.848277"
   }
 ]

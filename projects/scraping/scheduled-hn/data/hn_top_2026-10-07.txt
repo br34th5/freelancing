@@ -3,177 +3,185 @@ Hacker News Top Stories - 2026-10-07
 
 1. Mistral Large 4
    URL: https://mistral.ai/news/mistral-large-4/\
-   Points: 1736
+   Points: 1955
 
 2. Sharing AI progress in mathematics
    URL: https://openai.com/index/sharing-ai-progress-in-mathematics/
-   Points: 798
+   Points: 1136
 
-3. Nobel Prize in Physics 2026: Francis Halzen
-   URL: https://www.nobelprize.org/prizes/physics/2026/
-   Points: 548
-
-4. Polars 2.0
-   URL: https://pola.rs/posts/release-polars-2/
-   Points: 432
-
-5. Nature's capacity to 'bounce back' when species are lost is overestimated: study
-   URL: https://phys.org/news/2026-10-nature-capacity-species-lost-vastly.html
-   Points: 329
-
-6. EmbeddingGemma 2: An open, lightweight multimodal embedding model
-   URL: https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/
-   Points: 298
-
-7. OpenTPU – An open-source AI accelerator, developed by AI
-   URL: https://github.com/FeSens/openTPU
-   Points: 277
-
-8. Decisions API is in public beta
-   URL: https://developers.openai.com/api/docs/guides/decisions
-   Points: 256
-
-9. Paramount Skydance has completed its $111B merger with Warner Bros. Discovery
-   URL: https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/
-   Points: 226
-
-10. AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)
-   URL: https://github.com/boykopovar/AnyPS5
-   Points: 223
-
-11. What's Earth's dominant species by mass?
-   URL: https://signoregalilei.com/2026/09/27/whats-earths-dominant-species-by-mass/
-   Points: 212
-
-12. Claude Code’s suggested message feature: I think the real customer is the model
-   URL: https://www.zohaib.cc/blog/smartest-claude-code-feature
-   Points: 178
-
-13. Tell HN: GitHub refuses to remove cracked copies of my software after a month
+3. Tell HN: GitHub refuses to remove cracked copies of my software after a month
    URL: https://news.ycombinator.com/item?id=49982498
-   Points: 157
+   Points: 457
 
-14. Penguin Mail – open-source Rust email client for Linux with AI
-   URL: https://penguin-mail.com/
-   Points: 151
+4. A font recreated from photographs of classic Commodore 64 keycaps
+   URL: https://github.com/szabadkai/c64-keyboard-font/
+   Points: 270
 
-15. Strands Decider 2B: a small, open-source, decision model
+5. Strands Decider 2B: a small, open-source, decision model
    URL: https://strandsagents.com/blog/introducing-strands-decider/
+   Points: 252
+
+6. Nobel Prize in Chemistry 2026 to Henri B. Kagan and Kenso Soai
+   URL: https://www.nobelprize.org/prizes/chemistry/2026/press-release/
+   Points: 203
+
+7. ESP32-C3 Adblock
+   URL: https://github.com/M-Abozaid/esp32-c3-adblock
+   Points: 167
+
+8. The cost of lies: A Mineserver story
+   URL: https://www.jeremyreimer.com/rockets-item.lsp?f=true&p=272
+   Points: 167
+
+9. What is Codemode
+   URL: https://lucumr.pocoo.org/2026/10/6/codemode/
    Points: 138
 
-16. Benchmark in Milliseconds
-   URL: https://matklad.github.io/2026/10/05/benchmark-milliseconds.html
-   Points: 137
+10. GitHub Incident with Git Operations, Pull Requests and Actions
+   URL: https://www.githubstatus.com/incidents/djlmxz2zd0j7
+   Points: 133
 
-17. Toronto-Based VPN Provider Plans to Quit Canada over Lawful-Access Bill
-   URL: https://citizenlab.ca/toronto-based-vpn-provider-plans-to-quit-canada-over-lawful-access-bill/
-   Points: 136
-
-18. Direct retinal projection display for smart glasses using a meta-optic mirror
-   URL: https://www.tdk.com/en/news_center/press/20261002_01.html
-   Points: 130
-
-19. The Early History of Smalltalk (1993)
-   URL: https://worrydream.com/EarlyHistoryOfSmalltalk/
-   Points: 119
-
-20. California closed the Montana license plate loophole
-   URL: https://www.thedrive.com/news/heres-how-california-closed-the-montana-license-plate-loophole
+11. House with 15m underground tunnels for sale for 300k
+   URL: https://www.readingchronicle.co.uk/news/26612080.house-15m-underground-tunnels-sale-300k/
    Points: 100
 
-21. Erdosproblems.com Succumbs to the AI Onslaught
-   URL: https://www.erdosproblems.com/forum/thread/blog:9
-   Points: 100
+12. Google Playground: Create and play custom games
+   URL: https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/
+   Points: 81
 
-22. Integer multiplication below n log n
-   URL: https://github.com/openai/math/tree/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026
-   Points: 97
+13. Show HN: A walkable 3D art history museum built from Wikipedia
+   URL: https://artmuseum.artfrompixels.com/
+   Points: 79
 
-23. The cost of lies: A Mineserver story
-   URL: https://www.jeremyreimer.com/rockets-item.lsp?f=true&p=272
-   Points: 87
+14. Rust's derive often implies inline
+   URL: https://yossarian.net/til/post/rust-s-derive-often-implies-inline/
+   Points: 79
 
-24. LLMs may have helped my RSI
-   URL: https://vaughanhilts.me/2026/10/05/llms-immensely-helped-my-rsi.html
-   Points: 83
+15. Show HN: AstroHelm – Use your phone camera to aim a telescope or telephoto lens
+   URL: https://astrohelm.app/
+   Points: 68
 
-25. Show HN: Parseable, an open observability datalake, handles 100M time-series/min
-   URL: https://www.parseable.com
-   Points: 82
+16. Shaders, WebGPU Components for React, Vue, Svelte, Solid, JavaScript and Framer
+   URL: https://github.com/shader-effects-inc/shaders
+   Points: 59
 
-26. Show HN: I turned my iPhone and a $20 smart plug into an f-stop timer
-   URL: https://peterszentkiralyi.eu/darkplug/
-   Points: 80
+17. Write Like It's 1866: LLMs Relearn Telegraphese
+   URL: https://fiveminutesforward.com/post/2026-10-04-telegraph-test/
+   Points: 58
 
-27. Mathematics of Geothermal Energy
-   URL: https://www.ebsco.com/research-starters/power-and-energy/mathematics-geothermal-energy/
-   Points: 71
+18. SynthID Detector
+   URL: https://synthid.com/
+   Points: 58
 
-28. South Korea says AI agents appear to have been used to hack the country's banks
-   URL: https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/
-   Points: 70
-
-29. ESP32-C3 Adblock
-   URL: https://github.com/M-Abozaid/esp32-c3-adblock
-   Points: 66
-
-30. Calling It Quits on ServerFault
-   URL: https://sysadmin1138.net/mt/blog/2026/10/calling-it-quits-on-serverfault.shtml
-   Points: 66
-
-31. What Is Codemode
-   URL: https://lucumr.pocoo.org/2026/10/6/codemode/
-   Points: 64
-
-32. Account bans on Reddit
-   URL: https://orchidfiles.com/account-bans-on-reddit/
-   Points: 62
-
-33. La Cueva BBS in Mexico in 1993 (session replay)
-   URL: https://nanochess.org/la_cueva_bbs.html
-   Points: 40
-
-34. Hackers obtain counterfeit TLS certificates for Google and other large services
-   URL: https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services/
-   Points: 36
-
-35. Jev-Driven SRE Diagnosis: What Worked and What Failed
-   URL: https://www.sregym.com/blog/jev-driven-sre-diagnosis
-   Points: 27
-
-36. I hired an illustrator to draw my house. Now it's my Home Assistant dashboard
-   URL: https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my
-   Points: 27
-
-37. The art of defusing a second world war bomb
-   URL: https://www.theguardian.com/news/ng-interactive/2026/oct/06/it-could-knock-a-whole-street-down-the-art-of-defusing-a-second-world-war-bomb
-   Points: 26
-
-38. Treg (OpenRouter for Tools)
-   URL: https://github.com/superdesigndev/treg
-   Points: 19
-
-39. Improving and Stabilizing the Racoon2 IKE Daemon in NetBSD
-   URL: https://blog.netbsd.org/tnf/entry/gsoc2026_racoon2
-   Points: 15
-
-40. Show HN: NanoMuse – An open-source AI agent for your phone and computer
+19. Show HN: NanoMuse – An open-source AI agent for your phone and computer
    URL: https://github.com/nano-muse/nanoMuse
-   Points: 15
+   Points: 53
 
-41. The Query Transformation Pipeline
-   URL: https://readyset.io/blog/how-readyset-rewrites-your-sql-inside-the-query-transformation-pipeline
-   Points: 14
+20. Mallet Head Angle
+   URL: http://www.timberframe-tools.com/tools/mallet-head-angle/
+   Points: 46
 
-42. OpenWAM: An Open Framework for Composable World-Action Models
-   URL: https://openwam.stanford.edu/
+21. Gallery of Processor Cache Effects (2010)
+   URL: https://igoro.com/archive/gallery-of-processor-cache-effects/
+   Points: 43
+
+22. Animated ASCII Art for Web Pages
+   URL: https://ascii.rest/
+   Points: 35
+
+23. God of War on PSP, recompiled to WebAssembly and running in the browser
+   URL: https://github.com/snuri00/psp-web-recomp
+   Points: 35
+
+24. Anti-Patterns in Software Blogging
+   URL: https://refactoringenglish.com/blog/anti-patterns-software-blogging/
+   Points: 34
+
+25. Across the Globe, People Increasingly Say Social Media Is Harming Democracy
+   URL: https://www.pewresearch.org/global/2026/10/01/across-the-globe-people-increasingly-say-social-media-is-harming-democracy/
+   Points: 32
+
+26. Show HN: Procinsh – A 3D Linux process inspector
+   URL: https://github.com/akawashiro/procinsh
+   Points: 31
+
+27. AI firm HUMXN offers free plumbing and HVAC service in Minnesota to train robots
+   URL: https://humxn.io/humxn-launches-free-home-service-program
+   Points: 29
+
+28. Wood Tape (2004)
+   URL: http://gamesbyemail.com/WoodTape/Default.htm
+   Points: 29
+
+29. The Legend of the Paper Crane
+   URL: https://mazdastories.com/en_us/inspire/paper-cranes-into-the-fold/
+   Points: 29
+
+30. AI-assisted proof of optimal packing for 11 squares
+   URL: https://github.com/Queuingtheorydotcom/11SquaresFormalized
+   Points: 28
+
+31. Southern Olive Oil
+   URL: https://ambrook.com/offrange/supply-chain/southern-olive-oil
+   Points: 25
+
+32. Navier–Stokes Lost in Translation
+   URL: https://arxiv.org/abs/2610.08144
+   Points: 18
+
+33. How many GPUs is 1M/B/T tokens?
+   URL: https://cedana.com/resources/tokens-to-gpus/
+   Points: 16
+
+34. Study: Claude, ChatGPT Offer Different Shopping Prices Based on Wealth
+   URL: https://www.bloomberg.com/news/newsletters/2026-10-07/study-claude-chatgpt-ai-bots-offer-different-shopping-prices-based-on-wealth
+   Points: 13
+
+35. GitHub Is Down (Again)
+   URL: https://news.ycombinator.com/item?id=49994020
+   Points: 12
+
+36. Reverse Engineering of the M-VAVE FM-1 Pocket Synthesizer Firmware
+   URL: https://github.com/AL-255/FM-1-RE
+   Points: 11
+
+37. Thank You Indonesia for the Clean Air
+   URL: https://thankyouindoforthecleanair.web.app/
+   Points: 11
+
+38. Spotifast: A native Rust Spotify client with Winamp skins
+   URL: https://spotifast.rocks/
+   Points: 11
+
+39. Visa, Mastercard, Major Banks Facing New Litigation over 'Anticompetitive' Fees
+   URL: https://www.classaction.org/news/visa-mastercard-major-banks-facing-new-litigation-over-anticompetitive-merchant-credit-card-transaction-fees
+   Points: 8
+
+40. They solved chemistry's asymmetric mystery [pdf]
+   URL: https://www.nobelprize.org/uploads/2026/10/popular-chemistryprize2026.pdf
+   Points: 8
+
+41. ShinyHunters Extorted Boeing Spin-Off Prior to Arrests
+   URL: https://krebsonsecurity.com/2026/10/shinyhunters-extorted-boeing-spin-off-prior-to-arrests/
    Points: 7
 
-43. Anatomy Unzipped: John of Arderne's Sweden Scroll (Ca. 1425–35)
-   URL: https://publicdomainreview.org/collection/arderne-scroll/
-   Points: 6
+42. Plastic Waste and Oceans: Banning Straws Won't Help Much
+   URL: https://www.nationalreview.com/2018/09/plastic-bag-straw-bans-ocean-pollution/
+   Points: 7
 
-44. The Legend of the Paper Crane
-   URL: https://mazdastories.com/en_us/inspire/paper-cranes-into-the-fold/
-   Points: 3
+43. Christa Pike's lawyers hold press conference after she regains consciousness
+   URL: https://www.theguardian.com/us-news/live/2026/oct/07/christa-pike-lawyers-live-updates-tennessee-execution
+   Points: 7
+
+44. SF could have dense, fine-grained, family-friendly Neighborhood, Not Megaproject
+   URL: https://urbancourtyard.substack.com/p/san-francisco-could-have-a-dense
+   Points: 5
+
+45. The Dawn of the Age of the Exoskeleton
+   URL: https://theconversation.com/the-dawn-of-the-age-of-the-exoskeleton-281804
+   Points: 5
+
+46. The Auditor's Opinion
+   URL: https://www.cringely.com/2026/07/16/the-auditors-opinion/
+   Points: 4
 
