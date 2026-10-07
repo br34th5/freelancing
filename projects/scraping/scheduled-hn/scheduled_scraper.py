@@ -154,12 +154,24 @@ def main():
 
         logger.info(f"Saved {len(stories)} stories to {output_file}")
 
+        txt_file = OUTPUT_DIR / f"hn_top_{date_str}.txt"
+        ranked = sorted(stories, key=lambda s: s.get("points", 0), reverse=True)
+        with open(txt_file, 'w') as f:
+            f.write(f"Hacker News Top Stories - {date_str}\n")
+            f.write("=" * 60 + "\n\n")
+            for i, s in enumerate(ranked, 1):
+                f.write(f"{i}. {s['title']}\n")
+                f.write(f"   URL: {s['url']}\n")
+                f.write(f"   Points: {s['points']}\n\n")
+
+        logger.info(f"Saved ranked list to {txt_file}")
+
         save_stories(stories)
 
         duration = (datetime.now() - start_time).total_seconds()
         logger.info(f"Completed in {duration:.1f}s")
-        if stories:
-            logger.info(f"Top story: {stories[0]['title']} ({stories[0]['points']} pts)")
+        if ranked:
+            logger.info(f"Top story: {ranked[0]['title']} ({ranked[0]['points']} pts)")
 
     except Exception as e:
         error_msg = f"❌ HN Scraper failed at {start_time.strftime('%Y-%m-%d %H:%M:%S')}\nError: {str(e)}"
