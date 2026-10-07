@@ -1,246 +1,246 @@
 [
   {
+    "id": 49984923,
+    "title": "Sharing AI progress in mathematics",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "points": 798,
+    "comments": 730,
+    "author": "OfficialTurkey",
+    "scraped_at": "2026-10-07T07:29:50.032662"
+  },
+  {
     "id": 49987076,
     "title": "Strands Decider 2B: a small, open-source, decision model",
     "url": "https://strandsagents.com/blog/introducing-strands-decider/",
-    "points": 133,
-    "comments": 25,
+    "points": 138,
+    "comments": 28,
     "author": "gmays",
-    "scraped_at": "2026-10-07T07:06:34.691644"
+    "scraped_at": "2026-10-07T07:29:50.345672"
   },
   {
     "id": 49984025,
     "title": "Decisions API is in public beta",
     "url": "https://developers.openai.com/api/docs/guides/decisions",
-    "points": 245,
-    "comments": 112,
+    "points": 256,
+    "comments": 114,
     "author": "chiefstorm",
-    "scraped_at": "2026-10-07T07:06:35.799600"
-  },
-  {
-    "id": 49988709,
-    "title": "Shaders, WebGPU Components for React, Vue, Svelte, Solid, JavaScript and Framer",
-    "url": "https://github.com/shader-effects-inc/shaders",
-    "points": 11,
-    "comments": 3,
-    "author": "jinqueeny",
-    "scraped_at": "2026-10-07T07:06:36.601999"
-  },
-  {
-    "id": 49987675,
-    "title": "La Cueva BBS in Mexico in 1993 (session replay)",
-    "url": "https://nanochess.org/la_cueva_bbs.html",
-    "points": 38,
-    "comments": 9,
-    "author": "nanochess",
-    "scraped_at": "2026-10-07T07:06:36.948313"
-  },
-  {
-    "id": 49977979,
-    "title": "Mistral Large 4",
-    "url": "https://mistral.ai/news/mistral-large-4/\\",
-    "points": 1722,
-    "comments": 1015,
-    "author": "Philpax",
-    "scraped_at": "2026-10-07T07:06:37.874481"
-  },
-  {
-    "id": 49984716,
-    "title": "Penguin Mail \u2013 open-source Rust email client for Linux with AI",
-    "url": "https://penguin-mail.com/",
-    "points": 148,
-    "comments": 79,
-    "author": "kavourias",
-    "scraped_at": "2026-10-07T07:06:38.633060"
-  },
-  {
-    "id": 49980487,
-    "title": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
-    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
-    "points": 296,
-    "comments": 31,
-    "author": "ilreb",
-    "scraped_at": "2026-10-07T07:06:39.059831"
-  },
-  {
-    "id": 49950865,
-    "title": "The cost of lies: A Mineserver story",
-    "url": "https://www.jeremyreimer.com/rockets-item.lsp?f=true&p=272",
-    "points": 80,
-    "comments": 30,
-    "author": "luu",
-    "scraped_at": "2026-10-07T07:06:40.471949"
-  },
-  {
-    "id": 49978333,
-    "title": "What Is Codemode",
-    "url": "https://lucumr.pocoo.org/2026/10/6/codemode/",
-    "points": 59,
-    "comments": 17,
-    "author": "Tomte",
-    "scraped_at": "2026-10-07T07:06:40.902598"
+    "scraped_at": "2026-10-07T07:29:51.605168"
   },
   {
     "id": 49986862,
     "title": "ESP32-C3 Adblock",
     "url": "https://github.com/M-Abozaid/esp32-c3-adblock",
-    "points": 61,
-    "comments": 17,
+    "points": 66,
+    "comments": 21,
     "author": "jayhoon",
-    "scraped_at": "2026-10-07T07:06:41.824636"
+    "scraped_at": "2026-10-07T07:29:57.662611"
+  },
+  {
+    "id": 49987675,
+    "title": "La Cueva BBS in Mexico in 1993 (session replay)",
+    "url": "https://nanochess.org/la_cueva_bbs.html",
+    "points": 40,
+    "comments": 10,
+    "author": "nanochess",
+    "scraped_at": "2026-10-07T07:29:57.962524"
+  },
+  {
+    "id": 49977979,
+    "title": "Mistral Large 4",
+    "url": "https://mistral.ai/news/mistral-large-4/\\",
+    "points": 1736,
+    "comments": 1028,
+    "author": "Philpax",
+    "scraped_at": "2026-10-07T07:29:59.003423"
+  },
+  {
+    "id": 49984716,
+    "title": "Penguin Mail \u2013 open-source Rust email client for Linux with AI",
+    "url": "https://penguin-mail.com/",
+    "points": 151,
+    "comments": 82,
+    "author": "kavourias",
+    "scraped_at": "2026-10-07T07:30:00.131533"
+  },
+  {
+    "id": 49980487,
+    "title": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+    "points": 298,
+    "comments": 31,
+    "author": "ilreb",
+    "scraped_at": "2026-10-07T07:30:02.054792"
+  },
+  {
+    "id": 49978333,
+    "title": "What Is Codemode",
+    "url": "https://lucumr.pocoo.org/2026/10/6/codemode/",
+    "points": 64,
+    "comments": 20,
+    "author": "Tomte",
+    "scraped_at": "2026-10-07T07:30:02.688954"
   },
   {
     "id": 49987858,
     "title": "The art of defusing a second world war bomb",
     "url": "https://www.theguardian.com/news/ng-interactive/2026/oct/06/it-could-knock-a-whole-street-down-the-art-of-defusing-a-second-world-war-bomb",
-    "points": 23,
-    "comments": 5,
+    "points": 26,
+    "comments": 7,
     "author": "sandebert",
-    "scraped_at": "2026-10-07T07:06:42.831691"
+    "scraped_at": "2026-10-07T07:30:03.623197"
+  },
+  {
+    "id": 49950865,
+    "title": "The cost of lies: A Mineserver story",
+    "url": "https://www.jeremyreimer.com/rockets-item.lsp?f=true&p=272",
+    "points": 87,
+    "comments": 33,
+    "author": "luu",
+    "scraped_at": "2026-10-07T07:30:04.448194"
+  },
+  {
+    "id": 49953939,
+    "title": "The Legend of the Paper Crane",
+    "url": "https://mazdastories.com/en_us/inspire/paper-cranes-into-the-fold/",
+    "points": 3,
+    "comments": 0,
+    "author": "vismit2000",
+    "scraped_at": "2026-10-07T07:30:05.400773"
   },
   {
     "id": 49985664,
     "title": "AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)",
     "url": "https://github.com/boykopovar/AnyPS5",
-    "points": 213,
-    "comments": 167,
+    "points": 223,
+    "comments": 172,
     "author": "Fe2O3",
-    "scraped_at": "2026-10-07T07:06:43.198816"
+    "scraped_at": "2026-10-07T07:30:06.428307"
   },
   {
     "id": 49981905,
     "title": "Claude Code\u2019s suggested message feature: I think the real customer is the model",
     "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature",
-    "points": 174,
+    "points": 178,
     "comments": 91,
     "author": "zed_labs_dev",
-    "scraped_at": "2026-10-07T07:06:44.101221"
-  },
-  {
-    "id": 49988142,
-    "title": "Calling It Quits on ServerFault",
-    "url": "https://sysadmin1138.net/mt/blog/2026/10/calling-it-quits-on-serverfault.shtml",
-    "points": 63,
-    "comments": 28,
-    "author": "zdw",
-    "scraped_at": "2026-10-07T07:06:44.478384"
-  },
-  {
-    "id": 49986765,
-    "title": "Jev-Driven SRE Diagnosis: What Worked and What Failed",
-    "url": "https://www.sregym.com/blog/jev-driven-sre-diagnosis",
-    "points": 26,
-    "comments": 6,
-    "author": "matt_d",
-    "scraped_at": "2026-10-07T07:06:45.537151"
-  },
-  {
-    "id": 49980790,
-    "title": "Treg (OpenRouter for Tools)",
-    "url": "https://github.com/superdesigndev/treg",
-    "points": 18,
-    "comments": 4,
-    "author": "trollied",
-    "scraped_at": "2026-10-07T07:06:45.950585"
-  },
-  {
-    "id": 49980715,
-    "title": "OpenTPU \u2013 An open-source AI accelerator, developed by AI",
-    "url": "https://github.com/FeSens/openTPU",
-    "points": 276,
-    "comments": 331,
-    "author": "fsbonetto",
-    "scraped_at": "2026-10-07T07:06:46.816969"
+    "scraped_at": "2026-10-07T07:30:07.332110"
   },
   {
     "id": 49982498,
     "title": "Tell HN: GitHub refuses to remove cracked copies of my software after a month",
     "url": "https://news.ycombinator.com/item?id=49982498",
-    "points": 138,
-    "comments": 87,
+    "points": 157,
+    "comments": 92,
     "author": "IvanK_net",
-    "scraped_at": "2026-10-07T07:06:47.164452"
+    "scraped_at": "2026-10-07T07:30:08.231330"
   },
   {
-    "id": 49953455,
-    "title": "Improving and Stabilizing the Racoon2 IKE Daemon in NetBSD",
-    "url": "https://blog.netbsd.org/tnf/entry/gsoc2026_racoon2",
-    "points": 14,
+    "id": 49986765,
+    "title": "Jev-Driven SRE Diagnosis: What Worked and What Failed",
+    "url": "https://www.sregym.com/blog/jev-driven-sre-diagnosis",
+    "points": 27,
+    "comments": 8,
+    "author": "matt_d",
+    "scraped_at": "2026-10-07T07:30:09.189889"
+  },
+  {
+    "id": 49980715,
+    "title": "OpenTPU \u2013 An open-source AI accelerator, developed by AI",
+    "url": "https://github.com/FeSens/openTPU",
+    "points": 277,
+    "comments": 331,
+    "author": "fsbonetto",
+    "scraped_at": "2026-10-07T07:30:11.177909"
+  },
+  {
+    "id": 49980790,
+    "title": "Treg (OpenRouter for Tools)",
+    "url": "https://github.com/superdesigndev/treg",
+    "points": 19,
     "comments": 4,
-    "author": "jaypatelani",
-    "scraped_at": "2026-10-07T07:06:47.584609"
+    "author": "trollied",
+    "scraped_at": "2026-10-07T07:30:12.127886"
   },
   {
     "id": 49977531,
     "title": "What's Earth's dominant species by mass?",
     "url": "https://signoregalilei.com/2026/09/27/whats-earths-dominant-species-by-mass/",
-    "points": 210,
-    "comments": 140,
+    "points": 212,
+    "comments": 147,
     "author": "surprisetalk",
-    "scraped_at": "2026-10-07T07:06:48.013965"
+    "scraped_at": "2026-10-07T07:30:13.736353"
   },
   {
-    "id": 49988230,
-    "title": "Hackers obtain counterfeit TLS certificates for Google and other large services",
-    "url": "https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services/",
-    "points": 34,
-    "comments": 5,
-    "author": "colinprince",
-    "scraped_at": "2026-10-07T07:06:48.861607"
-  },
-  {
-    "id": 49987765,
-    "title": "Show HN: NanoMuse \u2013 An open-source AI agent for your phone and computer",
-    "url": "https://github.com/nano-muse/nanoMuse",
-    "points": 13,
-    "comments": 0,
-    "author": "ilreb",
-    "scraped_at": "2026-10-07T07:06:49.467823"
+    "id": 49953455,
+    "title": "Improving and Stabilizing the Racoon2 IKE Daemon in NetBSD",
+    "url": "https://blog.netbsd.org/tnf/entry/gsoc2026_racoon2",
+    "points": 15,
+    "comments": 4,
+    "author": "jaypatelani",
+    "scraped_at": "2026-10-07T07:30:14.092160"
   },
   {
     "id": 49981186,
     "title": "California closed the Montana license plate loophole",
     "url": "https://www.thedrive.com/news/heres-how-california-closed-the-montana-license-plate-loophole",
-    "points": 99,
-    "comments": 244,
+    "points": 100,
+    "comments": 247,
     "author": "speckx",
-    "scraped_at": "2026-10-07T07:06:50.399994"
+    "scraped_at": "2026-10-07T07:30:15.034521"
+  },
+  {
+    "id": 49988230,
+    "title": "Hackers obtain counterfeit TLS certificates for Google and other large services",
+    "url": "https://arstechnica.com/security/2026/10/hackers-obtain-counterfeit-tls-certificates-for-google-and-other-large-services/",
+    "points": 36,
+    "comments": 6,
+    "author": "colinprince",
+    "scraped_at": "2026-10-07T07:30:15.676761"
+  },
+  {
+    "id": 49973644,
+    "title": "LLMs may have helped my RSI",
+    "url": "https://vaughanhilts.me/2026/10/05/llms-immensely-helped-my-rsi.html",
+    "points": 83,
+    "comments": 42,
+    "author": "vaughands",
+    "scraped_at": "2026-10-07T07:30:16.639304"
+  },
+  {
+    "id": 49987765,
+    "title": "Show HN: NanoMuse \u2013 An open-source AI agent for your phone and computer",
+    "url": "https://github.com/nano-muse/nanoMuse",
+    "points": 15,
+    "comments": 0,
+    "author": "ilreb",
+    "scraped_at": "2026-10-07T07:30:17.486755"
+  },
+  {
+    "id": 49988142,
+    "title": "Calling It Quits on ServerFault",
+    "url": "https://sysadmin1138.net/mt/blog/2026/10/calling-it-quits-on-serverfault.shtml",
+    "points": 66,
+    "comments": 33,
+    "author": "zdw",
+    "scraped_at": "2026-10-07T07:30:18.800185"
   },
   {
     "id": 49987679,
     "title": "OpenWAM: An Open Framework for Composable World-Action Models",
     "url": "https://openwam.stanford.edu/",
     "points": 7,
-    "comments": 0,
+    "comments": 1,
     "author": "ilreb",
-    "scraped_at": "2026-10-07T07:06:51.924941"
+    "scraped_at": "2026-10-07T07:30:19.729978"
   },
   {
     "id": 49960290,
     "title": "Anatomy Unzipped: John of Arderne's Sweden Scroll (Ca. 1425\u201335)",
     "url": "https://publicdomainreview.org/collection/arderne-scroll/",
-    "points": 5,
-    "comments": 0,
+    "points": 6,
+    "comments": 1,
     "author": "prismatic",
-    "scraped_at": "2026-10-07T07:06:52.307357"
-  },
-  {
-    "id": 49983404,
-    "title": "When random is not actually random enough",
-    "url": "https://ersc.io/blog/when-random-isnt-random-enough",
-    "points": 51,
-    "comments": 16,
-    "author": "steveklabnik",
-    "scraped_at": "2026-10-07T07:06:52.712743"
-  },
-  {
-    "id": 49985643,
-    "title": "State of Devs 2026",
-    "url": "https://2026.stateofdevs.com/en-US/",
-    "points": 127,
-    "comments": 61,
-    "author": "sgdesign",
-    "scraped_at": "2026-10-07T07:06:53.079172"
+    "scraped_at": "2026-10-07T07:30:20.634682"
   },
   {
     "id": 49967427,
@@ -249,7 +249,7 @@
     "points": 137,
     "comments": 45,
     "author": "surprisetalk",
-    "scraped_at": "2026-10-07T07:06:53.368048"
+    "scraped_at": "2026-10-07T07:30:21.559335"
   },
   {
     "id": 49976265,
@@ -258,70 +258,79 @@
     "points": 548,
     "comments": 194,
     "author": "solarist",
-    "scraped_at": "2026-10-07T07:06:54.721213"
+    "scraped_at": "2026-10-07T07:30:21.857890"
+  },
+  {
+    "id": 49983703,
+    "title": "Paramount Skydance has completed its $111B merger with Warner Bros. Discovery",
+    "url": "https://arstechnica.com/tech-policy/2026/10/paramount-completes-111b-warner-merger-creating-skydance-behemoth/",
+    "points": 226,
+    "comments": 375,
+    "author": "Mgtyalx",
+    "scraped_at": "2026-10-07T07:30:22.814812"
   },
   {
     "id": 49985524,
     "title": "Integer multiplication below n log n",
     "url": "https://github.com/openai/math/tree/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026",
-    "points": 95,
+    "points": 97,
     "comments": 63,
     "author": "E-Reverance",
-    "scraped_at": "2026-10-07T07:06:55.614913"
-  },
-  {
-    "id": 49986223,
-    "title": "Account bans on Reddit",
-    "url": "https://orchidfiles.com/account-bans-on-reddit/",
-    "points": 61,
-    "comments": 52,
-    "author": "theorchid",
-    "scraped_at": "2026-10-07T07:06:56.529477"
+    "scraped_at": "2026-10-07T07:30:23.244601"
   },
   {
     "id": 49985861,
     "title": "South Korea says AI agents appear to have been used to hack the country's banks",
     "url": "https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/",
-    "points": 66,
-    "comments": 13,
+    "points": 70,
+    "comments": 15,
     "author": "thoughtpeddler",
-    "scraped_at": "2026-10-07T07:06:57.390830"
+    "scraped_at": "2026-10-07T07:30:24.205855"
   },
   {
-    "id": 49985292,
-    "title": "UniEvo-VL: Self-Distillation Training for Multimodal Model Self-Improvement",
-    "url": "https://arxiv.org/abs/2609.38721",
-    "points": 15,
-    "comments": 3,
-    "author": "gmays",
-    "scraped_at": "2026-10-07T07:06:58.254988"
+    "id": 49986223,
+    "title": "Account bans on Reddit",
+    "url": "https://orchidfiles.com/account-bans-on-reddit/",
+    "points": 62,
+    "comments": 52,
+    "author": "theorchid",
+    "scraped_at": "2026-10-07T07:30:24.504523"
   },
   {
     "id": 49977819,
     "title": "Mathematics of Geothermal Energy",
     "url": "https://www.ebsco.com/research-starters/power-and-energy/mathematics-geothermal-energy/",
     "points": 71,
-    "comments": 41,
+    "comments": 42,
     "author": "srameshc",
-    "scraped_at": "2026-10-07T07:06:58.552098"
+    "scraped_at": "2026-10-07T07:30:25.812474"
   },
   {
     "id": 49979845,
     "title": "The Early History of Smalltalk (1993)",
     "url": "https://worrydream.com/EarlyHistoryOfSmalltalk/",
     "points": 119,
-    "comments": 71,
+    "comments": 75,
     "author": "_reza",
-    "scraped_at": "2026-10-07T07:06:58.967623"
+    "scraped_at": "2026-10-07T07:30:26.113740"
   },
   {
     "id": 49978595,
     "title": "Show HN: I turned my iPhone and a $20 smart plug into an f-stop timer",
     "url": "https://peterszentkiralyi.eu/darkplug/",
     "points": 80,
-    "comments": 30,
+    "comments": 31,
     "author": "pentakkusu",
-    "scraped_at": "2026-10-07T07:06:59.337502"
+    "scraped_at": "2026-10-07T07:30:27.054184"
+  },
+  {
+    "id": 49977177,
+    "title": "Polars 2.0",
+    "url": "https://pola.rs/posts/release-polars-2/",
+    "points": 432,
+    "comments": 99,
+    "author": "simicd",
+    "scraped_at": "2026-10-07T07:30:27.811468"
   },
   {
     "id": 49984834,
@@ -330,16 +339,16 @@
     "points": 14,
     "comments": 1,
     "author": "gvsg-rs",
-    "scraped_at": "2026-10-07T07:07:00.224361"
+    "scraped_at": "2026-10-07T07:30:28.146345"
   },
   {
-    "id": 49977177,
-    "title": "Polars 2.0",
-    "url": "https://pola.rs/posts/release-polars-2/",
-    "points": 431,
-    "comments": 99,
-    "author": "simicd",
-    "scraped_at": "2026-10-07T07:07:00.528194"
+    "id": 49977689,
+    "title": "Erdosproblems.com Succumbs to the AI Onslaught",
+    "url": "https://www.erdosproblems.com/forum/thread/blog:9",
+    "points": 100,
+    "comments": 40,
+    "author": "pfdietz",
+    "scraped_at": "2026-10-07T07:30:28.503555"
   },
   {
     "id": 49982471,
@@ -348,34 +357,16 @@
     "points": 136,
     "comments": 51,
     "author": "speckx",
-    "scraped_at": "2026-10-07T07:07:01.429599"
-  },
-  {
-    "id": 49977689,
-    "title": "Erdosproblems.com Succumbs to the AI Onslaught",
-    "url": "https://www.erdosproblems.com/forum/thread/blog:9",
-    "points": 99,
-    "comments": 40,
-    "author": "pfdietz",
-    "scraped_at": "2026-10-07T07:07:02.274139"
+    "scraped_at": "2026-10-07T07:30:28.803297"
   },
   {
     "id": 49976823,
     "title": "Nature's capacity to 'bounce back' when species are lost is overestimated: study",
     "url": "https://phys.org/news/2026-10-nature-capacity-species-lost-vastly.html",
-    "points": 328,
+    "points": 329,
     "comments": 157,
     "author": "pseudolus",
-    "scraped_at": "2026-10-07T07:07:02.629792"
-  },
-  {
-    "id": 49988604,
-    "title": "We Asked Starbucks Why Their 'Sugar-Free' Drinks Have Sugar",
-    "url": "https://gizmodo.com/we-asked-starbucks-why-their-sugar-free-drinks-have-sugar-and-now-were-just-more-confused-2000822422",
-    "points": 11,
-    "comments": 3,
-    "author": "Tomte",
-    "scraped_at": "2026-10-07T07:07:03.571416"
+    "scraped_at": "2026-10-07T07:30:29.767983"
   },
   {
     "id": 49978171,
@@ -384,16 +375,7 @@
     "points": 82,
     "comments": 22,
     "author": "yashdotrv",
-    "scraped_at": "2026-10-07T07:07:04.475674"
-  },
-  {
-    "id": 49983791,
-    "title": "OpenSSH 10.6",
-    "url": "https://www.openssh.org/releasenotes.html#10.6",
-    "points": 105,
-    "comments": 25,
-    "author": "torcete",
-    "scraped_at": "2026-10-07T07:07:05.387599"
+    "scraped_at": "2026-10-07T07:30:30.699309"
   },
   {
     "id": 49944369,
@@ -402,24 +384,15 @@
     "points": 130,
     "comments": 63,
     "author": "bookofjoe",
-    "scraped_at": "2026-10-07T07:07:05.761349"
+    "scraped_at": "2026-10-07T07:30:31.608922"
   },
   {
     "id": 49986882,
     "title": "I hired an illustrator to draw my house. Now it's my Home Assistant dashboard",
     "url": "https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my",
-    "points": 25,
+    "points": 27,
     "comments": 0,
     "author": "soheilpro",
-    "scraped_at": "2026-10-07T07:07:06.635081"
-  },
-  {
-    "id": 49982735,
-    "title": "Berthd",
-    "url": "https://berthd.app/",
-    "points": 56,
-    "comments": 70,
-    "author": "handfuloflight",
-    "scraped_at": "2026-10-07T07:07:07.524966"
+    "scraped_at": "2026-10-07T07:30:32.376385"
   }
 ]
