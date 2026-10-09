@@ -1,0 +1,434 @@
+[
+  {
+    "id": 50019911,
+    "title": "Deno Is Joining Cloudflare",
+    "url": "https://deno.com/blog/cloudflare",
+    "points": 543,
+    "comments": 294,
+    "author": "ilreb",
+    "scraped_at": "2026-10-09T16:10:44.266215"
+  },
+  {
+    "id": 50018817,
+    "title": "Let your AI agents paint big arrows, boxes and text on your screen",
+    "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+    "points": 245,
+    "comments": 97,
+    "author": "franze",
+    "scraped_at": "2026-10-09T16:10:45.883104"
+  },
+  {
+    "id": 50018088,
+    "title": "I'm in a Meeting",
+    "url": "https://iminafleeting.com/",
+    "points": 354,
+    "comments": 132,
+    "author": "splintersio",
+    "scraped_at": "2026-10-09T16:10:46.183788"
+  },
+  {
+    "id": 50018420,
+    "title": "Nobel Peace Prize for 2026 to Navanethem \"NAVI\" Pillay",
+    "url": "https://www.nobelprize.org/prizes/peace/2026/press-release/",
+    "points": 271,
+    "comments": 144,
+    "author": "Anon84",
+    "scraped_at": "2026-10-09T16:10:47.366789"
+  },
+  {
+    "id": 50021540,
+    "title": "Germany turning abandoned coal mines into 23 lakes, becoming artificial wetland",
+    "url": "https://timesofindia.indiatimes.com/world/europe/germany-is-turning-abandoned-coal-mines-into-23-lakes-the-former-mining-landscape-is-becoming-europes-largest-artificial-wetland/articleshow/134725669.cms",
+    "points": 37,
+    "comments": 14,
+    "author": "ohjeez",
+    "scraped_at": "2026-10-09T16:10:48.246605"
+  },
+  {
+    "id": 50021127,
+    "title": "Python 3.15.0",
+    "url": "https://www.python.org/downloads/release/python-3150/",
+    "points": 92,
+    "comments": 26,
+    "author": "ngoldbaum",
+    "scraped_at": "2026-10-09T16:10:48.928990"
+  },
+  {
+    "id": 50000488,
+    "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+    "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
+    "points": 950,
+    "comments": 866,
+    "author": "jonotime",
+    "scraped_at": "2026-10-09T16:10:49.681305"
+  },
+  {
+    "id": 50020927,
+    "title": "Yandex Takes a Second Data Center Hit in 48 Hours",
+    "url": "https://united24media.com/war-in-ukraine/yandex-takes-a-second-data-center-hit-in-48-hours-now-its-biggest-russian-site-is-damaged-23277",
+    "points": 143,
+    "comments": 123,
+    "author": "ortusdux",
+    "scraped_at": "2026-10-09T16:10:50.545755"
+  },
+  {
+    "id": 50021763,
+    "title": "The super intelligence shit is a humiliation ritual for OpenAI",
+    "url": "https://bsky.app/profile/opinionhaver.bsky.social/post/3mxfo2mdjqs2z",
+    "points": 37,
+    "comments": 13,
+    "author": "doener",
+    "scraped_at": "2026-10-09T16:10:51.615837"
+  },
+  {
+    "id": 50021066,
+    "title": "US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize",
+    "url": "https://www.reuters.com/world/us-imposes-sanctions-international-criminal-court-hours-after-former-judge-wins-2026-10-09/",
+    "points": 233,
+    "comments": 88,
+    "author": "poly2it",
+    "scraped_at": "2026-10-09T16:10:53.029851"
+  },
+  {
+    "id": 50008427,
+    "title": "Whistle: Speech to Text in 16.9 MB",
+    "url": "https://cactuscompute.com/blog/whistle",
+    "points": 846,
+    "comments": 169,
+    "author": "gmays",
+    "scraped_at": "2026-10-09T16:10:53.826281"
+  },
+  {
+    "id": 49995495,
+    "title": "Man discovers his parents' coffee machine used 1TB of data in 10 days",
+    "url": "https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/",
+    "points": 843,
+    "comments": 513,
+    "author": "ck2",
+    "scraped_at": "2026-10-09T16:10:54.460234"
+  },
+  {
+    "id": 50016489,
+    "title": "MXC - a sandboxed code execution system",
+    "url": "https://github.com/microsoft/mxc",
+    "points": 114,
+    "comments": 57,
+    "author": "nreece",
+    "scraped_at": "2026-10-09T16:10:55.190544"
+  },
+  {
+    "id": 50003796,
+    "title": "Yes, and",
+    "url": "https://htmx.org/essays/yes-and/",
+    "points": 613,
+    "comments": 240,
+    "author": "Michelangelo11",
+    "scraped_at": "2026-10-09T16:10:56.081156"
+  },
+  {
+    "id": 49986882,
+    "title": "I hired an illustrator to draw my house. Now it's my Home Assistant dashboard",
+    "url": "https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my",
+    "points": 794,
+    "comments": 172,
+    "author": "soheilpro",
+    "scraped_at": "2026-10-09T16:10:56.910907"
+  },
+  {
+    "id": 50015515,
+    "title": "Keyboard differences between Windows and Macs",
+    "url": "https://unsung.aresluna.org/deeper-dive-keyboard-differences-between-windows-and-macs/",
+    "points": 242,
+    "comments": 197,
+    "author": "sohkamyung",
+    "scraped_at": "2026-10-09T16:10:57.256603"
+  },
+  {
+    "id": 50009295,
+    "title": "Theranos.world",
+    "url": "https://www.theranos.world/",
+    "points": 510,
+    "comments": 184,
+    "author": "kbyatnal",
+    "scraped_at": "2026-10-09T16:10:58.029083"
+  },
+  {
+    "id": 50021403,
+    "title": "Imposing Sanctions on the International Criminal Court",
+    "url": "https://www.state.gov/releases/office-of-the-spokesman/2026/10/imposing-sanctions-on-the-international-criminal-court/",
+    "points": 100,
+    "comments": 85,
+    "author": "TechTechTech",
+    "scraped_at": "2026-10-09T16:10:58.835240"
+  },
+  {
+    "id": 50018350,
+    "title": "OpenAI fires three safety researchers for \"mishandling research information\"",
+    "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/",
+    "points": 164,
+    "comments": 84,
+    "author": "trakkstar",
+    "scraped_at": "2026-10-09T16:10:59.710429"
+  },
+  {
+    "id": 50019499,
+    "title": "Reactions to 100 Solutions",
+    "url": "https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/",
+    "points": 15,
+    "comments": 6,
+    "author": "jacobedawson",
+    "scraped_at": "2026-10-09T16:11:00.490858"
+  },
+  {
+    "id": 50019455,
+    "title": "Iranian campaign planted fake articles in real U.S. publications using ChatGPT",
+    "url": "https://www.washingtonpost.com/technology/2026/10/09/chatgpt-users-iran-planted-ai-generated-articles-us-news-media/",
+    "points": 121,
+    "comments": 111,
+    "author": "cainxinth",
+    "scraped_at": "2026-10-09T16:11:00.849943"
+  },
+  {
+    "id": 50019741,
+    "title": "Study: Exercise increases cancer survival rates",
+    "url": "https://www.nejm.org/doi/10.1056/NEJMoa2502760",
+    "points": 46,
+    "comments": 27,
+    "author": "RickJWagner",
+    "scraped_at": "2026-10-09T16:11:01.210708"
+  },
+  {
+    "id": 50022266,
+    "title": "A statement on the Tor Project's relationship with Mullvad",
+    "url": "https://blog.torproject.org/on-tor-relationship-with-mullvad/",
+    "points": 10,
+    "comments": 5,
+    "author": "runtimewire",
+    "scraped_at": "2026-10-09T16:11:01.556268"
+  },
+  {
+    "id": 49985548,
+    "title": "Ask HN: What do you run on a $5 VPS that's worth keeping online 24/7?",
+    "url": "https://news.ycombinator.com/item?id=49985548",
+    "points": 330,
+    "comments": 529,
+    "author": "mariocesar",
+    "scraped_at": "2026-10-09T16:11:02.440322"
+  },
+  {
+    "id": 50019451,
+    "title": "The Hetzner Cloud network stack \u2013 history and technical overview",
+    "url": "https://www.hetzner.com/blog/the-hetzner-cloud-network-stack-history-and-technical-overview/",
+    "points": 57,
+    "comments": 18,
+    "author": "cnkk",
+    "scraped_at": "2026-10-09T16:11:03.255857"
+  },
+  {
+    "id": 50010470,
+    "title": "The value of not getting to the point (2015)",
+    "url": "https://ken.arneson.name/2015/11/the-value-of-not-getting-to-the-point/",
+    "points": 204,
+    "comments": 70,
+    "author": "NaOH",
+    "scraped_at": "2026-10-09T16:11:04.044076"
+  },
+  {
+    "id": 50013902,
+    "title": "OpenAI, the Partition Principle, and Mathematics",
+    "url": "https://karagila.org/2026/openai-pp/",
+    "points": 167,
+    "comments": 251,
+    "author": "md224",
+    "scraped_at": "2026-10-09T16:11:04.397512"
+  },
+  {
+    "id": 49992994,
+    "title": "ETH-68: Ethernet Audio Interface for Linux",
+    "url": "https://naturalsystems.io/eth68",
+    "points": 195,
+    "comments": 120,
+    "author": "chabad360",
+    "scraped_at": "2026-10-09T16:11:05.233757"
+  },
+  {
+    "id": 49996149,
+    "title": "DuckDB Ducklake",
+    "url": "https://github.com/duckdb/ducklake",
+    "points": 218,
+    "comments": 29,
+    "author": "saikatsg",
+    "scraped_at": "2026-10-09T16:11:06.016884"
+  },
+  {
+    "id": 50005527,
+    "title": "Beauty in DVD Menus",
+    "url": "https://vale.rocks/posts/dvd-menus",
+    "points": 326,
+    "comments": 173,
+    "author": "speckx",
+    "scraped_at": "2026-10-09T16:11:06.365946"
+  },
+  {
+    "id": 50002650,
+    "title": "OpenAI withdraws three mathematical results",
+    "url": "https://twitter.com/danintheory/status/2108065033070789090",
+    "points": 363,
+    "comments": 600,
+    "author": "sashank_1509",
+    "scraped_at": "2026-10-09T16:11:06.710228"
+  },
+  {
+    "id": 50011999,
+    "title": "AI-ready biological data: $1.8B global commitment",
+    "url": "https://biohub.org/news/virtual-biology-initiative-expansion/",
+    "points": 140,
+    "comments": 20,
+    "author": "ray__",
+    "scraped_at": "2026-10-09T16:11:07.062789"
+  },
+  {
+    "id": 50002665,
+    "title": "I think I found a planet nobody knew existed. I used Claude Code to find it",
+    "url": "https://www.reddit.com/r/ClaudeAI/s/mbe5IY2LF9",
+    "points": 244,
+    "comments": 119,
+    "author": "pyduan",
+    "scraped_at": "2026-10-09T16:11:07.848954"
+  },
+  {
+    "id": 50008047,
+    "title": "Show HN: Making a flexible \"neon\" t-shirt with LED filaments",
+    "url": "http://scottbezek.blogspot.com/2026/10/making-flexible-neon-t-shirt-with-leds.html",
+    "points": 206,
+    "comments": 36,
+    "author": "scottbez1",
+    "scraped_at": "2026-10-09T16:11:08.657181"
+  },
+  {
+    "id": 49984159,
+    "title": "A Terminal Protocol for Program Status (OSC 7501)",
+    "url": "https://mitchellh.com/writing/program-status-osc7501",
+    "points": 171,
+    "comments": 52,
+    "author": "mfiguiere",
+    "scraped_at": "2026-10-09T16:11:09.465863"
+  },
+  {
+    "id": 50020533,
+    "title": "'Wallace and Gromit,' 90% Alone",
+    "url": "https://animationobsessive.substack.com/p/wallace-and-gromit-90-alone",
+    "points": 11,
+    "comments": 0,
+    "author": "vinhnx",
+    "scraped_at": "2026-10-09T16:11:09.878160"
+  },
+  {
+    "id": 49998992,
+    "title": "Archaeologists Are Reconstructing the 'Invisible' Technologies of the Stone Age",
+    "url": "https://www.smithsonianmag.com/science-nature/archaeologists-are-reconstructing-the-invisible-technologies-of-the-stone-age-from-rope-to-thread-and-twine-180989534/",
+    "points": 143,
+    "comments": 57,
+    "author": "Hooke",
+    "scraped_at": "2026-10-09T16:11:10.906916"
+  },
+  {
+    "id": 50011928,
+    "title": "ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)",
+    "url": "https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full",
+    "points": 365,
+    "comments": 239,
+    "author": "bookofjoe",
+    "scraped_at": "2026-10-09T16:11:11.829857"
+  },
+  {
+    "id": 50006012,
+    "title": "Orkut.com",
+    "url": "https://orkut.com/",
+    "points": 209,
+    "comments": 152,
+    "author": "andreynering",
+    "scraped_at": "2026-10-09T16:11:13.349023"
+  },
+  {
+    "id": 50007764,
+    "title": "Step 5 Preview, a 1M-context MoE from StepFun, shows up on OpenRouter",
+    "url": "https://openrouter.ai/stepfun/step-5-preview",
+    "points": 136,
+    "comments": 38,
+    "author": "AnneWodell",
+    "scraped_at": "2026-10-09T16:11:13.657316"
+  },
+  {
+    "id": 49996639,
+    "title": "A 5.3M-year-old deep-sea whale necropolis in the Diamantina Zone",
+    "url": "https://www.nature.com/articles/s41586-026-10546-z",
+    "points": 145,
+    "comments": 15,
+    "author": "bryanrasmussen",
+    "scraped_at": "2026-10-09T16:11:14.459255"
+  },
+  {
+    "id": 50021794,
+    "title": "ChatGPT for Teens is not necessarily 'safer than the previous version,'",
+    "url": "https://www.cnbc.com/make-it/2026/10/09/chatgpt-for-teens-safety-common-sense-media.html",
+    "points": 3,
+    "comments": 0,
+    "author": "cramer4next",
+    "scraped_at": "2026-10-09T16:11:15.909879"
+  },
+  {
+    "id": 50013610,
+    "title": "Bevy 0.20",
+    "url": "https://bevy.org/news/bevy-0-20/",
+    "points": 219,
+    "comments": 51,
+    "author": "Philpax",
+    "scraped_at": "2026-10-09T16:11:16.313800"
+  },
+  {
+    "id": 49984923,
+    "title": "Sharing AI progress in mathematics",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "points": 1332,
+    "comments": 1512,
+    "author": "OfficialTurkey",
+    "scraped_at": "2026-10-09T16:11:16.672422"
+  },
+  {
+    "id": 50015236,
+    "title": "What should we tell our students?",
+    "url": "https://terrytao.wordpress.com/2026/10/08/what-should-we-tell-our-students/",
+    "points": 140,
+    "comments": 214,
+    "author": "sajid",
+    "scraped_at": "2026-10-09T16:11:17.031042"
+  },
+  {
+    "id": 50006366,
+    "title": "Tell HN: I've been paying for a rural Tanzanian's education for 10 years",
+    "url": "https://news.ycombinator.com/item?id=50006366",
+    "points": 727,
+    "comments": 226,
+    "author": "lukehandcool",
+    "scraped_at": "2026-10-09T16:11:17.417776"
+  },
+  {
+    "id": 50016312,
+    "title": "Show HN: Quake ported to safe Rust, playable in browser",
+    "url": "https://quake-srp.pages.dev/",
+    "points": 206,
+    "comments": 171,
+    "author": "ilreb",
+    "scraped_at": "2026-10-09T16:11:17.799401"
+  },
+  {
+    "id": 50000985,
+    "title": "US man given prison sentence for bot-farming music streams",
+    "url": "https://thequietus.com/news/us-man-given-prison-sentence-for-bot-farming-music-streams/",
+    "points": 191,
+    "comments": 288,
+    "author": "cdrnsf",
+    "scraped_at": "2026-10-09T16:11:18.207940"
+  }
+]

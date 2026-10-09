@@ -1,0 +1,195 @@
+Hacker News Top Stories - 2026-10-09
+============================================================
+
+1. Sharing AI progress in mathematics
+   URL: https://openai.com/index/sharing-ai-progress-in-mathematics/
+   Points: 1332
+
+2. Why isn't the industry freaking out about DeepSeek 4.1 Flash?
+   URL: https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/
+   Points: 950
+
+3. Whistle: Speech to Text in 16.9 MB
+   URL: https://cactuscompute.com/blog/whistle
+   Points: 846
+
+4. Man discovers his parents' coffee machine used 1TB of data in 10 days
+   URL: https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/
+   Points: 843
+
+5. I hired an illustrator to draw my house. Now it's my Home Assistant dashboard
+   URL: https://antonfrolov.substack.com/p/i-hired-an-illustrator-to-draw-my
+   Points: 794
+
+6. Tell HN: I've been paying for a rural Tanzanian's education for 10 years
+   URL: https://news.ycombinator.com/item?id=50006366
+   Points: 727
+
+7. Yes, and
+   URL: https://htmx.org/essays/yes-and/
+   Points: 613
+
+8. Deno Is Joining Cloudflare
+   URL: https://deno.com/blog/cloudflare
+   Points: 543
+
+9. Theranos.world
+   URL: https://www.theranos.world/
+   Points: 510
+
+10. ADHD as a circadian rhythm disorder: evidence and implications for chronotherapy (2025)
+   URL: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2025.1697900/full
+   Points: 365
+
+11. OpenAI withdraws three mathematical results
+   URL: https://twitter.com/danintheory/status/2108065033070789090
+   Points: 363
+
+12. I'm in a Meeting
+   URL: https://iminafleeting.com/
+   Points: 354
+
+13. Ask HN: What do you run on a $5 VPS that's worth keeping online 24/7?
+   URL: https://news.ycombinator.com/item?id=49985548
+   Points: 330
+
+14. Beauty in DVD Menus
+   URL: https://vale.rocks/posts/dvd-menus
+   Points: 326
+
+15. Nobel Peace Prize for 2026 to Navanethem "NAVI" Pillay
+   URL: https://www.nobelprize.org/prizes/peace/2026/press-release/
+   Points: 271
+
+16. Let your AI agents paint big arrows, boxes and text on your screen
+   URL: https://github.com/franzenzenhofer/big-arrow-on-the-screen
+   Points: 245
+
+17. I think I found a planet nobody knew existed. I used Claude Code to find it
+   URL: https://www.reddit.com/r/ClaudeAI/s/mbe5IY2LF9
+   Points: 244
+
+18. Keyboard differences between Windows and Macs
+   URL: https://unsung.aresluna.org/deeper-dive-keyboard-differences-between-windows-and-macs/
+   Points: 242
+
+19. US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize
+   URL: https://www.reuters.com/world/us-imposes-sanctions-international-criminal-court-hours-after-former-judge-wins-2026-10-09/
+   Points: 233
+
+20. Bevy 0.20
+   URL: https://bevy.org/news/bevy-0-20/
+   Points: 219
+
+21. DuckDB Ducklake
+   URL: https://github.com/duckdb/ducklake
+   Points: 218
+
+22. Orkut.com
+   URL: https://orkut.com/
+   Points: 209
+
+23. Show HN: Making a flexible "neon" t-shirt with LED filaments
+   URL: http://scottbezek.blogspot.com/2026/10/making-flexible-neon-t-shirt-with-leds.html
+   Points: 206
+
+24. Show HN: Quake ported to safe Rust, playable in browser
+   URL: https://quake-srp.pages.dev/
+   Points: 206
+
+25. The value of not getting to the point (2015)
+   URL: https://ken.arneson.name/2015/11/the-value-of-not-getting-to-the-point/
+   Points: 204
+
+26. ETH-68: Ethernet Audio Interface for Linux
+   URL: https://naturalsystems.io/eth68
+   Points: 195
+
+27. US man given prison sentence for bot-farming music streams
+   URL: https://thequietus.com/news/us-man-given-prison-sentence-for-bot-farming-music-streams/
+   Points: 191
+
+28. A Terminal Protocol for Program Status (OSC 7501)
+   URL: https://mitchellh.com/writing/program-status-osc7501
+   Points: 171
+
+29. OpenAI, the Partition Principle, and Mathematics
+   URL: https://karagila.org/2026/openai-pp/
+   Points: 167
+
+30. OpenAI fires three safety researchers for "mishandling research information"
+   URL: https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/
+   Points: 164
+
+31. A 5.3M-year-old deep-sea whale necropolis in the Diamantina Zone
+   URL: https://www.nature.com/articles/s41586-026-10546-z
+   Points: 145
+
+32. Yandex Takes a Second Data Center Hit in 48 Hours
+   URL: https://united24media.com/war-in-ukraine/yandex-takes-a-second-data-center-hit-in-48-hours-now-its-biggest-russian-site-is-damaged-23277
+   Points: 143
+
+33. Archaeologists Are Reconstructing the 'Invisible' Technologies of the Stone Age
+   URL: https://www.smithsonianmag.com/science-nature/archaeologists-are-reconstructing-the-invisible-technologies-of-the-stone-age-from-rope-to-thread-and-twine-180989534/
+   Points: 143
+
+34. AI-ready biological data: $1.8B global commitment
+   URL: https://biohub.org/news/virtual-biology-initiative-expansion/
+   Points: 140
+
+35. What should we tell our students?
+   URL: https://terrytao.wordpress.com/2026/10/08/what-should-we-tell-our-students/
+   Points: 140
+
+36. Step 5 Preview, a 1M-context MoE from StepFun, shows up on OpenRouter
+   URL: https://openrouter.ai/stepfun/step-5-preview
+   Points: 136
+
+37. Iranian campaign planted fake articles in real U.S. publications using ChatGPT
+   URL: https://www.washingtonpost.com/technology/2026/10/09/chatgpt-users-iran-planted-ai-generated-articles-us-news-media/
+   Points: 121
+
+38. MXC - a sandboxed code execution system
+   URL: https://github.com/microsoft/mxc
+   Points: 114
+
+39. Imposing Sanctions on the International Criminal Court
+   URL: https://www.state.gov/releases/office-of-the-spokesman/2026/10/imposing-sanctions-on-the-international-criminal-court/
+   Points: 100
+
+40. Python 3.15.0
+   URL: https://www.python.org/downloads/release/python-3150/
+   Points: 92
+
+41. The Hetzner Cloud network stack – history and technical overview
+   URL: https://www.hetzner.com/blog/the-hetzner-cloud-network-stack-history-and-technical-overview/
+   Points: 57
+
+42. Study: Exercise increases cancer survival rates
+   URL: https://www.nejm.org/doi/10.1056/NEJMoa2502760
+   Points: 46
+
+43. Germany turning abandoned coal mines into 23 lakes, becoming artificial wetland
+   URL: https://timesofindia.indiatimes.com/world/europe/germany-is-turning-abandoned-coal-mines-into-23-lakes-the-former-mining-landscape-is-becoming-europes-largest-artificial-wetland/articleshow/134725669.cms
+   Points: 37
+
+44. The super intelligence shit is a humiliation ritual for OpenAI
+   URL: https://bsky.app/profile/opinionhaver.bsky.social/post/3mxfo2mdjqs2z
+   Points: 37
+
+45. Reactions to 100 Solutions
+   URL: https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/
+   Points: 15
+
+46. 'Wallace and Gromit,' 90% Alone
+   URL: https://animationobsessive.substack.com/p/wallace-and-gromit-90-alone
+   Points: 11
+
+47. A statement on the Tor Project's relationship with Mullvad
+   URL: https://blog.torproject.org/on-tor-relationship-with-mullvad/
+   Points: 10
+
+48. ChatGPT for Teens is not necessarily 'safer than the previous version,'
+   URL: https://www.cnbc.com/make-it/2026/10/09/chatgpt-for-teens-safety-common-sense-media.html
+   Points: 3
+
