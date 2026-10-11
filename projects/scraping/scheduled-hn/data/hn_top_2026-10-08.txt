@@ -1,0 +1,195 @@
+Hacker News Top Stories - 2026-10-08
+============================================================
+
+1. Margaret Hamilton has died
+   URL: https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007
+   Points: 1993
+
+2. Sharing AI progress in mathematics
+   URL: https://openai.com/index/sharing-ai-progress-in-mathematics/
+   Points: 1307
+
+3. Claude Haiku 5.5
+   URL: https://www.anthropic.com/claude-haiku-5-5
+   Points: 993
+
+4. GPT‑6 and Intelligent UI for everyone
+   URL: https://openai.com/index/gpt-6-for-everyone/
+   Points: 722
+
+5. Show HN: Bigwords.page – Turn any screen into a sign. The URL is the app
+   URL: https://bigwords.page/
+   Points: 626
+
+6. “Math 2.0” will need to value mathematical progress more holistically
+   URL: https://mathstodon.xyz/@tao/117395269325940185
+   Points: 514
+
+7. Animated ASCII Art for Web Pages
+   URL: https://ascii.rest/
+   Points: 431
+
+8. The Mathocalypse
+   URL: https://scottaaronson.blog/?p=10169
+   Points: 337
+
+9. OpenAI Withdraws 3 Math Papers
+   URL: https://github.com/openai/math/blob/main/history.md
+   Points: 335
+
+10. Navier–Stokes Lost in Translation
+   URL: https://arxiv.org/abs/2610.08144
+   Points: 331
+
+11. Living off-grid: Hundred Rabbits
+   URL: https://100r.ca/site/home.html
+   Points: 330
+
+12. Anti-patterns in software blogging
+   URL: https://refactoringenglish.com/blog/anti-patterns-software-blogging/
+   Points: 305
+
+13. The 15-year search for a band that charted once and vanished
+   URL: https://shahidhussain.com/writing/search-for-salvage/
+   Points: 287
+
+14. Docker Agent
+   URL: https://github.com/docker/docker-agent
+   Points: 282
+
+15. How did Rosalind Franklin miss the helix in her iconic DNA image? She didn't
+   URL: https://www.science.org/content/article/how-did-rosalind-franklin-miss-helix-her-iconic-dna-image-she-didn-t
+   Points: 266
+
+16. 'Jonathan' is the oldest land animal on Earth
+   URL: https://www.404media.co/oldest-living-land-animal-jonathan-the-tortoise/
+   Points: 227
+
+17. Cleo (Mathematician)
+   URL: https://en.wikipedia.org/wiki/Cleo_(mathematician)
+   Points: 227
+
+18. House with 15m underground tunnels for sale for 300k
+   URL: https://www.readingchronicle.co.uk/news/26612080.house-15m-underground-tunnels-sale-300k/
+   Points: 224
+
+19. Tell HN: I've been paying for a rural Tanzanian's education for 10 years
+   URL: https://news.ycombinator.com/item?id=50006366
+   Points: 222
+
+20. I gave Opus 5.5 one prompt and six hours to visualize Invisible Cities
+   URL: https://quesma.com/blog/invisible-cities-one-shot/
+   Points: 216
+
+21. How machines learned precision
+   URL: https://glinscott.github.io/how-machines-learned-precision/
+   Points: 208
+
+22. Why were Victorian elites so effective?
+   URL: https://worksinprogress.co/issue/the-seven-vices-of-highly-effective-victorians/
+   Points: 205
+
+23. Push ifs up and fors down: The idiom, its algebra, and its limits
+   URL: https://debasishg.github.io/blog/push-ifs-up-fors-down/
+   Points: 172
+
+24. The Slow Formation of Durable Software
+   URL: https://newsletter.dancohen.org/archive/the-slow-formation-of-durable-software/
+   Points: 162
+
+25. US Suspends Visa Program for Tech Firms Including Microsoft
+   URL: https://www.bloomberg.com/news/articles/2026-10-08/us-suspends-visa-program-for-tech-firms-including-microsoft
+   Points: 156
+
+26. Google Playground: Create and play custom games
+   URL: https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/
+   Points: 153
+
+27. In Vienna and Beijing, the first (thorium) nuclear clocks begin to tick
+   URL: https://www.nytimes.com/2026/10/07/science/first-nuclear-clocks-thorium-229.html
+   Points: 149
+
+28. Classic PC demoscene productions running natively in the browser
+   URL: https://treylorswift.github.io/demoscene-recomp/web/
+   Points: 140
+
+29. Beauty in DVD Menus
+   URL: https://vale.rocks/posts/dvd-menus
+   Points: 128
+
+30. Anne Carson wins Nobel Prize in literature 2026
+   URL: https://www.theguardian.com/books/2026/oct/08/wins-the-nobel-prize-in-literature-2026
+   Points: 108
+
+31. A minimal kernel in Swift, running in QEMU
+   URL: https://carette.xyz/posts/minimal_swift_kernel_on_qemu/
+   Points: 100
+
+32. Port of the TypeScript compiler, checker and lsp to Rust, by LLM
+   URL: https://github.com/pingdotgg/ts-rust
+   Points: 97
+
+33. OpenAI withdraws three mathematical results
+   URL: https://twitter.com/danintheory/status/2108065033070789090
+   Points: 91
+
+34. 'The eels were climbing out of the water to die'
+   URL: https://www.theguardian.com/environment/2026/sep/24/furnace-book-east-sussex-fishing-lake
+   Points: 87
+
+35. Telnet BBS Guide
+   URL: https://www.telnetbbsguide.com/
+   Points: 63
+
+36. US suspends Microsoft, major IT firms from key green card program
+   URL: https://www.reuters.com/business/us-suspending-permanent-residency-program-for-microsoft-vance-says-2026-10-08/
+   Points: 55
+
+37. Dat-ecosystem: high level applications built on top of P2P protocols
+   URL: https://dat-ecosystem.org/
+   Points: 52
+
+38. New gTLD Application for .lan
+   URL: https://newgtldprogram-aps.icann.org/applications/CD2694T-T26351/summary
+   Points: 46
+
+39. New repository settings for configuring pull request access
+   URL: https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/
+   Points: 40
+
+40. VECOS – A windows-like operating system for the Vectrex for the UVMC2 [video]
+   URL: https://www.youtube.com/watch?v=9ranfp_vz30
+   Points: 39
+
+41. Analog Computer Simulator in the Browser
+   URL: https://pavel-krivanek.github.io/The-Analog-Thing-Simulator/public/
+   Points: 37
+
+42. Float and integer arithmetic follow two different paradigms
+   URL: https://blog.pkh.me/p/49-float-and-integer-arithmetic-follow-two-different-paradigms.html
+   Points: 32
+
+43. Sub-1-Bit LLM Compression via Latent Factorization
+   URL: https://github.com/SamsungLabs/LittleBit
+   Points: 31
+
+44. Bloody Cavemen
+   URL: https://www.lrb.co.uk/the-paper/v48/n18/edmund-gordon/bloody-cavemen
+   Points: 31
+
+45. 2027 Web Platform Feature Ranking
+   URL: https://interop-rank.fxdx.dev/
+   Points: 25
+
+46. Orkut.com
+   URL: https://orkut.com/
+   Points: 21
+
+47. Archaeologists Are Reconstructing the 'Invisible' Technologies of the Stone Age
+   URL: https://www.smithsonianmag.com/science-nature/archaeologists-are-reconstructing-the-invisible-technologies-of-the-stone-age-from-rope-to-thread-and-twine-180989534/
+   Points: 15
+
+48. 4-hour battery storage is cheaper to install than gas turbines all across globe
+   URL: https://www.solarpowerworldonline.com/2026/10/4-hour-battery-storage-is-cheaper-to-install-than-gas-turbines-all-across-globe/
+   Points: 13
+

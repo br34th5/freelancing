@@ -1,0 +1,398 @@
+[
+  {
+    "id": 50033407,
+    "title": "Bitwarden Dual License Model",
+    "url": "https://community.bitwarden.com/t/published-version-update-in-app-stores/102750",
+    "points": 70,
+    "comments": 23,
+    "author": "Cider9986",
+    "scraped_at": "2026-10-10T15:21:52.031174"
+  },
+  {
+    "id": 50032556,
+    "title": "Lobbying Is Corruption",
+    "url": "https://carette.xyz/posts/lobbying_and_corruption/",
+    "points": 325,
+    "comments": 151,
+    "author": "LucidLynx",
+    "scraped_at": "2026-10-10T15:21:53.569733"
+  },
+  {
+    "id": 50031614,
+    "title": "Talorys \u2013 A self-hosted personal AI agent on Cloudflare's free tier",
+    "url": "https://github.com/rociiu/talorys",
+    "points": 108,
+    "comments": 51,
+    "author": "rociiu",
+    "scraped_at": "2026-10-10T15:21:54.290087"
+  },
+  {
+    "id": 50024242,
+    "title": "Rampart: Browser native on-device PII radaction",
+    "url": "https://ndstudio.gov/posts/say-hello-to-rampart",
+    "points": 8,
+    "comments": 0,
+    "author": "nateb2022",
+    "scraped_at": "2026-10-10T15:21:55.216502"
+  },
+  {
+    "id": 50028275,
+    "title": "REA Reverse \u2013 Engineer Anything",
+    "url": "https://rea.tools/",
+    "points": 546,
+    "comments": 239,
+    "author": "modinfo",
+    "scraped_at": "2026-10-10T15:21:56.042687"
+  },
+  {
+    "id": 50019911,
+    "title": "Cloudflare acquires Deno",
+    "url": "https://deno.com/blog/cloudflare",
+    "points": 1295,
+    "comments": 665,
+    "author": "ilreb",
+    "scraped_at": "2026-10-10T15:21:56.679103"
+  },
+  {
+    "id": 50029123,
+    "title": "Telegram Desktop vulnerability allowed any user's file to be stolen",
+    "url": "https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/",
+    "points": 276,
+    "comments": 143,
+    "author": "g-b-r",
+    "scraped_at": "2026-10-10T15:21:57.528752"
+  },
+  {
+    "id": 50022292,
+    "title": "Triple-A Minesweeper",
+    "url": "https://minesweeper.mikelacher.com/",
+    "points": 1162,
+    "comments": 230,
+    "author": "robin_reala",
+    "scraped_at": "2026-10-10T15:21:59.164838"
+  },
+  {
+    "id": 49998801,
+    "title": "WSL3 Performance is about 5-60% faster than WSL2 depending on the workload",
+    "url": "https://tonym.us/wsl2-vs-wsl3-benchmarks.html",
+    "points": 144,
+    "comments": 103,
+    "author": "tonymet",
+    "scraped_at": "2026-10-10T15:22:10.112849"
+  },
+  {
+    "id": 49997481,
+    "title": "Eye of Sauron: Long-Range Hidden Spy Camera Detection (2024)",
+    "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-qibo",
+    "points": 225,
+    "comments": 47,
+    "author": "ortusdux",
+    "scraped_at": "2026-10-10T15:22:10.506201"
+  },
+  {
+    "id": 50005743,
+    "title": "C for Rust Programmers",
+    "url": "https://bd103.dev/blog/2026-10-07-c-for-rust-programmers/",
+    "points": 66,
+    "comments": 48,
+    "author": "xyproto",
+    "scraped_at": "2026-10-10T15:22:11.416028"
+  },
+  {
+    "id": 49981508,
+    "title": "Noto means \"no tofu\": fixing dotted circles in Myanmar text",
+    "url": "https://www.datocms.com/blog/handling-less-common-scripts",
+    "points": 32,
+    "comments": 20,
+    "author": "steffoz",
+    "scraped_at": "2026-10-10T15:22:12.441237"
+  },
+  {
+    "id": 50031653,
+    "title": "Apple/macOS silently removed from official Unix registry",
+    "url": "https://www.opengroup.org//openbrand/register/",
+    "points": 110,
+    "comments": 114,
+    "author": "john_alan",
+    "scraped_at": "2026-10-10T15:22:13.242031"
+  },
+  {
+    "id": 50033517,
+    "title": "My personal AI agent posted my bank details on company Slack",
+    "url": "https://www.businessinsider.com/personal-ai-agent-grok-bot-posted-bank-details-company-slack-2026-10",
+    "points": 11,
+    "comments": 8,
+    "author": "bhrlady",
+    "scraped_at": "2026-10-10T15:22:14.236043"
+  },
+  {
+    "id": 50021410,
+    "title": "Can you use autoregressive diffusion to generate market data?",
+    "url": "https://blog.janestreet.com/can-you-use-autoregressive-diffusion-to-generate-market-data/",
+    "points": 136,
+    "comments": 41,
+    "author": "jsomers",
+    "scraped_at": "2026-10-10T15:22:15.243588"
+  },
+  {
+    "id": 49981264,
+    "title": "How to head into VR without wearing a headset",
+    "url": "https://www.kyushu-u.ac.jp/en/researches/view/414/",
+    "points": 55,
+    "comments": 26,
+    "author": "Betelbuddy",
+    "scraped_at": "2026-10-10T15:22:16.476817"
+  },
+  {
+    "id": 50028027,
+    "title": "Clinical trial of a prion disease drug candidate begins enrolling participants",
+    "url": "https://www.broadinstitute.org/news/clinical-trial-prion-disease-drug-candidate-begins-enrolling-participants",
+    "points": 119,
+    "comments": 28,
+    "author": "luu",
+    "scraped_at": "2026-10-10T15:22:16.857927"
+  },
+  {
+    "id": 50023995,
+    "title": "Scam American companies are using to manipulate ingredient lists",
+    "url": "https://twitter.com/WallStreetApes/status/2108594998656807078",
+    "points": 173,
+    "comments": 191,
+    "author": "bilsbie",
+    "scraped_at": "2026-10-10T15:22:17.855432"
+  },
+  {
+    "id": 50014397,
+    "title": "Timestamping a Giant Record of the Web",
+    "url": "https://projecttimestamper.org/blog/common-crawl/",
+    "points": 11,
+    "comments": 0,
+    "author": "arthuredelstein",
+    "scraped_at": "2026-10-10T15:22:18.767253"
+  },
+  {
+    "id": 50023450,
+    "title": "Typesafe AI raises $870M at $7.5B",
+    "url": "https://typesafe.ai/blog/series-ai",
+    "points": 409,
+    "comments": 325,
+    "author": "tosh",
+    "scraped_at": "2026-10-10T15:22:19.655031"
+  },
+  {
+    "id": 50010986,
+    "title": "Cube Type \u2013 Isometric Typography Generator",
+    "url": "https://typeincube.com/",
+    "points": 42,
+    "comments": 10,
+    "author": "eustoria",
+    "scraped_at": "2026-10-10T15:22:20.483841"
+  },
+  {
+    "id": 50024090,
+    "title": "What mathematicians should know about the Lean Theorem Prover: reliability & AI",
+    "url": "https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai/",
+    "points": 156,
+    "comments": 42,
+    "author": "matt_d",
+    "scraped_at": "2026-10-10T15:22:20.841462"
+  },
+  {
+    "id": 50019056,
+    "title": "Pointing AI at archives found a forgotten meteorite, lost rhinos, and more",
+    "url": "https://jessewaites.com/blog/post/i-pointed-ai-at-400-years-of-archives/",
+    "points": 170,
+    "comments": 86,
+    "author": "piratebroadcast",
+    "scraped_at": "2026-10-10T15:22:21.190243"
+  },
+  {
+    "id": 50029982,
+    "title": "Computers Cannot Make Decisions",
+    "url": "https://wiki.cateat.fish/art:computers_cannot_make_decisions",
+    "points": 155,
+    "comments": 132,
+    "author": "heavensteeth",
+    "scraped_at": "2026-10-10T15:22:22.079895"
+  },
+  {
+    "id": 50003545,
+    "title": "Show HN: Proton Drive for Linux",
+    "url": "https://oss.lsantos.dev/proton-drive-linux-fs/",
+    "points": 106,
+    "comments": 38,
+    "author": "khaosdoctor",
+    "scraped_at": "2026-10-10T15:22:23.071310"
+  },
+  {
+    "id": 49984854,
+    "title": "The role of cat eye narrowing movements in cat\u2013human communication (2020)",
+    "url": "https://www.nature.com/articles/s41598-020-73426-0",
+    "points": 110,
+    "comments": 51,
+    "author": "bushwart",
+    "scraped_at": "2026-10-10T15:22:23.429423"
+  },
+  {
+    "id": 50020533,
+    "title": "'Wallace and Gromit,' 90% Alone",
+    "url": "https://animationobsessive.substack.com/p/wallace-and-gromit-90-alone",
+    "points": 256,
+    "comments": 40,
+    "author": "vinhnx",
+    "scraped_at": "2026-10-10T15:22:23.856509"
+  },
+  {
+    "id": 50029830,
+    "title": "Food processing influences metabolism and brain activity",
+    "url": "https://news.vt.edu/articles/2026/10/research_fralinbiomed_upfhutelin.html",
+    "points": 79,
+    "comments": 68,
+    "author": "gmays",
+    "scraped_at": "2026-10-10T15:22:24.759652"
+  },
+  {
+    "id": 50018088,
+    "title": "Sorry, I'm in a meeting",
+    "url": "https://iminafleeting.com/",
+    "points": 961,
+    "comments": 265,
+    "author": "splintersio",
+    "scraped_at": "2026-10-10T15:22:25.539327"
+  },
+  {
+    "id": 50020014,
+    "title": "Our $445M Series D",
+    "url": "https://oxide.computer/blog/our-445m-series-d",
+    "points": 676,
+    "comments": 305,
+    "author": "ahlCVA",
+    "scraped_at": "2026-10-10T15:22:26.422523"
+  },
+  {
+    "id": 50019499,
+    "title": "100+ reactions to 100+ solutions",
+    "url": "https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/",
+    "points": 89,
+    "comments": 87,
+    "author": "jacobedawson",
+    "scraped_at": "2026-10-10T15:22:27.313619"
+  },
+  {
+    "id": 50026555,
+    "title": "YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops",
+    "url": "https://gizmodo.com/youtuber-says-cops-paid-him-a-visit-after-he-built-flock-style-camera-to-track-cops-2000824306",
+    "points": 627,
+    "comments": 338,
+    "author": "gumby",
+    "scraped_at": "2026-10-10T15:22:28.306899"
+  },
+  {
+    "id": 50024055,
+    "title": "Show HN: The rarest tech books and docs you've probably never read",
+    "url": "https://readrare.com/",
+    "points": 150,
+    "comments": 56,
+    "author": "miletus",
+    "scraped_at": "2026-10-10T15:22:29.323775"
+  },
+  {
+    "id": 50017357,
+    "title": "Programming Isn't Special",
+    "url": "https://blog.glyph.im/2026/10/programming-isnt-special.html",
+    "points": 236,
+    "comments": 247,
+    "author": "ingve",
+    "scraped_at": "2026-10-10T15:22:29.671670"
+  },
+  {
+    "id": 49980208,
+    "title": "Communication Between the Compiler, the Build System, and Beyond",
+    "url": "https://shrub.industries/words/problem.html",
+    "points": 20,
+    "comments": 3,
+    "author": "shrub900",
+    "scraped_at": "2026-10-10T15:22:30.028337"
+  },
+  {
+    "id": 50031156,
+    "title": "AI Data Centers Not Paying Their Costs, Will Keep Using NDAs and Seek Tax Breaks",
+    "url": "https://www.warren.senate.gov/newsroom/press-releases/ai-data-center-companies-reveal-to-warren-blumenthal-van-hollen-they-are-not-paying-their-full-costs-will-continue-using-ndas-and-seeking-tax-breaks/",
+    "points": 19,
+    "comments": 0,
+    "author": "DeepLogin",
+    "scraped_at": "2026-10-10T15:22:30.889283"
+  },
+  {
+    "id": 50027694,
+    "title": "Rewriting Prime Agent in Rust",
+    "url": "https://www.primeintellect.ai/blog/prime-agent-rust",
+    "points": 59,
+    "comments": 19,
+    "author": "piotrgrabowski",
+    "scraped_at": "2026-10-10T15:22:31.690033"
+  },
+  {
+    "id": 50018817,
+    "title": "Show HN: Let your AI agents paint big arrows, boxes and text on your screen",
+    "url": "https://github.com/franzenzenhofer/big-arrow-on-the-screen",
+    "points": 403,
+    "comments": 183,
+    "author": "franze",
+    "scraped_at": "2026-10-10T15:22:32.634838"
+  },
+  {
+    "id": 50000488,
+    "title": "Why isn't the industry freaking out about DeepSeek 4.1 Flash?",
+    "url": "https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/",
+    "points": 1105,
+    "comments": 968,
+    "author": "jonotime",
+    "scraped_at": "2026-10-10T15:22:32.998437"
+  },
+  {
+    "id": 50027118,
+    "title": "Anthropic AI model submits false tip on unsolved Philly murder, police say",
+    "url": "https://www.nbcphiladelphia.com/news/local/anthropic-ai-model-submits-false-tip-on-unsolved-philly-murder-police-say/4477051/",
+    "points": 193,
+    "comments": 139,
+    "author": "Zambyte",
+    "scraped_at": "2026-10-10T15:22:34.048464"
+  },
+  {
+    "id": 50028982,
+    "title": "Put a price on breakthroughs",
+    "url": "https://alexwang.ai/posts/put-a-price-on-breakthroughs/",
+    "points": 27,
+    "comments": 7,
+    "author": "ketothekingdom",
+    "scraped_at": "2026-10-10T15:22:34.872825"
+  },
+  {
+    "id": 50027590,
+    "title": "Atari Falcon",
+    "url": "https://atarimuseum.nl/atari-falcon/",
+    "points": 59,
+    "comments": 23,
+    "author": "debo_",
+    "scraped_at": "2026-10-10T15:22:35.643794"
+  },
+  {
+    "id": 50029487,
+    "title": "The Lightbulb Computer",
+    "url": "https://lightbulbcomputer.com/",
+    "points": 20,
+    "comments": 6,
+    "author": "oskarth",
+    "scraped_at": "2026-10-10T15:22:36.006369"
+  },
+  {
+    "id": 49995495,
+    "title": "Man discovers his parents' coffee machine used 1TB of data in 10 days",
+    "url": "https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/",
+    "points": 941,
+    "comments": 566,
+    "author": "ck2",
+    "scraped_at": "2026-10-10T15:22:36.805026"
+  }
+]

@@ -1,0 +1,179 @@
+Hacker News Top Stories - 2026-10-10
+============================================================
+
+1. Cloudflare acquires Deno
+   URL: https://deno.com/blog/cloudflare
+   Points: 1295
+
+2. Triple-A Minesweeper
+   URL: https://minesweeper.mikelacher.com/
+   Points: 1162
+
+3. Why isn't the industry freaking out about DeepSeek 4.1 Flash?
+   URL: https://www.dgt.is/blog/2026-10-07-deepseek-freek-out/
+   Points: 1105
+
+4. Sorry, I'm in a meeting
+   URL: https://iminafleeting.com/
+   Points: 961
+
+5. Man discovers his parents' coffee machine used 1TB of data in 10 days
+   URL: https://www.dexerto.com/entertainment/man-discovers-his-parents-coffee-machine-used-1tb-of-data-in-10-days-3416399/
+   Points: 941
+
+6. Our $445M Series D
+   URL: https://oxide.computer/blog/our-445m-series-d
+   Points: 676
+
+7. YouTuber Says Cops Visited Him After He Built a Flock-Style Camera to Track Cops
+   URL: https://gizmodo.com/youtuber-says-cops-paid-him-a-visit-after-he-built-flock-style-camera-to-track-cops-2000824306
+   Points: 627
+
+8. REA Reverse – Engineer Anything
+   URL: https://rea.tools/
+   Points: 546
+
+9. Typesafe AI raises $870M at $7.5B
+   URL: https://typesafe.ai/blog/series-ai
+   Points: 409
+
+10. Show HN: Let your AI agents paint big arrows, boxes and text on your screen
+   URL: https://github.com/franzenzenhofer/big-arrow-on-the-screen
+   Points: 403
+
+11. Lobbying Is Corruption
+   URL: https://carette.xyz/posts/lobbying_and_corruption/
+   Points: 325
+
+12. Telegram Desktop vulnerability allowed any user's file to be stolen
+   URL: https://beaksec.github.io/posts/telegram-desktop-one-click-account-takeover/
+   Points: 276
+
+13. 'Wallace and Gromit,' 90% Alone
+   URL: https://animationobsessive.substack.com/p/wallace-and-gromit-90-alone
+   Points: 256
+
+14. Programming Isn't Special
+   URL: https://blog.glyph.im/2026/10/programming-isnt-special.html
+   Points: 236
+
+15. Eye of Sauron: Long-Range Hidden Spy Camera Detection (2024)
+   URL: https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-qibo
+   Points: 225
+
+16. Anthropic AI model submits false tip on unsolved Philly murder, police say
+   URL: https://www.nbcphiladelphia.com/news/local/anthropic-ai-model-submits-false-tip-on-unsolved-philly-murder-police-say/4477051/
+   Points: 193
+
+17. Scam American companies are using to manipulate ingredient lists
+   URL: https://twitter.com/WallStreetApes/status/2108594998656807078
+   Points: 173
+
+18. Pointing AI at archives found a forgotten meteorite, lost rhinos, and more
+   URL: https://jessewaites.com/blog/post/i-pointed-ai-at-400-years-of-archives/
+   Points: 170
+
+19. What mathematicians should know about the Lean Theorem Prover: reliability & AI
+   URL: https://terrytao.wordpress.com/2026/10/09/what-mathematicians-should-know-about-the-lean-theorem-proverquestions-of-reliability-and-ai/
+   Points: 156
+
+20. Computers Cannot Make Decisions
+   URL: https://wiki.cateat.fish/art:computers_cannot_make_decisions
+   Points: 155
+
+21. Show HN: The rarest tech books and docs you've probably never read
+   URL: https://readrare.com/
+   Points: 150
+
+22. WSL3 Performance is about 5-60% faster than WSL2 depending on the workload
+   URL: https://tonym.us/wsl2-vs-wsl3-benchmarks.html
+   Points: 144
+
+23. Can you use autoregressive diffusion to generate market data?
+   URL: https://blog.janestreet.com/can-you-use-autoregressive-diffusion-to-generate-market-data/
+   Points: 136
+
+24. Clinical trial of a prion disease drug candidate begins enrolling participants
+   URL: https://www.broadinstitute.org/news/clinical-trial-prion-disease-drug-candidate-begins-enrolling-participants
+   Points: 119
+
+25. Apple/macOS silently removed from official Unix registry
+   URL: https://www.opengroup.org//openbrand/register/
+   Points: 110
+
+26. The role of cat eye narrowing movements in cat–human communication (2020)
+   URL: https://www.nature.com/articles/s41598-020-73426-0
+   Points: 110
+
+27. Talorys – A self-hosted personal AI agent on Cloudflare's free tier
+   URL: https://github.com/rociiu/talorys
+   Points: 108
+
+28. Show HN: Proton Drive for Linux
+   URL: https://oss.lsantos.dev/proton-drive-linux-fs/
+   Points: 106
+
+29. 100+ reactions to 100+ solutions
+   URL: https://proofsandprompts.com/2026/10/08/100-reactions-to-100-solutions/
+   Points: 89
+
+30. Food processing influences metabolism and brain activity
+   URL: https://news.vt.edu/articles/2026/10/research_fralinbiomed_upfhutelin.html
+   Points: 79
+
+31. Bitwarden Dual License Model
+   URL: https://community.bitwarden.com/t/published-version-update-in-app-stores/102750
+   Points: 70
+
+32. C for Rust Programmers
+   URL: https://bd103.dev/blog/2026-10-07-c-for-rust-programmers/
+   Points: 66
+
+33. Rewriting Prime Agent in Rust
+   URL: https://www.primeintellect.ai/blog/prime-agent-rust
+   Points: 59
+
+34. Atari Falcon
+   URL: https://atarimuseum.nl/atari-falcon/
+   Points: 59
+
+35. How to head into VR without wearing a headset
+   URL: https://www.kyushu-u.ac.jp/en/researches/view/414/
+   Points: 55
+
+36. Cube Type – Isometric Typography Generator
+   URL: https://typeincube.com/
+   Points: 42
+
+37. Noto means "no tofu": fixing dotted circles in Myanmar text
+   URL: https://www.datocms.com/blog/handling-less-common-scripts
+   Points: 32
+
+38. Put a price on breakthroughs
+   URL: https://alexwang.ai/posts/put-a-price-on-breakthroughs/
+   Points: 27
+
+39. Communication Between the Compiler, the Build System, and Beyond
+   URL: https://shrub.industries/words/problem.html
+   Points: 20
+
+40. The Lightbulb Computer
+   URL: https://lightbulbcomputer.com/
+   Points: 20
+
+41. AI Data Centers Not Paying Their Costs, Will Keep Using NDAs and Seek Tax Breaks
+   URL: https://www.warren.senate.gov/newsroom/press-releases/ai-data-center-companies-reveal-to-warren-blumenthal-van-hollen-they-are-not-paying-their-full-costs-will-continue-using-ndas-and-seeking-tax-breaks/
+   Points: 19
+
+42. My personal AI agent posted my bank details on company Slack
+   URL: https://www.businessinsider.com/personal-ai-agent-grok-bot-posted-bank-details-company-slack-2026-10
+   Points: 11
+
+43. Timestamping a Giant Record of the Web
+   URL: https://projecttimestamper.org/blog/common-crawl/
+   Points: 11
+
+44. Rampart: Browser native on-device PII radaction
+   URL: https://ndstudio.gov/posts/say-hello-to-rampart
+   Points: 8
+
