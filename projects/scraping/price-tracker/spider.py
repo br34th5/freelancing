@@ -7,8 +7,13 @@ Politeness budget (from config.json):
   - robots_txt_obey = True
   - max_pages_per_run kill-switch (default 80 ≈ 6 subcats × 5 + watched slugs)
 
-Emits item dicts (one per listing) with observed_at timestamp. Run as a module:
-  python3 -m spider            # full crawl, appends to data/observations.jsonl
+Emits item dicts (one per listing) with observed_at timestamp. Storage (P3):
+  database.save_items(items) — local Docker Postgres primary + Neon dual-write,
+  with data/observations.jsonl kept as a raw crawl backup (re-loadable via
+  `python3 -m database --from-jsonl data/observations.jsonl`).
+
+Run as a module:
+  python3 -m spider            # full crawl → DB (+ jsonl backup)
   python3 -m spider --pages 12 # override max pages (smoke test)
 
 Pause/resume: crawldir=data/crawl_state holds checkpoints; SIGINT pauses gracefully.
@@ -21,6 +26,7 @@ import asyncio
 import json
 import os
 import random
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -29,6 +35,7 @@ from scrapling.spiders import Request, Spider
 from scrapling.engines.toolbelt.proxy_rotation import ProxyRotator
 
 from extract import parse_list_page
+from database import save_items
 
 DATA = Path(__file__).parent / "data"
 CONFIG = json.loads((Path(__file__).parent / "config.json").read_text())
@@ -103,6 +110,8 @@ class SkelbiuSpider(Spider):
         self.max_pages = max_pages or CONFIG["max_pages_per_run"]
         self._pages_fetched = 0
         self._items_emitted = 0
+        self._block_streak = 0          # consecutive CF-blocked responses
+        self._max_block_streak = 0
         DATA.mkdir(exist_ok=True)
         super().__init__(crawldir=str(DATA / "crawl_state"), **kw)
 
@@ -124,6 +133,13 @@ class SkelbiuSpider(Spider):
 
     # ---- CF / block detection ----------------------------------------------
     async def is_blocked(self, response) -> bool:
+        blocked = self._is_blocked_response(response)
+        if blocked:
+            self._block_streak += 1
+            self._max_block_streak = max(self._max_block_streak, self._block_streak)
+        return blocked
+
+    def _is_blocked_response(self, response) -> bool:
         if response.status in (403, 503, 429):
             return True
         html = response.html_content or ""
@@ -172,6 +188,8 @@ class SkelbiuSpider(Spider):
         if response.status != 200:
             self.logger.warning("HTTP %s on %s (page %d)", response.status, response.url, page_no)
             return
+
+        self._block_streak = 0  # a clean 200 breaks any CF-block streak
 
         listings, next_url = parse_list_page(
             response.html_content or "", response.url, cat
@@ -222,21 +240,39 @@ class SkelbiuSpider(Spider):
         )
 
 
-def run(max_pages: int | None = None) -> int:
+def run(max_pages: int | None = None) -> dict:
+    """Run one crawl. Returns {exit_code, items, pages, max_block_streak,
+    paused, completed, db_ok} for the daily pipeline's break checks."""
     spider = SkelbiuSpider(max_pages=max_pages)
     result = spider.start()
     items = list(result)
+    db_ok = True
     if items:
         with OBS_PATH.open("a") as f:
             for it in items:
                 f.write(json.dumps(it, ensure_ascii=False) + "\n")
+        try:
+            stats = save_items(items)
+            for role, s in stats.items():
+                print(f"  {role}: {s.summary()}")
+        except Exception as e:
+            print(f"DB write failed (primary): {e}", file=sys.stderr)
+            db_ok = False
     print(f"\n{len(items)} items appended to {OBS_PATH}")
     print(f"paused={result.paused} completed={result.completed}")
-    return 0 if result.completed else 1
+    return {
+        "exit_code": 0 if (result.completed and db_ok) else 1,
+        "items": len(items),
+        "pages": spider._pages_fetched,
+        "max_block_streak": spider._max_block_streak,
+        "paused": result.paused,
+        "completed": result.completed,
+        "db_ok": db_ok,
+    }
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--pages", type=int, default=None, help="override max_pages_per_run")
     args = ap.parse_args()
-    raise SystemExit(run(max_pages=args.pages))
+    raise SystemExit(run(max_pages=args.pages)["exit_code"])

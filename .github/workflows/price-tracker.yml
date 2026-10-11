@@ -1,0 +1,60 @@
+name: skelbiu Price Tracker
+
+on:
+  schedule:
+    # 06:10 UTC ≈ 09:10 Europe/Vilnius (EEST, summer). Winter shifts to 08:10 local.
+    - cron: '10 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  track:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: projects/scraping/price-tracker/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+        working-directory: projects/scraping/price-tracker
+
+      # Pipeline: crawl → score → report. Break conditions (0 items, DB
+      # failure, scoring/report crash) alert to Discord via run_daily and
+      # exit non-zero so this job shows red in Actions.
+      # Datacenter IP + Cloudflare is the known risk (plan: "test separately")
+      # — the PROXY_* secrets route skelbiu fetches through the residential
+      # pool; without them, watch the first scheduled runs for 0-item alerts.
+      - name: Run daily pipeline
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+          PROXY_LIST: ${{ secrets.PROXY_LIST }}
+          PROXY_USER: ${{ secrets.PROXY_USER }}
+          PROXY_PASS: ${{ secrets.PROXY_PASS }}
+          PROXY_HOSTS: ${{ secrets.PROXY_HOSTS }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: python -m run_daily
+        working-directory: projects/scraping/price-tracker
+
+      - name: Upload report + logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-tracker-${{ github.run_number }}
+          path: |
+            projects/scraping/price-tracker/data/report.txt
+            projects/scraping/price-tracker/data/report.html
+            projects/scraping/price-tracker/data/spider.log
+            projects/scraping/price-tracker/data/cron.log
+          retention-days: 14
+          if-no-files-found: warn

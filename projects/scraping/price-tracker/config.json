@@ -42,6 +42,9 @@
 
   "tier_thresholds": { "entry_max": 40, "mid_max": 65 },
 
+  "g3d_bands": { "4k_min": 30000, "1440p_min": 12000, "1080p_min": 5000 },
+  "genre_ref": { "st": 4500, "mt": 40000, "l3": 64 },
+
   "ad_keyword_guard": ["superku", "ieško", "perku", "nupirkčiau", "superka"],
   "junk_patterns": [
     "\\b\\d+\\s*vnt\\b",

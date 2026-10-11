@@ -1,5 +1,13 @@
 __pycache__/
 *.pyc
 .env
-data/
 *.log
+# The repo root ignores `data/` — re-include this project's data dir so the
+# reference-data files below can be committed (scoring needs them on a fresh
+# checkout / CI). Crawl artifacts stay ignored.
+!data/
+data/*
+!data/cpu_scores.json
+!data/gpu_scores.json
+!data/tpu_map.json
+!data/tpu_reco.json

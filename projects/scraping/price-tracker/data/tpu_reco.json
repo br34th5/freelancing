@@ -1,0 +1,74 @@
+{
+ "GeForce RTX 4090": {
+  "url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4090.c4182",
+  "reco": [
+   [
+    "1920x1080",
+    "Good"
+   ],
+   [
+    "2560x1440",
+    "Good"
+   ],
+   [
+    "3840x2160",
+    "Good"
+   ]
+  ],
+  "scraped_at": "2026-10-11T14:30:21.173731+00:00"
+ },
+ "GeForce RTX 4070 Ti SUPER": {
+  "url": "https://www.techpowerup.com/gpu-specs/geforce-rtx-4070-ti-super.c4187",
+  "reco": [
+   [
+    "1920x1080",
+    "Good"
+   ],
+   [
+    "2560x1440",
+    "Good"
+   ],
+   [
+    "3840x2160",
+    "Good"
+   ]
+  ],
+  "scraped_at": "2026-10-11T14:30:21.173803+00:00"
+ },
+ "GeForce GTX 1650": {
+  "url": "https://www.techpowerup.com/gpu-specs/geforce-gtx-1650.c1476",
+  "reco": [
+   [
+    "640x480",
+    "Playable"
+   ],
+   [
+    "1280x720",
+    "Unplayable"
+   ],
+   [
+    "1366x768",
+    "Unplayable"
+   ]
+  ],
+  "scraped_at": "2026-10-11T14:30:21.173864+00:00"
+ },
+ "Radeon RX 6600 XT": {
+  "url": "https://www.techpowerup.com/gpu-specs/radeon-rx-6600-xt.c3730",
+  "reco": [
+   [
+    "640x480",
+    "Good"
+   ],
+   [
+    "1280x720",
+    "Low FPS"
+   ],
+   [
+    "1366x768",
+    "Unplayable"
+   ]
+  ],
+  "scraped_at": "2026-10-11T14:30:21.173922+00:00"
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "GeForce RTX 4090": {
+  "slug": "geforce-rtx-4090.c4182",
+  "verified": true
+ },
+ "GeForce RTX 4070 Ti SUPER": {
+  "slug": "geforce-rtx-4070-ti-super.c4187",
+  "verified": true
+ },
+ "GeForce GTX 1650": {
+  "slug": "geforce-gtx-1650.c1476",
+  "verified": true
+ },
+ "Radeon RX 6600 XT": {
+  "slug": "radeon-rx-6600-xt.c3730",
+  "verified": true
+ },
+ "GeForce RTX 4080 SUPER": {
+  "slug": "geforce-rtx-4080-super.c4181",
+  "verified": false
+ },
+ "GeForce RTX 4070 SUPER": {
+  "slug": "geforce-rtx-4070-super.c4185",
+  "verified": false
+ },
+ "GeForce RTX 4070 Ti": {
+  "slug": "geforce-rtx-4070-ti.c4186",
+  "verified": false
+ },
+ "GeForce RTX 4070": {
+  "slug": "geforce-rtx-4070.c4183",
+  "verified": false
+ },
+ "GeForce RTX 4060 Ti": {
+  "slug": "geforce-rtx-4060-ti.c4178",
+  "verified": false
+ },
+ "GeForce RTX 4060": {
+  "slug": "geforce-rtx-4060.c4177",
+  "verified": false
+ },
+ "GeForce RTX 3090": {
+  "slug": "geforce-rtx-3090.c3687",
+  "verified": false
+ },
+ "GeForce RTX 3080": {
+  "slug": "geforce-rtx-3080.c3688",
+  "verified": false
+ },
+ "GeForce RTX 3070": {
+  "slug": "geforce-rtx-3070.c3691",
+  "verified": false
+ },
+ "GeForce RTX 3060": {
+  "slug": "geforce-rtx-3060.c3694",
+  "verified": false
+ },
+ "GeForce RTX 2080 Ti": {
+  "slug": "geforce-rtx-2080-ti.c3748",
+  "verified": false
+ },
+ "GeForce RTX 2070": {
+  "slug": "geforce-rtx-2070.c3751",
+  "verified": false
+ },
+ "GeForce RTX 2060": {
+  "slug": "geforce-rtx-2060.c3752",
+  "verified": false
+ },
+ "GeForce GTX 1660 SUPER": {
+  "slug": "geforce-gtx-1660-super.c3736",
+  "verified": false
+ },
+ "GeForce GTX 1660": {
+  "slug": "geforce-gtx-1660.c3742",
+  "verified": false
+ },
+ "GeForce GTX 1650 SUPER": {
+  "slug": "geforce-gtx-1650-super.c3756",
+  "verified": false
+ },
+ "GeForce GTX 1080 Ti": {
+  "slug": "geforce-gtx-1080-ti.c3604",
+  "verified": false
+ },
+ "GeForce GTX 1080": {
+  "slug": "geforce-gtx-1080.c3603",
+  "verified": false
+ },
+ "GeForce GTX 1070": {
+  "slug": "geforce-gtx-1070.c3605",
+  "verified": false
+ },
+ "GeForce GTX 1060 6GB": {
+  "slug": "geforce-gtx-1060-6gb.c3607",
+  "verified": false
+ },
+ "GeForce GTX 1050 Ti": {
+  "slug": "geforce-gtx-1050-ti.c3609",
+  "verified": false
+ },
+ "Radeon RX 7900 XTX": {
+  "slug": "radeon-rx-7900-xtx.c4015",
+  "verified": false
+ },
+ "Radeon RX 7900 XT": {
+  "slug": "radeon-rx-7900-xt.c4016",
+  "verified": false
+ },
+ "Radeon RX 7800 XT": {
+  "slug": "radeon-rx-7800-xt.c4024",
+  "verified": false
+ },
+ "Radeon RX 7700 XT": {
+  "slug": "radeon-rx-7700-xt.c4023",
+  "verified": false
+ },
+ "Radeon RX 7600": {
+  "slug": "radeon-rx-7600.c4019",
+  "verified": false
+ },
+ "Radeon RX 6950 XT": {
+  "slug": "radeon-rx-6950-xt.c3741",
+  "verified": false
+ },
+ "Radeon RX 6800 XT": {
+  "slug": "radeon-rx-6800-xt.c3738",
+  "verified": false
+ },
+ "Radeon RX 6700 XT": {
+  "slug": "radeon-rx-6700-xt.c3739",
+  "verified": false
+ },
+ "Radeon RX 6600": {
+  "slug": "radeon-rx-6600.c3745",
+  "verified": false
+ },
+ "Radeon RX 580": {
+  "slug": "radeon-rx-580.c3039",
+  "verified": false
+ },
+ "Radeon RX 5700 XT": {
+  "slug": "radeon-rx-5700-xt.c3477",
+  "verified": false
+ },
+ "Arc A770": {
+  "slug": "arc-a770.c3919",
+  "verified": false
+ },
+ "Arc A750": {
+  "slug": "arc-a750.c3918",
+  "verified": false
+ }
+}
