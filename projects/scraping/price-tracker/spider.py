@@ -60,24 +60,41 @@ def _load_env() -> dict:
 
 def _proxy_rotator(env: dict) -> ProxyRotator | None:
     """Build a rotator from env. Supported shapes (first match wins):
-      PROXY_LIST=http://user:pass@host:port,http://...   (full URLs)
-      PROXY_HOSTS=host1:port1,host2:port2  + PROXY_USER / PROXY_PASS (shared creds)
-      PROXY_URL=http://user:pass@host:port (single)
+      PROXY_LIST=host1:port1,host2:port2          + PROXY_USER/PROXY_PASS
+                                                   (repo-standard shared-cred
+                                                   form — creds are injected)
+      PROXY_LIST=http://user:pass@host:port,...   (full URLs, used as-is)
+      PROXY_HOSTS=host1:port1,host2:port2         + PROXY_USER/PROXY_PASS
+      PROXY_URL=http://user:pass@host:port        (single)
     """
+    user = env.get("PROXY_USER", "")
+    pw = env.get("PROXY_PASS", "")
+    auth = f"{user}:{pw}@" if user and pw else ""
+
+    def _normalize(entry: str) -> str:
+        e = entry.strip()
+        if not e:
+            return ""
+        if "://" not in e:
+            e = f"http://{e}"
+        # inject shared creds when the URL itself carries none
+        if auth and "@" not in e.split("://", 1)[1]:
+            e = e.replace("://", f"://{auth}", 1)
+        return e
+
     entries: list[str] = []
     if env.get("PROXY_LIST"):
-        entries.extend(x.strip() for x in env["PROXY_LIST"].split(",") if x.strip())
+        entries.extend(
+            filter(None, (_normalize(x) for x in env["PROXY_LIST"].split(",")))
+        )
     elif env.get("PROXY_HOSTS"):
-        user = env.get("PROXY_USER", "")
-        pw = env.get("PROXY_PASS", "")
-        auth = f"{user}:{pw}@" if user and pw else ""
-        for hp in env["PROXY_HOSTS"].split(","):
-            hp = hp.strip()
-            if hp:
-                scheme = hp if hp.startswith(("http://", "https://", "socks")) else f"http://{auth}{hp}"
-                entries.append(scheme)
+        entries.extend(
+            filter(None, (_normalize(x) for x in env["PROXY_HOSTS"].split(",")))
+        )
     elif env.get("PROXY_URL"):
-        entries.append(env["PROXY_URL"].strip())
+        e = _normalize(env["PROXY_URL"])
+        if e:
+            entries.append(e)
     if not entries:
         return None
     return ProxyRotator(entries)
