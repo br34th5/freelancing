@@ -1,0 +1,60 @@
+{
+  "subcats": {
+    "laptops": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/nesiojami-kompiuteriai/",
+    "desktops": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/stacionarus-kompiuteriai/",
+    "gaming_pcs": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/zaidimu-kompiuteriai/",
+    "servers": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/serveriai/",
+    "cpus": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriu-komponentai/stacionariems-kompiuteriams/procesoriai-cpu/",
+    "gpus": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriu-komponentai/stacionariems-kompiuteriams/vaizdo-plokstes/"
+  },
+  "watched_slugs": [],
+  "pages_per_subcat": 5,
+  "max_pages_per_run": 80,
+  "delay_seconds": [3, 5],
+  "fetch_impersonate": "chrome131",
+  "type_filter": 1,
+  "pages_per_watched_slug": 3,
+
+  "min_profit_eur": 50,
+  "fees_pct": 10,
+  "refurb_eur": { "entry": 10, "mid": 25, "high": 45, "not-capable": 0 },
+
+  "refresh_interval_days": 60,
+  "tpu_delay_seconds": 12,
+  "tpu_max_models_per_run": 8,
+  "passmark_delay_seconds": 4,
+
+  "vram_gates": { "no_1440p_below_gb": 6, "no_4k_below_gb": 10 },
+  "genre_weights": {
+    "mmo":      { "st": 0.2, "mt": 0.5, "l3": 0.3 },
+    "strategy": { "st": 0.2, "mt": 0.5, "l3": 0.3 },
+    "sim":      { "st": 0.2, "mt": 0.5, "l3": 0.3 },
+    "esports":  { "st": 0.7, "mt": 0.2, "l3": 0.1 },
+    "aaa":      { "st": 0.4, "mt": 0.4, "l3": 0.2 }
+  },
+  "x3d_bonus": 1.15,
+
+  "combined_weights": {
+    "desktop": { "cpu": 0.45, "gpu": 0.55 },
+    "laptop":  { "cpu": 0.50, "gpu": 0.50 },
+    "server":  { "cpu": 1.0,  "gpu": 0.0 }
+  },
+
+  "tier_thresholds": { "entry_max": 40, "mid_max": 65 },
+
+  "ad_keyword_guard": ["superku", "ieško", "perku", "nupirkčiau", "superka"],
+  "junk_patterns": [
+    "\\b\\d+\\s*vnt\\b",
+    "rinksinys",
+    "\\+\\s*(cooler|aušintuvas|mainboard|motherboard|ram|ddr)",
+    "broken",
+    "neveikia",
+    "defekt",
+    "riser",
+    "mining",
+    "kasimas",
+    "\\bparts?\\b",
+    "detalėms",
+    "komplektas"
+  ]
+}
