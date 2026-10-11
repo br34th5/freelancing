@@ -26,6 +26,7 @@ import asyncio
 import json
 import os
 import random
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -58,8 +59,8 @@ def _load_env() -> dict:
     return out
 
 
-def _proxy_rotator(env: dict) -> ProxyRotator | None:
-    """Build a rotator from env. Supported shapes (first match wins):
+def _proxy_entries(env: dict) -> list[str]:
+    """Normalized proxy URLs from env. Supported shapes (first match wins):
       PROXY_LIST=host1:port1,host2:port2          + PROXY_USER/PROXY_PASS
                                                    (repo-standard shared-cred
                                                    form — creds are injected)
@@ -95,9 +96,86 @@ def _proxy_rotator(env: dict) -> ProxyRotator | None:
         e = _normalize(env["PROXY_URL"])
         if e:
             entries.append(e)
-    if not entries:
-        return None
-    return ProxyRotator(entries)
+    return entries
+
+
+# consecutive CF-blocks before a proxy is benched; whole-pool reset after all
+CHAMP_FAIL_LIMIT = 2
+
+
+class ProxyHealth:
+    """CF-aware selection strategy for scrapling's ProxyRotator.
+
+    Observed on skelbiu (2026-10-11 Actions runs): most pool exits get 403
+    from Cloudflare, a few clear it — and clearance sticks per-IP for a
+    while. So: probation cycles candidates; the first proxy that returns a
+    clean list page becomes the *champion* and serves every subsequent
+    request; consecutive blocks (CHAMP_FAIL_LIMIT) bench it and promote the
+    next candidate. If the whole pool is benched, fails reset (CF may have
+    cooled off) and probation restarts.
+
+    The spider runs with concurrency=1, so the last proxy issued by the
+    strategy is the one that served the response being classified — that is
+    how report_ok/report_blocked attribute outcomes without races. A request
+    that never reaches classification (connection error) counts as a fail
+    when the next proxy is issued.
+    """
+
+    def __init__(self, entries: list[str]):
+        self._entries = entries
+        self.fails = [0] * len(entries)
+        self.champion: int | None = None
+        self._cursor = 0
+        self._last: int | None = None
+        self._last_reported = True
+
+    # -- scrapling strategy signature: (proxies, index) -> (proxy, index) --
+    def strategy(self, proxies, current_index):
+        if self._last is not None and not self._last_reported:
+            self._register_fail(self._last)   # errored out before classification
+        if self.champion is not None:
+            idx = self.champion
+        else:
+            idx = self._next_candidate(len(proxies))
+        self._last, self._last_reported = idx, False
+        return proxies[idx], idx
+
+    def _next_candidate(self, size: int) -> int:
+        for _ in range(size):
+            idx = self._cursor % size
+            self._cursor += 1
+            if self.fails[idx] < CHAMP_FAIL_LIMIT:
+                return idx
+        # every proxy benched — give the pool a fresh probation wave
+        self.fails = [0] * size
+        return self._cursor % size
+
+    def _register_fail(self, idx: int):
+        self.fails[idx] += 1
+        if self.champion == idx and self.fails[idx] >= CHAMP_FAIL_LIMIT:
+            self.champion = None
+
+    # -- outcomes, reported by the spider (idempotent per response) --------
+    def report_ok(self):
+        """Clean 200 that reached the parser — crown this proxy."""
+        if self._last is None or self._last_reported:
+            return
+        self._last_reported = True
+        self.fails[self._last] = 0
+        self.champion = self._last
+
+    def report_blocked(self):
+        """CF challenge / 403 / 429 / 503 on the in-flight response."""
+        if self._last is None or self._last_reported:
+            return
+        self._last_reported = True
+        self._register_fail(self._last)
+
+    def snapshot(self) -> str:
+        """Redacted one-liner for logs (credentials never logged)."""
+        champ = (re.sub(r"//[^@]+@", "//***@", self._entries[self.champion])
+                 if self.champion is not None else None)
+        return f"champion={champ} fails={self.fails}"
 
 
 class SkelbiuSpider(Spider):
@@ -129,13 +207,14 @@ class SkelbiuSpider(Spider):
         self._items_emitted = 0
         self._block_streak = 0          # consecutive CF-blocked responses
         self._max_block_streak = 0
+        self._proxy_health: ProxyHealth | None = None
         DATA.mkdir(exist_ok=True)
         super().__init__(crawldir=str(DATA / "crawl_state"), **kw)
 
     # ---- session: TLS impersonation + optional proxy -----------------------
     def configure_sessions(self, manager) -> None:
         env = _load_env()
-        rotator = _proxy_rotator(env)
+        entries = _proxy_entries(env)
         kw: dict = dict(
             impersonate=CONFIG.get("fetch_impersonate", "chrome131"),
             timeout=30,
@@ -143,14 +222,21 @@ class SkelbiuSpider(Spider):
             retry_delay=2,
             follow_redirects="safe",
         )
-        if rotator is not None:
-            kw["proxy_rotator"] = rotator
-            self.logger.info("proxy rotator enabled")
+        if entries:
+            self._proxy_health = ProxyHealth(entries)
+            kw["proxy_rotator"] = ProxyRotator(entries, strategy=self._proxy_health.strategy)
+            self.logger.info(
+                "proxy rotator enabled (%d entries, CF-health sticky)", len(entries)
+            )
         manager.add("default", FetcherSession(**kw))
 
     # ---- CF / block detection ----------------------------------------------
     async def is_blocked(self, response) -> bool:
         blocked = self._is_blocked_response(response)
+        if self._proxy_health is not None:
+            if blocked:
+                self._proxy_health.report_blocked()
+            # non-blocked outcomes are reported by parse() on a clean 200
         if blocked:
             self._block_streak += 1
             self._max_block_streak = max(self._max_block_streak, self._block_streak)
@@ -207,6 +293,8 @@ class SkelbiuSpider(Spider):
             return
 
         self._block_streak = 0  # a clean 200 breaks any CF-block streak
+        if self._proxy_health is not None:
+            self._proxy_health.report_ok()  # this proxy cleared CF — crown it
 
         listings, next_url = parse_list_page(
             response.html_content or "", response.url, cat
@@ -255,6 +343,8 @@ class SkelbiuSpider(Spider):
         self.logger.info(
             "crawl finished: %d pages, %d items", self._pages_fetched, self._items_emitted
         )
+        if self._proxy_health is not None:
+            self.logger.info("proxy health: %s", self._proxy_health.snapshot())
 
 
 def run(max_pages: int | None = None) -> dict:
