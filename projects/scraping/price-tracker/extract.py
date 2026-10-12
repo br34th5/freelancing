@@ -13,6 +13,7 @@ DOM facts (verified 2026-10-11):
 
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -187,6 +188,84 @@ def parse_list_page(html: str, page_url: str, category: str) -> tuple[list[Listi
         if href:
             next_url = urljoin(page_url, href)
     return out, next_url
+
+
+# ---------------------------------------------------------- detail page
+
+# Lithuanian spec field labels commonly found in descriptions
+_SPEC_FIELDS = {
+    "processor": re.compile(
+        r"(?:PROCESSOR|PROCESORIUS|CPU)\s*[:\u2013-]\s*(.+)", re.I
+    ),
+    "gpu": re.compile(
+        r"(?:VAIZDO\s+PLOK[^\s:]*|VIDEO|GPU|GRAFIKA|GRAPHICS)"
+        r"\s*[:\u2013-]\s*(.+)", re.I
+    ),
+    "ram": re.compile(
+        r"(?:RAM|ATMINTIN[^\s:]*|MEMORY)\s*[:\u2013-]\s*(.+)", re.I
+    ),
+    "storage": re.compile(
+        r"(?:HARD|SSD|HDD|KAUPYKL[^\s:]*|STORAGE|NVME)\s*[:\u2013-]\s*(.+)", re.I
+    ),
+    "screen": re.compile(
+        r"(?:EKRAN[^\s:]*|SCREEN|DISPLAY)\s*[:\u2013-]\s*(.+)", re.I
+    ),
+}
+
+
+def parse_description_text(desc: str) -> dict[str, str]:
+    """Extract spec fields from description text (Lithuanian/English labels).
+
+    Returns dict like {"processor": "Intel Core i5-1334U", "gpu": "Intel UHD Graphics", ...}.
+    Handles `<br>`-separated lines and common field label variations.
+    """
+    if not desc:
+        return {}
+    # normalize line breaks
+    text = re.sub(r"<br\s*/?>", "\n", desc, flags=re.I)
+    text = re.sub(r"</?(?:p|div|span|li|td|tr|table)[^>]*>", "\n", text, flags=re.I)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = text.replace("\xa0", " ")
+
+    found: dict[str, str] = {}
+    for line in text.split("\n"):
+        line = line.strip()
+        if not line:
+            continue
+        for field, pat in _SPEC_FIELDS.items():
+            if field in found:
+                continue
+            m = pat.search(line)
+            if m:
+                val = m.group(1).strip().rstrip(";").strip()
+                if val:
+                    found[field] = val
+    return found
+
+
+def extract_description(html: str) -> str:
+    """Get the raw description text from a detail page (Lithuanian or English)."""
+    page = Selector(html)
+    # primary: the description div on skelbiu detail pages
+    els = page.css("div.item-description div.description")
+    if not els:
+        els = page.css("div.description")
+    if not els:
+        # JSON-LD fallback
+        for s in page.css('script[type="application/ld+json"]'):
+            raw = s.text or ""
+            try:
+                data = json.loads(raw)
+                if isinstance(data, dict) and "description" in data:
+                    return data["description"]
+            except (json.JSONDecodeError, TypeError):
+                continue
+        return ""
+    # .html_content preserves <br> tags; convert to text
+    raw = els[0].html_content or ""
+    text = re.sub(r"<br\s*/?>", "\n", raw, flags=re.I)
+    text = re.sub(r"<[^>]+>", "", text)
+    return text.replace("\xa0", " ").strip()
 
 
 def now_iso() -> str:

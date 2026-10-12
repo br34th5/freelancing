@@ -42,7 +42,7 @@ def _med(values: list[float]) -> float | None:
 def _conf(n: int) -> str:
     if n >= 3:
         return "high"
-    if n >= 1:
+    if n >= 2:
         return "med"
     return "low"
 
@@ -130,23 +130,53 @@ def _bucket(a: float | None, b: float | None) -> bool:
 
 
 def find_comparables(deal: dict, pool: list[dict]) -> list[dict]:
-    """Same canonical model (exact) OR ±10% combined-score bucket."""
+    """Same canonical model (exact) OR same device_class + ±10% combined-score bucket.
+
+    device_class must match: a laptop and a desktop with the same score are NOT
+    comparable (different resale markets).  Without this filter, every mid-tier
+    listing clustered around the single mid-tier sale price.
+    """
     model = (deal.get("canonical_model") or "").strip()
+    deal_class = (deal.get("device_class") or "").strip()
     out = []
     for sold in pool:
+        sold_class = (sold.get("device_class") or "").strip()
+        # same model → always a comp (even across device_class, e.g. eGPU setup)
         if model and (sold.get("canonical_model") or "").strip() == model:
             out.append(sold)
-        elif _bucket(deal.get("combined_score"), sold.get("combined_score")):
-            out.append(sold)
+        # score-bucket match → require same device_class
+        elif deal_class and sold_class == deal_class:
+            if _bucket(deal.get("combined_score"), sold.get("combined_score")):
+                out.append(sold)
     return out
 
 
-def tier_fallback_median(tier: str | None, pool: list[dict]) -> float | None:
-    """No model/bucket comps → median of same-tier sold listings."""
+def tier_fallback_median(deal: dict, pool: list[dict]) -> float | None:
+    """No model/bucket comps → median of same-tier + same-device_class sold listings.
+
+    Also requires combined_score within ±30% to avoid matching a €250 laptop
+    to a €3,400 laptop just because they share a tier label.
+    """
+    tier = deal.get("tier")
     if not tier:
         return None
-    prices = [s["price_eur"] for s in pool if s.get("tier") == tier]
-    return _med([float(p) for p in prices if p is not None])
+    deal_class = (deal.get("device_class") or "").strip()
+    deal_score = deal.get("combined_score")
+    prices = []
+    for s in pool:
+        if s.get("tier") != tier:
+            continue
+        if deal_class and (s.get("device_class") or "").strip() != deal_class:
+            continue
+        # score-similarity gate (wider than comparables' ±10%)
+        s_score = s.get("combined_score")
+        if deal_score is not None and s_score is not None:
+            hi, lo = max(deal_score, s_score), min(deal_score, s_score)
+            if lo > 0 and (hi - lo) / lo > 0.30:
+                continue
+        if s.get("price_eur") is not None:
+            prices.append(float(s["price_eur"]))
+    return _med(prices)
 
 
 # ------------------------------------------------------------------ profit
@@ -158,7 +188,7 @@ def score_deal(deal: dict, pool: list[dict]) -> dict:
     est = _med(prices)
     source = "comparables"
     if est is None:
-        est = tier_fallback_median(deal.get("tier"), pool)
+        est = tier_fallback_median(deal, pool)
         source = "tier-median" if est is not None else "none"
 
     asking = float(deal["asking_eur"]) if deal.get("asking_eur") is not None else None

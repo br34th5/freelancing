@@ -183,10 +183,16 @@ def extract_gpus(title: str) -> list[str]:
         found.append(_join_gpu(m.groups(), "apple"))
 
     # bare sku fallback ("Legion i9 4090") when no prefixed GPU matched
+    # guard: require the number NOT to follow a non-GPU word (e.g. "Optiplex 5080")
     if not found:
         for m in _GPU_BARE.finditer(t):
             num = m.group(1)
             if num not in _BARE_GPU_SKUS:
+                continue
+            # reject if preceded by a word that isn't a GPU/CPU hint
+            prefix_start = max(0, m.start() - 20)
+            prefix = t[prefix_start:m.start()].strip()
+            if prefix and re.search(r"(optiplex|thinkpad|zenbook|latitude|inspiron|vostro|precision|surface)\s*$", prefix, re.I):
                 continue
             extra = (m.group(2) or "").upper()
             pretty_extra = " Ti" if extra == "TI" else " SUPER" if extra == "SUPER" else ""

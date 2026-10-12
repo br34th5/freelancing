@@ -43,7 +43,7 @@ from scrapling.fetchers import AsyncStealthySession, FetcherSession
 from scrapling.spiders import Request, Spider
 from scrapling.engines.toolbelt.proxy_rotation import ProxyRotator
 
-from extract import parse_list_page
+from extract import parse_list_page, extract_description, parse_description_text
 from database import save_items
 
 DATA = Path(__file__).parent / "data"
@@ -265,6 +265,7 @@ class SkelbiuSpider(Spider):
         self._fallback_proxy_list: list[str] = []
         self._fallback_used = False
         self._use_fallback = use_fallback
+        self._detail_specs: dict[str, dict] = {}  # item_id → {desc_cpu, desc_gpu, enriched_title}
         DATA.mkdir(exist_ok=True)
         super().__init__(crawldir=str(DATA / "crawl_state"), **kw)
 
@@ -386,31 +387,32 @@ class SkelbiuSpider(Spider):
 
         now = datetime.now(timezone.utc).isoformat()
         kept = 0
+        need_detail = 0
         for l in listings:
             # wanted-ad guard (type=1 should prevent, but titles can still slip)
             if l.title and l.title.lower().startswith(_AD_PREFIXES):
                 continue
-            item = {
-                "item_id": l.item_id,
-                "url": l.url,
-                "title": l.title,
-                "category": l.category,
-                "price_eur": l.price_eur,
-                "state": l.state,
-                "time_to_sell_min": l.time_to_sell_min,
-                "price_change_pct": l.price_change_pct,
-                "location": l.location,
-                "condition": l.condition,
-                "observed_at": now,
-                "source_page": response.url,
-            }
+
+            # yield item immediately (specs enriched later via detail page)
+            item = self._build_item(l, cat, now, response.url)
             kept += 1
             self._items_emitted += 1
             yield item
 
+            # if CPU/GPU missing from title, queue detail-page fetch for enrichment
+            from specs import analyze_title
+            ts = analyze_title(l.title)
+            if not ts.cpus and not ts.gpus:
+                need_detail += 1
+                yield Request(
+                    l.url,
+                    callback=self.parse_detail,
+                    meta={"category": cat, "listing": l, "now": now},
+                )
+
         self.logger.info(
-            "%s page %d: %d listings (%d kept), next=%s",
-            cat, page_no, len(listings), kept, "yes" if next_url else "no",
+            "%s page %d: %d listings (%d kept, %d detail-queued), next=%s",
+            cat, page_no, len(listings), kept, need_detail, "yes" if next_url else "no",
         )
 
         # follow next page only if budget remains and we're under per-cat depth
@@ -421,6 +423,66 @@ class SkelbiuSpider(Spider):
                 callback=self.parse,
                 meta={"category": cat, "page_no": page_no + 1},
             )
+
+    def parse_detail(self, response):
+        """Fetch detail page to extract CPU/GPU from description text.
+
+        Stores extracted specs in self._detail_specs[item_id] for merging
+        into items during run(). Does NOT yield items (CrawlResult doesn't
+        reliably collect from async generator callbacks).
+        """
+        l = (response.meta or {}).get("listing")
+        if not l:
+            return
+
+        if response.status != 200:
+            self.logger.warning("detail %s: HTTP %s", response.url, response.status)
+            return
+
+        desc = extract_description(response.html_content or "")
+        specs_found = parse_description_text(desc)
+        cpu_text = specs_found.get("processor", "")
+        gpu_text = specs_found.get("gpu", "")
+
+        entry: dict = {}
+        if cpu_text:
+            entry["desc_cpu"] = cpu_text
+        if gpu_text:
+            entry["desc_gpu"] = gpu_text
+
+        # enrich title with found specs so scoring can parse them
+        enriched = l.title
+        if cpu_text and not re.search(r"i[3579][- ]\d{4,5}|ryzen|xeon|epyc", l.title, re.I):
+            enriched = f"{enriched} {cpu_text}"
+        if gpu_text and not re.search(r"rtx|gtx|rx\s*\d{3,4}|arc\s+a\d{3}|geforce|radeon", l.title, re.I):
+            enriched = f"{enriched} {gpu_text}"
+        if enriched != l.title:
+            entry["enriched_title"] = enriched
+
+        if entry:
+            self._detail_specs[l.item_id] = entry
+
+        self.logger.info(
+            "detail %s: cpu=%r gpu=%r", l.item_id,
+            cpu_text[:40] or "—", gpu_text[:40] or "—",
+        )
+
+    @staticmethod
+    def _build_item(l, cat: str, now: str, source_page: str) -> dict:
+        return {
+            "item_id": l.item_id,
+            "url": l.url,
+            "title": l.title,
+            "category": l.category or cat,
+            "price_eur": l.price_eur,
+            "state": l.state,
+            "time_to_sell_min": l.time_to_sell_min,
+            "price_change_pct": l.price_change_pct,
+            "location": l.location,
+            "condition": l.condition,
+            "observed_at": now,
+            "source_page": source_page,
+        }
 
     # ---- close: report ------------------------------------------------------
     async def on_close(self):
@@ -436,20 +498,23 @@ class SkelbiuSpider(Spider):
 def run(max_pages: int | None = None) -> dict:
     """Run one crawl. Returns {exit_code, items, pages, max_block_streak,
     paused, completed, db_ok} for the daily pipeline's break checks.
-    
+
     Exit codes: 0=success, 1=fail (blocked/error), 2=skip (all proxies failed).
-    
+
     Fallback logic: if primary proxy (Oxylabs) fails (0 items), retry with
     fallback proxies (LT datacenter). If fallback also fails, skip the run.
     """
     env = _load_env()
     fallback_entries = _fallback_proxy_entries(env)
-    
+
     # First attempt: primary config
     spider = SkelbiuSpider(max_pages=max_pages, use_fallback=False)
     result = spider.start()
     items = list(result)
-    
+
+    # Merge detail-page extracted specs (desc_cpu/desc_gpu/enriched_title)
+    items = _merge_detail_specs(items, spider._detail_specs)
+
     # If 0 items and fallback proxies available, retry with fallback
     if not items and fallback_entries and not spider._fallback_used:
         print("Primary proxy failed (0 items) — trying fallback proxies...")
@@ -458,7 +523,8 @@ def run(max_pages: int | None = None) -> dict:
         spider._fallback_used = True
         result = spider.start()
         items = list(result)
-    
+        items = _merge_detail_specs(items, spider._detail_specs)
+
     db_ok = True
     if items:
         with OBS_PATH.open("a") as f:
@@ -473,17 +539,16 @@ def run(max_pages: int | None = None) -> dict:
             db_ok = False
     print(f"\n{len(items)} items appended to {OBS_PATH}")
     print(f"paused={result.paused} completed={result.completed}")
-    
+
     # Exit codes: 0=success, 1=fail (blocked/error), 2=skip (all proxies failed)
     if result.completed and db_ok and items:
         exit_code = 0
     elif not items and spider._fallback_used:
-        # Both primary and fallback failed — skip the run
         exit_code = 2
         print("WARNING: All proxy attempts failed — skipping this run")
     else:
         exit_code = 1
-    
+
     return {
         "exit_code": exit_code,
         "items": len(items),
@@ -493,6 +558,21 @@ def run(max_pages: int | None = None) -> dict:
         "completed": result.completed,
         "db_ok": db_ok,
     }
+
+
+def _merge_detail_specs(items: list[dict], detail_specs: dict[str, dict]) -> list[dict]:
+    """Merge detail-page extracted specs (desc_cpu/desc_gpu/enriched_title) into items."""
+    if not detail_specs:
+        return items
+    merged = 0
+    for item in items:
+        specs = detail_specs.get(item.get("item_id", ""))
+        if specs:
+            item.update(specs)
+            merged += 1
+    if merged:
+        print(f"  merged detail specs into {merged} items")
+    return items
 
 
 if __name__ == "__main__":

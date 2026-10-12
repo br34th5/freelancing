@@ -377,14 +377,25 @@ def score_listing(listing: dict, cpu_idx: dict, gpu_idx: dict,
                   title_spec=None) -> ScoreResult:
     title = listing.get("title", "")
     category = listing.get("category", "")
+
+    # Use enriched_title (from detail-page description parsing) when available,
+    # falling back to the raw title. Also merge desc_cpu/desc_gpu as text hints.
+    effective_title = listing.get("enriched_title") or title
+    desc_cpu = listing.get("desc_cpu", "")
+    desc_gpu = listing.get("desc_gpu", "")
+    if desc_cpu or desc_gpu:
+        extra = " ".join(filter(None, [desc_cpu, desc_gpu]))
+        if extra and extra not in effective_title:
+            effective_title = f"{effective_title} {extra}"
+
     if title_spec is None:
-        title_spec = analyze_title(title, CONFIG)
+        title_spec = analyze_title(effective_title, CONFIG)
     device_class = classify_device(category, title)
 
     cpu_model = title_spec.cpus[0] if title_spec.cpus else None
     gpu_model = title_spec.gpus[0] if title_spec.gpus else None
-    cpu = resolve_cpu(cpu_model, cpu_idx, title)
-    gpu = resolve_gpu(gpu_model, gpu_idx, title)
+    cpu = resolve_cpu(cpu_model, cpu_idx, effective_title)
+    gpu = resolve_gpu(gpu_model, gpu_idx, effective_title)
 
     cpu_score = cpu.cpu_mark if cpu else None
     gpu_score = gpu.g3d_mark if gpu else None
