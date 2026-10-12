@@ -28,21 +28,33 @@ jobs:
           pip install -r requirements.txt
         working-directory: projects/scraping/price-tracker
 
+      # Patchright browsers are required for StealthyFetcher (real Chrome + CF solve).
+      # ubuntu-22.04 runners have Chromium pre-installed at /usr/bin/chromium,
+      # but patchright bundles its own. `patchright install` downloads the bundled
+      # Chromium (~150MB). Falls back to Fetcher (TLS impersonation) if this fails.
+      - name: Install patchright browsers
+        run: patchright install chromium || echo "patchright install skipped"
+        working-directory: projects/scraping/price-tracker
+
       # Pipeline: crawl → score → report. Break conditions (0 items, DB
       # failure, scoring/report crash) alert to Discord via run_daily and
       # exit non-zero so this job shows red in Actions.
-      # Datacenter IP + Cloudflare is the known risk (plan: "test separately")
-      # — the PROXY_* secrets route skelbiu fetches through the residential
-      # pool; without them, watch the first scheduled runs for 0-item alerts.
+      #
+      # Engine: stealthy (real Chrome + auto CF solve) + Oxylabs residential
+      # proxy. Falls back to fetcher (TLS impersonation) if browser unavailable.
+      # Without a working proxy, datacenter IPs may still get 403 — accept
+      # occasional 0-item alerts or upgrade to premium anti-bot bypass.
       - name: Run daily pipeline
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
-          PROXY_LIST: ${{ secrets.PROXY_LIST }}
+          FETCH_ENGINE: stealthy
+          PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           PROXY_USER: ${{ secrets.PROXY_USER }}
           PROXY_PASS: ${{ secrets.PROXY_PASS }}
-          PROXY_HOSTS: ${{ secrets.PROXY_HOSTS }}
-          PROXY_URL: ${{ secrets.PROXY_URL }}
+          FALLBACK_PROXY_LIST: ${{ secrets.FALLBACK_PROXY_LIST }}
+          FALLBACK_PROXY_USER: ${{ secrets.FALLBACK_PROXY_USER }}
+          FALLBACK_PROXY_PASS: ${{ secrets.FALLBACK_PROXY_PASS }}
         run: python -m run_daily
         working-directory: projects/scraping/price-tracker
 

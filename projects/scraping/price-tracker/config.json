@@ -11,6 +11,7 @@
   "pages_per_subcat": 5,
   "max_pages_per_run": 80,
   "delay_seconds": [3, 5],
+  "fetch_engine": "stealthy",
   "fetch_impersonate": "chrome131",
   "type_filter": 1,
   "pages_per_watched_slug": 3,

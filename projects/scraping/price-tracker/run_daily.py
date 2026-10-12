@@ -9,7 +9,8 @@ Break alerts (Discord, see alerts.py):
   - primary DB write failure
   - scoring/report crash
 
-Exit codes: 0 ok · 1 crawl incomplete/blocked · 2 pipeline crash.
+Exit codes: 0 ok · 1 crawl incomplete/blocked · 2 skip (all proxies failed)
+  Note: exit 2 means we tried all proxies and failed — skip silently (no alert)
 """
 
 from __future__ import annotations
@@ -38,6 +39,10 @@ def main() -> int:
         except Exception as e:
             alerts.alert_pipeline_error("spider", repr(e))
             return 2
+        if crawl.get("exit_code") == 2:
+            # All proxy attempts failed — skip silently (no alert)
+            print("Crawl skipped — all proxy attempts failed")
+            return 0
         if crawl["items"] == 0:
             alerts.alert_zero_items(crawl["pages"])
             return 1

@@ -49,10 +49,19 @@ No local cron — the dev machine doesn't need to be on.
 - `DATABASE_URL` — Neon connection string (becomes the primary when no
   local DB is configured; dual-write is local-only)
 - `ALERT_WEBHOOK_URL` — Discord webhook (already set, shared with HN scraper)
-- `PROXY_LIST` or `PROXY_HOSTS`+`PROXY_USER`+`PROXY_PASS` — **recommended**:
-  GitHub's datacenter IP may trip skelbiu's Cloudflare; the residential
-  proxy pool avoids this. Without proxies, watch the first scheduled runs
-  for 0-item alerts.
+- `PROXY_SERVER` — Oxylabs proxy server URL (e.g. `http://pr.oxylabs.io:7777`)
+- `PROXY_USER` — Oxylabs username (e.g. `customer-resi_XXXXX-sessid-...`)
+- `PROXY_PASS` — Oxylabs password
+- `FALLBACK_PROXY_LIST` — LT datacenter proxies (comma-separated, used when Oxylabs fails)
+- `FALLBACK_PROXY_USER` — Fallback proxy username
+- `FALLBACK_PROXY_PASS` — Fallback proxy password
+
+**Proxy fallback logic:**
+- **Primary:** Oxylabs residential (StealthyFetcher + CF auto-solve) — most robust, ~$0.03/run
+- **Fallback:** LT datacenter proxies (Fetcher, likely blocked but free) — last resort when Oxylabs quota exhausted
+- **If both fail:** Skip run silently (exit 0, no alert) — proxy limit exceeded or CF too aggressive
+
+Oxylabs has $5/month quota. When exhausted, proxy returns connection errors. LT proxies are free but on CF's blocklist — they're a last-ditch fallback. Without any working proxy, the run is skipped.
 
 Each run uploads `report.txt` / `report.html` / logs as a 14-day artifact.
 For a local full run: `python3 -m run_daily`. Logs: `data/spider.log`
@@ -75,8 +84,18 @@ Test: `python3 -c "import alerts; alerts.send_test()"`
 
 - `subcats` / `watched_slugs` — crawl scope · `max_pages_per_run` kill-switch
 - `fees_pct` (10) · `refurb_eur` per tier · `min_profit_eur` (50)
+- `fetch_engine`: `stealthy` (real Chrome + CF auto-solve) or `fetcher` (TLS impersonation, faster)
 - `vram_gates` · `genre_weights` · `g3d_bands` · `tier_thresholds`
 - `ad_keyword_guard` · `junk_patterns` — listing quality filters
+
+## Crawl engines
+
+| Engine | Speed | CF bypass | Proxy support | Use when |
+|---|---|---|---|---|
+| `stealthy` | ~17s/page | ✅ auto-solve | ✅ dict format | Actions, aggressive CF sites |
+| `fetcher` | ~0.5s/page |  TLS only | ✅ URL list format | Local dev, permissive sites |
+
+Override via env: `FETCH_ENGINE=fetcher python3 -m spider`
 
 ## Tests
 

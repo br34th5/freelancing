@@ -1,11 +1,19 @@
-"""Skelbiu.lt list spider — polite, robots-obeying, TLS-impersonating.
+"""Skelbiu.lt list spider — polite, robots-obeying, multi-engine.
 
-Politeness budget (from config.json):
+Engines (config.json → fetch_engine, override via FETCH_ENGINE env):
+  stealthy  - Real Chrome browser, auto-solves Cloudflare (slowest, most robust)
+  fetcher   - TLS impersonation, no browser (fastest, may get blocked)
+
+Politeness budget:
   - concurrent_requests=1, per-domain=1 (serial)
   - download_delay = mean(delay_seconds) ≈ 3–5s between requests
   - AutoThrottle on, backs off on blocks
   - robots_txt_obey = True
   - max_pages_per_run kill-switch (default 80 ≈ 6 subcats × 5 + watched slugs)
+
+Proxy:
+  StealthyFetcher: PROXY_SERVER + PROXY_USER + PROXY_PASS (env/.env)
+  Fetcher: PROXY_LIST / PROXY_HOSTS + PROXY_USER + PROXY_PASS (legacy URL list)
 
 Emits item dicts (one per listing) with observed_at timestamp. Storage (P3):
   database.save_items(items) — local Docker Postgres primary + Neon dual-write,
@@ -31,7 +39,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scrapling.fetchers import FetcherSession
+from scrapling.fetchers import AsyncStealthySession, FetcherSession
 from scrapling.spiders import Request, Spider
 from scrapling.engines.toolbelt.proxy_rotation import ProxyRotator
 
@@ -55,15 +63,33 @@ def _load_env() -> dict:
             if line and not line.startswith("#") and "=" in line:
                 k, v = line.split("=", 1)
                 out[k.strip()] = v.strip()
-    out.update({k: v for k, v in os.environ.items() if k.startswith("PROXY")})
+    # env vars override .env; include FALLBACK_PROXY_* and FETCH_ENGINE
+    for k, v in os.environ.items():
+        if k.startswith("PROXY") or k.startswith("FALLBACK_PROXY") or k == "FETCH_ENGINE":
+            out[k] = v
     return out
 
 
+def _proxy_dict(env: dict) -> dict | None:
+    """Proxy as dict for StealthyFetcher (server/user/pass)."""
+    server = env.get("PROXY_SERVER", "").strip()
+    user = env.get("PROXY_USER", "").strip()
+    pw = env.get("PROXY_PASS", "").strip()
+    if not server:
+        return None
+    d: dict = {"server": server}
+    if user:
+        d["username"] = user
+    if pw:
+        d["password"] = pw
+    return d
+
+
 def _proxy_entries(env: dict) -> list[str]:
-    """Normalized proxy URLs from env. Supported shapes (first match wins):
+    """Normalized proxy URLs from env for Fetcher (legacy URL list format).
+
+    Supported shapes (first match wins):
       PROXY_LIST=host1:port1,host2:port2          + PROXY_USER/PROXY_PASS
-                                                   (repo-standard shared-cred
-                                                   form — creds are injected)
       PROXY_LIST=http://user:pass@host:port,...   (full URLs, used as-is)
       PROXY_HOSTS=host1:port1,host2:port2         + PROXY_USER/PROXY_PASS
       PROXY_URL=http://user:pass@host:port        (single)
@@ -78,7 +104,6 @@ def _proxy_entries(env: dict) -> list[str]:
             return ""
         if "://" not in e:
             e = f"http://{e}"
-        # inject shared creds when the URL itself carries none
         if auth and "@" not in e.split("://", 1)[1]:
             e = e.replace("://", f"://{auth}", 1)
         return e
@@ -96,6 +121,33 @@ def _proxy_entries(env: dict) -> list[str]:
         e = _normalize(env["PROXY_URL"])
         if e:
             entries.append(e)
+    return entries
+
+
+def _fallback_proxy_entries(env: dict) -> list[str]:
+    """Fallback proxy URLs from FALLBACK_PROXY_LIST (used when primary fails).
+
+    Format: FALLBACK_PROXY_LIST=host1:port1,host2:port2 + FALLBACK_PROXY_USER/PASS
+    """
+    user = env.get("FALLBACK_PROXY_USER", "")
+    pw = env.get("FALLBACK_PROXY_PASS", "")
+    auth = f"{user}:{pw}@" if user and pw else ""
+
+    def _normalize(entry: str) -> str:
+        e = entry.strip()
+        if not e:
+            return ""
+        if "://" not in e:
+            e = f"http://{e}"
+        if auth and "@" not in e.split("://", 1)[1]:
+            e = e.replace("://", f"://{auth}", 1)
+        return e
+
+    entries: list[str] = []
+    if env.get("FALLBACK_PROXY_LIST"):
+        entries.extend(
+            filter(None, (_normalize(x) for x in env["FALLBACK_PROXY_LIST"].split(",")))
+        )
     return entries
 
 
@@ -201,34 +253,66 @@ class SkelbiuSpider(Spider):
     logging_level = 20  # INFO
     log_file = str(DATA / "spider.log")
 
-    def __init__(self, max_pages: int | None = None, **kw):
+    def __init__(self, max_pages: int | None = None, use_fallback: bool = False, **kw):
         self.max_pages = max_pages or CONFIG["max_pages_per_run"]
         self._pages_fetched = 0
         self._items_emitted = 0
         self._block_streak = 0          # consecutive CF-blocked responses
         self._max_block_streak = 0
         self._proxy_health: ProxyHealth | None = None
+        self._fetch_engine = ""
+        self._fallback_proxy_dict = None
+        self._fallback_proxy_list: list[str] = []
+        self._fallback_used = False
+        self._use_fallback = use_fallback
         DATA.mkdir(exist_ok=True)
         super().__init__(crawldir=str(DATA / "crawl_state"), **kw)
 
-    # ---- session: TLS impersonation + optional proxy -----------------------
+    # ---- session: multi-engine + optional proxy ----------------------------
     def configure_sessions(self, manager) -> None:
         env = _load_env()
-        entries = _proxy_entries(env)
-        kw: dict = dict(
-            impersonate=CONFIG.get("fetch_impersonate", "chrome131"),
-            timeout=30,
-            retries=2,
-            retry_delay=2,
-            follow_redirects="safe",
-        )
-        if entries:
-            self._proxy_health = ProxyHealth(entries)
-            kw["proxy_rotator"] = ProxyRotator(entries, strategy=self._proxy_health.strategy)
-            self.logger.info(
-                "proxy rotator enabled (%d entries, CF-health sticky)", len(entries)
+        engine = (env.get("FETCH_ENGINE") or CONFIG.get("fetch_engine", "stealthy")).lower()
+        self._fetch_engine = engine
+
+        proxy_d = _proxy_dict(env)
+        proxy_list = _proxy_entries(env)
+
+        if engine == "stealthy":
+            kw: dict = dict(
+                headless=True,
+                real_chrome=True,
+                solve_cloudflare=True,
+                timeout=45000,
             )
-        manager.add("default", FetcherSession(**kw))
+            if proxy_d:
+                kw["proxy"] = proxy_d
+                self.logger.info(
+                    "engine=stealthy, proxy=%s (Cloudflare auto-solve)",
+                    re.sub(r"(//[^@]+@)", "\\1***@", proxy_d["server"]),
+                )
+            else:
+                self.logger.info("engine=stealthy, no proxy (real Chrome bypasses CF)")
+            manager.add("default", AsyncStealthySession(**kw))
+
+        else:
+            # fetcher — TLS impersonation, optional proxy rotator
+            kw = dict(
+                impersonate=CONFIG.get("fetch_impersonate", "chrome131"),
+                timeout=30,
+                retries=2,
+                retry_delay=2,
+                follow_redirects="safe",
+            )
+            if proxy_list:
+                self._proxy_health = ProxyHealth(proxy_list)
+                kw["proxy_rotator"] = ProxyRotator(proxy_list, strategy=self._proxy_health.strategy)
+                self.logger.info(
+                    "engine=fetcher, proxy rotator enabled (%d entries, CF-health sticky)",
+                    len(proxy_list),
+                )
+            else:
+                self.logger.info("engine=fetcher, no proxy (TLS impersonation only)")
+            manager.add("default", FetcherSession(**kw))
 
     # ---- CF / block detection ----------------------------------------------
     async def is_blocked(self, response) -> bool:
@@ -345,14 +429,36 @@ class SkelbiuSpider(Spider):
         )
         if self._proxy_health is not None:
             self.logger.info("proxy health: %s", self._proxy_health.snapshot())
+        else:
+            self.logger.info("engine=%s", self._fetch_engine)
 
 
 def run(max_pages: int | None = None) -> dict:
     """Run one crawl. Returns {exit_code, items, pages, max_block_streak,
-    paused, completed, db_ok} for the daily pipeline's break checks."""
-    spider = SkelbiuSpider(max_pages=max_pages)
+    paused, completed, db_ok} for the daily pipeline's break checks.
+    
+    Exit codes: 0=success, 1=fail (blocked/error), 2=skip (all proxies failed).
+    
+    Fallback logic: if primary proxy (Oxylabs) fails (0 items), retry with
+    fallback proxies (LT datacenter). If fallback also fails, skip the run.
+    """
+    env = _load_env()
+    fallback_entries = _fallback_proxy_entries(env)
+    
+    # First attempt: primary config
+    spider = SkelbiuSpider(max_pages=max_pages, use_fallback=False)
     result = spider.start()
     items = list(result)
+    
+    # If 0 items and fallback proxies available, retry with fallback
+    if not items and fallback_entries and not spider._fallback_used:
+        print("Primary proxy failed (0 items) — trying fallback proxies...")
+        spider = SkelbiuSpider(max_pages=max_pages, use_fallback=True)
+        spider._fallback_proxy_list = fallback_entries
+        spider._fallback_used = True
+        result = spider.start()
+        items = list(result)
+    
     db_ok = True
     if items:
         with OBS_PATH.open("a") as f:
@@ -367,8 +473,19 @@ def run(max_pages: int | None = None) -> dict:
             db_ok = False
     print(f"\n{len(items)} items appended to {OBS_PATH}")
     print(f"paused={result.paused} completed={result.completed}")
+    
+    # Exit codes: 0=success, 1=fail (blocked/error), 2=skip (all proxies failed)
+    if result.completed and db_ok and items:
+        exit_code = 0
+    elif not items and spider._fallback_used:
+        # Both primary and fallback failed — skip the run
+        exit_code = 2
+        print("WARNING: All proxy attempts failed — skipping this run")
+    else:
+        exit_code = 1
+    
     return {
-        "exit_code": 0 if (result.completed and db_ok) else 1,
+        "exit_code": exit_code,
         "items": len(items),
         "pages": spider._pages_fetched,
         "max_block_streak": spider._max_block_streak,
@@ -382,4 +499,9 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--pages", type=int, default=None, help="override max_pages_per_run")
     args = ap.parse_args()
-    raise SystemExit(run(max_pages=args.pages)["exit_code"])
+    result = run(max_pages=args.pages)
+    # Exit codes: 0=success, 1=fail (blocked/error), 2=skip (all proxies failed)
+    # Skip (exit 2) means we tried all proxies and failed — exit 0 to avoid alerting
+    if result["exit_code"] == 2:
+        raise SystemExit(0)  # skip silently
+    raise SystemExit(result["exit_code"])
