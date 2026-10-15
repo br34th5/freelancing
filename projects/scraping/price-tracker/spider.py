@@ -65,9 +65,16 @@ def _load_env() -> dict:
                 out[k.strip()] = v.strip()
     # env vars override .env; include FALLBACK_PROXY_* and FETCH_ENGINE
     for k, v in os.environ.items():
-        if k.startswith("PROXY") or k.startswith("FALLBACK_PROXY") or k == "FETCH_ENGINE":
+        if k.startswith("PROXY") or k.startswith("FALLBACK_PROXY") or k in ("FETCH_ENGINE", "STEALTHY_HEADLESS"):
             out[k] = v
     return out
+
+
+def _env_bool(env: dict, key: str, default: bool = False) -> bool:
+    val = str(env.get(key, "")).strip().lower()
+    if not val:
+        return default
+    return val in ("1", "true", "yes", "on")
 
 
 def _proxy_dict(env: dict) -> dict | None:
@@ -279,10 +286,11 @@ class SkelbiuSpider(Spider):
         proxy_list = _proxy_entries(env)
 
         if engine == "stealthy":
+            headless = _env_bool(env, "STEALTHY_HEADLESS", default=True)
             kw: dict = dict(
-                headless=True,
+                headless=headless,
                 real_chrome=True,
-                solve_cloudflare=True,
+                solve_cloudflare=headless,
                 timeout=45000,
             )
             if proxy_d:
@@ -291,8 +299,12 @@ class SkelbiuSpider(Spider):
                     "engine=stealthy, proxy=%s (Cloudflare auto-solve)",
                     re.sub(r"(//[^@]+@)", "\\1***@", proxy_d["server"]),
                 )
-            else:
+            elif headless:
                 self.logger.info("engine=stealthy, no proxy (real Chrome bypasses CF)")
+            else:
+                self.logger.info(
+                    "engine=stealthy, no proxy, headless=False — solve CF challenges manually in the browser window"
+                )
             manager.add("default", AsyncStealthySession(**kw))
 
         else:
