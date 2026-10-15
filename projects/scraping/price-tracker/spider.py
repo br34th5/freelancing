@@ -342,8 +342,17 @@ class SkelbiuSpider(Spider):
         return any(m in html for m in markers)
 
     async def retry_blocked_request(self, request: Request, response) -> Request:
-        # rotate session (picks a new proxy if rotator present) and retry once
-        await asyncio.sleep(random.uniform(*CONFIG["delay_seconds"]) * 3)
+        retry_num = (request.meta or {}).get("_retry_num", 0) + 1
+        base_delay = random.uniform(*CONFIG["delay_seconds"]) * 3
+        backoff = base_delay * (2 ** retry_num)
+        jitter = random.uniform(0, base_delay)
+        wait = min(backoff + jitter, 120)
+        self.logger.info(
+            "CF-blocked retry %d/%d — waiting %.1fs (backoff=%.1fs + jitter=%.1fs)",
+            retry_num, self.max_blocked_retries, wait, backoff, jitter,
+        )
+        await asyncio.sleep(wait)
+        request.meta = {**(request.meta or {}), "_retry_num": retry_num}
         return request
 
     # ---- start URLs ---------------------------------------------------------
