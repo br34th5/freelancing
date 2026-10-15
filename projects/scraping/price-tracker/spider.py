@@ -433,12 +433,15 @@ class SkelbiuSpider(Spider):
                 meta={"category": cat, "page_no": page_no + 1},
             )
 
-    def parse_detail(self, response):
+    async def parse_detail(self, response):
         """Fetch detail page to extract CPU/GPU from description text.
 
         Stores extracted specs in self._detail_specs[item_id] for merging
         into items during run(). Does NOT yield items (CrawlResult doesn't
         reliably collect from async generator callbacks).
+
+        Defined as `async def` with a single terminal `yield` so scrapling's
+        engine can iterate the result; this function never actually yields.
         """
         l = (response.meta or {}).get("listing")
         if not l:
@@ -475,6 +478,9 @@ class SkelbiuSpider(Spider):
             "detail %s: cpu=%r gpu=%r", l.item_id,
             cpu_text[:40] or "—", gpu_text[:40] or "—",
         )
+
+        if False:  # pragma: no cover  # makes this an async generator
+            yield
 
     @staticmethod
     def _build_item(l, cat: str, now: str, source_page: str) -> dict:
