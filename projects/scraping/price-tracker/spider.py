@@ -286,6 +286,10 @@ class SkelbiuSpider(Spider):
         proxy_list = _proxy_entries(env)
 
         if engine == "stealthy":
+            # STEALTHY_HEADLESS=false shows the Chrome window so old-style
+            # checkbox CF challenges can be solved by hand. Managed
+            # turnstile ("Verifying..." with no checkbox) has no UI to
+            # interact with; for that case, configure a proxy instead.
             headless = _env_bool(env, "STEALTHY_HEADLESS", default=True)
             kw: dict = dict(
                 headless=headless,
@@ -302,8 +306,10 @@ class SkelbiuSpider(Spider):
             elif headless:
                 self.logger.info("engine=stealthy, no proxy (real Chrome bypasses CF)")
             else:
-                self.logger.info(
-                    "engine=stealthy, no proxy, headless=False — solve CF challenges manually in the browser window"
+                self.logger.warning(
+                    "engine=stealthy, headless=False — old-style checkbox CF "
+                    "challenges can be solved manually in the browser window. "
+                    "Managed turnstile (no checkbox) requires a proxy."
                 )
             manager.add("default", AsyncStealthySession(**kw))
 
