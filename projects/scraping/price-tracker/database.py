@@ -92,6 +92,7 @@ CREATE TABLE IF NOT EXISTS {s}.cpu_scores (
     mt_pct      DOUBLE PRECISION,
     l3_mb       DOUBLE PRECISION,
     rank        INTEGER,
+    tdp_w       DOUBLE PRECISION,
     scraped_at  TIMESTAMPTZ NOT NULL
 );
 
@@ -162,12 +163,13 @@ ON CONFLICT (item_id, detected_at) DO NOTHING
 """
 
 UPSERT_CPU_SCORE = """
-INSERT INTO {s}.cpu_scores (model, cpu_mark, st_mark, mt_pct, l3_mb, rank, scraped_at)
+INSERT INTO {s}.cpu_scores (model, cpu_mark, st_mark, mt_pct, l3_mb, rank, tdp_w, scraped_at)
 VALUES %s
 ON CONFLICT (model) DO UPDATE SET
     cpu_mark = EXCLUDED.cpu_mark, st_mark = EXCLUDED.st_mark,
     mt_pct = EXCLUDED.mt_pct, l3_mb = EXCLUDED.l3_mb,
-    rank = EXCLUDED.rank, scraped_at = EXCLUDED.scraped_at
+    rank = EXCLUDED.rank, tdp_w = EXCLUDED.tdp_w,
+    scraped_at = EXCLUDED.scraped_at
 """
 
 UPSERT_GPU_SCORE = """

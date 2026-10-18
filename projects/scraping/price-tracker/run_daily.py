@@ -135,7 +135,10 @@ def main() -> int:
             alerts.alert_pipeline_error("spider", repr(e))
             return 2
         if crawl.get("exit_code") == 2:
-            print("Crawl skipped — all proxy attempts failed")
+            if crawl.get("cf_solve_failed"):
+                print("Crawl skipped — Cloudflare auto-solver exhausted (dead proxy, no alert)")
+            else:
+                print("Crawl skipped — all proxy attempts failed (no alert)")
             return 0
         if crawl["items"] == 0:
             _record_cf_result(False)

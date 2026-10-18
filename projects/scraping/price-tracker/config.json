@@ -1,12 +1,12 @@
 {
   "subcats": {
-    "laptops": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/nesiojami-kompiuteriai/",
     "desktops": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/stacionarus-kompiuteriai/",
     "gaming_pcs": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/zaidimu-kompiuteriai/",
     "servers": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/serveriai/",
     "cpus": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriu-komponentai/stacionariems-kompiuteriams/procesoriai-cpu/",
     "gpus": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriu-komponentai/stacionariems-kompiuteriams/vaizdo-plokstes/"
   },
+  "manual_laptops_url": "https://www.skelbiu.lt/skelbimai/kompiuterija/kompiuteriai/nesiojami-kompiuteriai/",
   "watched_slugs": [],
   "pages_per_subcat": 5,
   "max_pages_per_run": 80,

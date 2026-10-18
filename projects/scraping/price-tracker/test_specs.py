@@ -109,6 +109,32 @@ FIXTURES = [
         "low",
         True,
     ),
+    # --- X3D extraction (must preserve the tier digit, not fall through to
+    # the X3D fallback's first-digit heuristic)
+    (
+        "Rtx 9070 XT / Ryzen 7 9800x3d / 32 GB RAM",
+        ["AMD Ryzen 7 9800X3D"],
+        # "XT" suffix isn't in _GPU_NVIDIA's (ti|super) alternation, so the
+        # regex captures "RTX 9070" — a pre-existing limitation. The tier-
+        # swap fix in resolve_cpu still kicks in for the X3D model.
+        ["GeForce RTX 9070"],
+        "med",      # mixed-parts: 2 models, no device keyword
+        False,
+    ),
+    (
+        "Gaming PC RYZEN 7 5800X3D RTX 3080",
+        ["AMD Ryzen 7 5800X3D"],
+        ["GeForce RTX 3080"],
+        "med",      # mixed-parts
+        False,
+    ),
+    (
+        "Ryzen 9 7950X3D + RTX 4090",
+        ["AMD Ryzen 9 7950X3D"],
+        ["GeForce RTX 4090"],
+        "med",      # mixed-parts
+        False,
+    ),
 ]
 
 

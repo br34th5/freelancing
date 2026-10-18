@@ -1,8 +1,12 @@
 # skelbiu.lt Electronics Price Tracker
 
-Daily polite scrape of skelbiu.lt (laptops, desktops, gaming PCs, servers,
+Every-3-days polite scrape of skelbiu.lt (desktops, gaming PCs, servers,
 CPUs, GPUs) → price history (asking + sold/reserved) → performance scoring
 (GPU resolution brackets, CPU genre tiers) → projected buy&sell profit report.
+
+**Laptops is excluded from the daily run** — that category trips aggressive
+Cloudflare protection that quickly burns the Oxylabs quota. Refresh
+laptops manually with `python -m scrape_laptops` from your own IP.
 
 ## Pipeline
 
@@ -41,9 +45,25 @@ python3 -m run_daily
 
 ## Scheduling (GitHub Actions)
 
-Runs daily via `.github/workflows/price-tracker.yml` at **06:10 UTC**
-(≈09:10 Europe/Vilnius in summer) + `workflow_dispatch` for manual runs.
-No local cron — the dev machine doesn't need to be on.
+Runs every 3 days via `.github/workflows/price-tracker.yml` at **00:00 UTC**
+(≈03:00 Europe/Vilnius in summer, ≈02:00 in winter) + `workflow_dispatch`
+for manual runs. No local cron — the dev machine doesn't need to be on.
+
+Every-3-days cadence: Oxylabs is $5/month and laptops is excluded (see
+below), so three days is enough cadence for sold-state transitions to
+accumulate without burning quota on idle scrapes.
+
+**Manual laptops scrape:**
+
+```bash
+python -m scrape_laptops            # first 3 pages (~10 min, no proxy)
+python -m scrape_laptops --pages 5  # deeper crawl
+```
+
+Runs the same parse + detail-enrichment logic as the main spider, but
+uses the fetcher engine (TLS impersonation) without a proxy, against
+your own IP. CF may still block occasionally — the script exits cleanly
+in that case, no alerts.
 
 **Required repo secrets:**
 - `DATABASE_URL` — Neon connection string (becomes the primary when no
@@ -82,7 +102,9 @@ Test: `python3 -c "import alerts; alerts.send_test()"`
 
 ## Config (config.json)
 
-- `subcats` / `watched_slugs` — crawl scope · `max_pages_per_run` kill-switch
+- `subcats` / `manual_laptops_url` — crawl scope (laptops is manual-only,
+  see Scheduling). `watched_slugs` — extra search keywords.
+- `max_pages_per_run` kill-switch
 - `fees_pct` (10) · `refurb_eur` per tier · `min_profit_eur` (50)
 - `fetch_engine`: `stealthy` (real Chrome + CF auto-solve) or `fetcher` (TLS impersonation, faster)
 - `vram_gates` · `genre_weights` · `g3d_bands` · `tier_thresholds`
@@ -109,9 +131,12 @@ python3 test_report.py     # profit engine + report rendering (offline)
 
 ## Politeness budget
 
-1×/day · ~70 pages × 3–5s delay ≈ 4–5 min · serial concurrency ·
-AutoThrottle · robots path-URLs only · TLS impersonation (no browser) ·
-`?type=1` (Siūlo only) · alert-only-on-failure · `max_pages_per_run` kill-switch.
+Every 3 days · ~25 pages × 3–5s delay ≈ 7–10 min · serial concurrency ·
+AutoThrottle · robots path-URLs only · TLS impersonation (no browser for
+the manual laptops script, real Chrome for the daily stealthy run) ·
+`?type=1` (Siūlo only) · alert-only-on-failure · `max_pages_per_run`
+kill-switch. Laptops scrape (manual) uses 1.5× wider delays since it
+hits skelbiu from a single residential IP.
 
 ## Reference data
 

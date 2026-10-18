@@ -1,6 +1,6 @@
 """Offline tests for extract.py using synthetic list HTML. Run: python3 test_extract.py"""
 
-from extract import parse_list_page, _parse_price, _parse_time_to_sell
+from extract import parse_list_page, parse_description_text, _parse_price, _parse_time_to_sell
 
 PAGE = """
 <html><body>
@@ -116,7 +116,61 @@ def run() -> int:
     check("444 url absolute", l4.url, "https://www.skelbiu.lt/skelbimai/superku-444.html")
 
     print(f"\n{'PASS' if fails == 0 else f'{fails} FAILURES'}")
-    return 1 if fails else 0
+
+    # --- description parsing (label + plain prose passes) ---
+    fails2 = 0
+    def check2(name, got, want):
+        nonlocal fails2
+        ok = got == want
+        print(f"[{'ok ' if ok else 'FAIL'}] {name}: {got!r}" + ("" if ok else f" (want {want!r})"))
+        if not ok:
+            fails2 += 1
+
+    # labeled fields (Lithuanian "PROCESORIUS:" / "VAIZDO PLOKŠTĖ:")
+    desc_labeled = (
+        "Parduodamas labai galingas kompiuteris su periferija.\n"
+        "Procesorius (CPU) - AMD Ryzen 7 9800X3D\n"
+        "Vaizdo plokštė (GPU) - GeForce RTX 5070 Ti"
+    )
+    out = parse_description_text(desc_labeled)
+    check2("labeled cpu", out.get("processor"), "AMD Ryzen 7 9800X3D")
+    check2("labeled gpu", out.get("gpu"), "GeForce RTX 5070 Ti")
+
+    # plain prose — no labels, model buried in Lithuanian sentence
+    desc_prose = (
+        "Šis kompiuteris yra šiek tiek naudotas. Jo specsai yra 4060 geforce gpu, "
+        "Ryzen 7 5800X, Tuf gaming motherboard, 16 GB Ram."
+    )
+    out = parse_description_text(desc_prose)
+    check2("prose gpu contains 4060", "4060" in out.get("gpu", ""), True)
+    check2("prose cpu contains Ryzen 7", "Ryzen 7" in out.get("processor", ""), True)
+
+    # prose with VRAM-style noise — should still find the GPU model
+    desc_vram = "Parduodu kompiuteri su rtx 3070 8gb ram, veikia puikiai zaidimam."
+    out = parse_description_text(desc_vram)
+    check2("prose gpu = rtx 3070", "RTX 3070" in out.get("gpu", ""), True)
+
+    # labeled should win over loose (never overwrite a clean labeled value);
+    # labeled pass stores raw text, scoring.py later canonicalizes via _join_gpu
+    desc_mixed = "GPU: GTX 1660 Ti\nAprašymas: tai galingas RTX 4090 modelis."
+    out = parse_description_text(desc_mixed)
+    check2("labeled wins over prose", "GTX 1660" in out.get("gpu", ""), True)
+    check2("labeled not overwritten by RTX 4090", "4090" not in out.get("gpu", ""), True)
+
+    # empty / no models
+    out_empty = parse_description_text("")
+    check2("empty", out_empty, {})
+    out_none = parse_description_text("Parduodu kompiuteri be specifikaciju")
+    check2("no models", out_none, {})
+
+    # bare-sku fallback still works in prose ("rx vega 56" partly works;
+    # bare "rtx 4090" is also caught)
+    desc_bare = "Pardaviau GTX 1660 SUPER, veikia puikiai."
+    out = parse_description_text(desc_bare)
+    check2("bare gpu", "GTX 1660" in out.get("gpu", ""), True)
+
+    print(f"\n{'PASS' if fails2 == 0 else f'{fails2} FAILURES'}")
+    return 1 if (fails or fails2) else 0
 
 
 if __name__ == "__main__":

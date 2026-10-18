@@ -55,6 +55,7 @@ class CpuScore:
     cpu_mark: float | None = None
     st_mark: float | None = None
     l3_mb: float | None = None
+    tdp_w: float | None = None      # TDP from data/cpu_tdp.json (NAS efficiency ranking)
 
 
 @dataclass
@@ -71,6 +72,7 @@ class ScoreResult:
     combined_score: float | None
     tier: str | None
     value_score: float | None
+    value_per_eur: float | None
     spec_confidence: str
 
 
@@ -87,6 +89,7 @@ def _load_json(name: str) -> dict:
 
 def load_cpu_index() -> dict[str, CpuScore]:
     raw = _load_json("cpu_scores")
+    tdp = _load_json("cpu_tdp")  # may be empty {} if data/cpu_tdp.json missing
     idx: dict[str, CpuScore] = {}
     for name, v in raw.items():
         idx[normalize_key(name)] = CpuScore(
@@ -94,6 +97,7 @@ def load_cpu_index() -> dict[str, CpuScore]:
             cpu_mark=v.get("cpu_mark"),
             st_mark=v.get("st_mark"),
             l3_mb=v.get("l3_mb"),
+            tdp_w=tdp.get(name),
         )
     return idx
 
@@ -227,6 +231,29 @@ def _variant_entry(key: str, idx: dict, title: str):
     return next(iter(cands.values()))               # any single variant
 
 
+_X3D_TIERS = ("5", "7", "9")  # AMD made X3D SKUs at every tier
+
+
+def _x3d_tier_swap(model: str, cpu_idx: dict):
+    """For X3D models where the tier guess is wrong, try every tier.
+
+    The X3D regex in specs.py can only match the bare number, so it has to
+    guess the tier from the first digit. Real SKUs disagree — "5800X3D" is
+    Ryzen 7, "9800X3D" is Ryzen 7, "9900X3D" is Ryzen 9 — so an entry like
+    "AMD Ryzen 5 5800X3D" might miss even though "AMD Ryzen 7 5800X3D"
+    exists in cpu_scores. Try each tier in turn; return whichever matches.
+    """
+    m = re.match(r"^AMD Ryzen (\d) (\d{4}X3D)$", model or "")
+    if not m:
+        return None
+    base = m.group(2)
+    for tier in _X3D_TIERS:
+        candidate = f"AMD Ryzen {tier} {base}"
+        if normalize_key(candidate) in cpu_idx:
+            return cpu_idx[normalize_key(candidate)]
+    return None
+
+
 def resolve_gpu(model: str | None, gpu_idx: dict[str, GpuScore],
                 title: str = "") -> GpuScore | None:
     if not model:
@@ -252,7 +279,8 @@ def resolve_cpu(model: str | None, cpu_idx: dict[str, CpuScore],
         return None
     key = normalize_key(model)
     return (cpu_idx.get(key) or _resolve_fallback(key, cpu_idx)
-            or _variant_entry(key, cpu_idx, title.lower()))
+            or _variant_entry(key, cpu_idx, title.lower())
+            or _x3d_tier_swap(model, cpu_idx))
 
 
 # ---------------------------------------------------------------- scoring
@@ -341,6 +369,27 @@ def value_score(price: float | None, combined: float | None, cpu_mark: float | N
     return round(price / pts, 2)
 
 
+def value_per_eur(price: float | None, combined: float | None, cpu_mark: float | None,
+                  g3d: float | None, device_class: str) -> float | None:
+    """k-points per € spent at asking price — HIGHER = more value for money.
+
+    Inverse of `value_score` (which is € per 1k pts). value_score=36 means
+    the listing gets ~0.028 k-pts per €; this column surfaces that ratio
+    directly so the report can rank "most value → least value" without
+    mental inversion. Whole PCs use combined; components use the larger of
+    cpu_mark/g3d.
+    """
+    if not price or price <= 0:
+        return None
+    if device_class in ("desktop", "laptop", "server"):
+        pts_k = combined
+    else:
+        pts_k = (cpu_mark / 1000.0) if (cpu_mark or 0) > (g3d or 0) else ((g3d or 0) / 1000.0)
+    if not pts_k or pts_k <= 0:
+        return None
+    return round(pts_k / price, 4)
+
+
 def classify_device(category: str, title: str) -> str:
     """Category is authoritative; title keywords only fill the gaps.
 
@@ -379,7 +428,8 @@ def score_listing(listing: dict, cpu_idx: dict, gpu_idx: dict,
     category = listing.get("category", "")
 
     # Use enriched_title (from detail-page description parsing) when available,
-    # falling back to the raw title. Also merge desc_cpu/desc_gpu as text hints.
+    # falling back to the raw title. Also merge desc_cpu/desc_gpu as text hints
+    # so a plain-prose description ("rx vega 56") feeds analyze_title's regex.
     effective_title = listing.get("enriched_title") or title
     desc_cpu = listing.get("desc_cpu", "")
     desc_gpu = listing.get("desc_gpu", "")
@@ -391,6 +441,16 @@ def score_listing(listing: dict, cpu_idx: dict, gpu_idx: dict,
     if title_spec is None:
         title_spec = analyze_title(effective_title, CONFIG)
     device_class = classify_device(category, title)
+
+    # If the title's regex missed a model but the description parser already
+    # extracted one, prefer the description model. This catches plain-prose
+    # descriptions that the title-only analyze_title pass skips, and it's
+    # what closes the cpu-missing / gpu-missing gap after the spider's
+    # detail-page enrichment.
+    if desc_cpu and not title_spec.cpus:
+        title_spec.cpus = [desc_cpu]
+    if desc_gpu and not title_spec.gpus:
+        title_spec.gpus = [desc_gpu]
 
     cpu_model = title_spec.cpus[0] if title_spec.cpus else None
     gpu_model = title_spec.gpus[0] if title_spec.gpus else None
@@ -436,6 +496,9 @@ def score_listing(listing: dict, cpu_idx: dict, gpu_idx: dict,
     vscore = value_score(price, comb,
                          cpu.cpu_mark if cpu else None,
                          gpu.g3d_mark if gpu else None, device_class)
+    vpe = value_per_eur(price, comb,
+                        cpu.cpu_mark if cpu else None,
+                        gpu.g3d_mark if gpu else None, device_class)
 
     canonical = cpu_model or gpu_model
     return ScoreResult(
@@ -445,7 +508,8 @@ def score_listing(listing: dict, cpu_idx: dict, gpu_idx: dict,
         canonical_model=canonical,
         res_brackets=res_brackets, genre_tiers=genre_tiers,
         bottleneck=bottleneck, combined_score=comb, tier=tier,
-        value_score=vscore, spec_confidence=title_spec.confidence,
+        value_score=vscore, value_per_eur=vpe,
+        spec_confidence=title_spec.confidence,
     )
 
 

@@ -9,6 +9,13 @@ DOM facts (verified 2026-10-11):
   reserved   = .top-right .item.reserved-icon
   params     = .item-params .param  → "Būklė: Nauja"
   pagination = a.pagination_link[rel=next]
+
+Description parsing (verified 2026-10-18):
+  Most Lithuanian listings describe specs in plain prose
+  ("veikia puikiai zaidimam pats tas rx vega 56" / "Ryzen 5900") without a
+  labeled header, so we run the title CPU/GPU regexes over the description
+  text as a second pass — only models missing from the labeled pass get
+  filled in, never overwriting a clean labeled value.
 """
 
 from __future__ import annotations
@@ -22,7 +29,7 @@ from urllib.parse import urljoin
 
 from scrapling.parser import Selector
 
-from specs import _clean
+from specs import _clean, extract_cpus, extract_gpus
 
 SEL_ITEM = "a.standard-list-item[data-item-id]"
 SEL_NEXT = 'a.pagination_link[rel="next"]'
@@ -192,14 +199,17 @@ def parse_list_page(html: str, page_url: str, category: str) -> tuple[list[Listi
 
 # ---------------------------------------------------------- detail page
 
-# Lithuanian spec field labels commonly found in descriptions
+# Lithuanian spec field labels commonly found in descriptions. The labels are
+# often wrapped in parens ("Procesorius (CPU) - …"), so the regex accepts an
+# optional `(...)` between keyword and separator before falling through to
+# the loose CPU/GPU extraction.
 _SPEC_FIELDS = {
     "processor": re.compile(
-        r"(?:PROCESSOR|PROCESORIUS|CPU)\s*[:\u2013-]\s*(.+)", re.I
+        r"(?:PROCESSOR|PROCESORIUS|CPU)\s*(?:\([^)]*\)\s*)?[:\u2013-]\s*(.+)", re.I
     ),
     "gpu": re.compile(
         r"(?:VAIZDO\s+PLOK[^\s:]*|VIDEO|GPU|GRAFIKA|GRAPHICS)"
-        r"\s*[:\u2013-]\s*(.+)", re.I
+        r"\s*(?:\([^)]*\)\s*)?[:\u2013-]\s*(.+)", re.I
     ),
     "ram": re.compile(
         r"(?:RAM|ATMINTIN[^\s:]*|MEMORY)\s*[:\u2013-]\s*(.+)", re.I
@@ -218,6 +228,14 @@ def parse_description_text(desc: str) -> dict[str, str]:
 
     Returns dict like {"processor": "Intel Core i5-1334U", "gpu": "Intel UHD Graphics", ...}.
     Handles `<br>`-separated lines and common field label variations.
+
+    Strategy (two passes, second pass only fills gaps):
+      1. Labeled fields — "PROCESORIUS: i5-13400", "GPU: RTX 4070", etc.
+         Fast, low-noise, but most Lithuanian ads don't use these labels.
+      2. Loose regex pass — runs `extract_cpus` / `extract_gpus` over the
+         full description text. Picks up plain-prose mentions like
+         "veikia puikiai rx vega 56" / "Ryzen 5900" / "RTX 3050 6Gb". A
+         labeled value is never overwritten.
     """
     if not desc:
         return {}
@@ -240,6 +258,20 @@ def parse_description_text(desc: str) -> dict[str, str]:
                 val = m.group(1).strip().rstrip(";").strip()
                 if val:
                     found[field] = val
+
+    # Pass 2: loose extraction over the full description. Most ads don't use
+    # labeled fields, so this is what finds CPU/GPU in plain prose. Skip
+    # when the labeled pass already produced a value for that slot.
+    if "processor" not in found:
+        cpus = extract_cpus(text)
+        if cpus:
+            # take the most-specific match: longest name (X3D > bare, full
+            # model > bare sku). Specs.py already dedupes + canonicalizes.
+            found["processor"] = max(cpus, key=len)
+    if "gpu" not in found:
+        gpus = extract_gpus(text)
+        if gpus:
+            found["gpu"] = max(gpus, key=len)
     return found
 
 

@@ -213,13 +213,13 @@ def fetch_passmark_gpus() -> dict:
 
 def join_cpu_scores(cpus: dict, st: dict) -> dict:
     """Merge MT list + ST list on normalized names; carry over existing l3.
-
-    Prefix fallback only accepts pure clock-suffix variants
-    (e.g. '...14900k' vs '...14900k320ghz') — never K/KF-style siblings.
+    TDP comes from the static data/cpu_tdp.json lookup so the NAS-efficiency
+    report can rank by wattage even when PassMark doesn't surface TDP.
     """
     existing = _load("cpu_scores")
     st_by_key = {normalize_key(k): v for k, v in st.items()}
     clock_suffix = re.compile(r"(\d+(?:\.\d+)?)(?:mhz|ghz|hz)")
+    tdp_static = _load("cpu_tdp")
 
     def _clock_variant(cpu_key: str, st_key: str) -> bool:
         longer, shorter = (st_key, cpu_key) if len(st_key) > len(cpu_key) else (cpu_key, st_key)
@@ -248,10 +248,14 @@ def join_cpu_scores(cpus: dict, st: dict) -> dict:
             "rank": info["rank"],
             "cpu_id": info.get("cpu_id"),
             "l3_mb": prev.get("l3_mb"),
+            # Preserve the TDP across refreshes — prefer the static lookup
+            # so a stale PassMark page (no TDP field) doesn't lose it.
+            "tdp_w": prev.get("tdp_w") or tdp_static.get(name),
             "scraped_at": _now(),
         }
     print(f"joined: {sum(1 for v in out.values() if v['st_mark'])}/{len(out)} with ST, "
-          f"{len(unmatched_st)} ST-only entries ignored")
+          f"{len(unmatched_st)} ST-only entries ignored, "
+          f"{sum(1 for v in out.values() if v.get('tdp_w'))}/{len(out)} with TDP")
     return out
 
 

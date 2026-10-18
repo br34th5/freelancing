@@ -36,8 +36,13 @@ _CPU_INTEL = re.compile(
     r"|\bi([3579])[-\s]?(\d{4,5})([KHFSU]E?)?\b",
     re.I,
 )
+# Order matters: the explicit X3D branch runs before the loose \d{3,4} branch
+# so that "Ryzen 7 9800X3D" / "Ryzen 7 5800X3D" pick up the correct tier
+# instead of falling through to the X3D fallback's first-digit heuristic
+# (which would wrongly tag "5800X3D" as Ryzen 5).
 _CPU_AMD = re.compile(
-    r"\b(?:amd\s+)?ryzen\s+([3579])\s+(\d{4})([XHUS]?)?\b"
+    r"\b(?:amd\s+)?ryzen\s+(pro\s+)?([3579])\s+(\d{4})X3D\b"
+    r"|\b(?:amd\s+)?ryzen\s+([3579])\s+(\d{4})([XHUS]?)?\b"
     r"|\bryzen\s+([3579])(\d{4})([XHUS]?)?\b"
     r"|\b(?:amd\s+)?ryzen\s+(pro\s+)?([3579])\s+(\d{3,4})([XH]?)?\b",
     re.I,
@@ -124,12 +129,18 @@ def extract_cpus(title: str) -> list[str]:
         found.append(f"Intel Core i{tier}-{num}{suffix}")
 
     for m in _CPU_AMD.finditer(t):
-        if m.group(1):
-            tier, num, suf = m.group(1), m.group(2), (m.group(3) or "")
-        elif m.group(4):
+        # Branch layout: (X3D-with-tier, bare 4-digit, bare no-space, 3-4 digit)
+        # Group 1 = pro prefix (X3D branch only), 2/3 = tier/num; the other
+        # branches slot tier/num into groups 4-9.
+        if m.group(2):                   # X3D branch: m[2]=tier, m[3]=num
+            tier, num = m.group(2), m.group(3)
+            suf = "X3D"
+        elif m.group(4):                 # bare 4-digit with space: m[4]=tier, m[5]=num
             tier, num, suf = m.group(4), m.group(5), (m.group(6) or "")
-        else:
+        elif m.group(7):                 # bare no-space: m[7]=tier, m[8]=num
             tier, num, suf = m.group(7), m.group(8), (m.group(9) or "")
+        else:                            # 3-4 digit fallback: m[10]=pro, m[11]=tier, m[12]=num
+            tier, num, suf = m.group(11), m.group(12), (m.group(13) or "")
         name = f"AMD Ryzen {tier} {num}{suf.upper()}"
         if num in x3d_nums and "X3D" not in name.upper():
             name = f"{name}X3D"

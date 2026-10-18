@@ -2,8 +2,11 @@ name: skelbiu Price Tracker
 
 on:
   schedule:
-    # 11:30 UTC = 14:30 EEST (summer) / 13:30 EET (winter). The Oct 14 run at ~11:41 was flawless (720 items, 0 blocks).
-    - cron: '30 11 * * *'
+    # Every 2 days at 00:00 UTC = 03:00 Vilnius (EEST, summer) / 02:00
+    # Vilnius (EET, winter) — single UTC cron can't follow DST.
+    # Laptops is excluded from this run — scrape that category manually
+    # (`python -m scrape_laptops`) from your own IP without a proxy.
+    - cron: '0 0 */2 * *'
   workflow_dispatch:
 
 jobs:

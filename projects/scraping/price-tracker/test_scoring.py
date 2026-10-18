@@ -4,7 +4,8 @@ Run: python3 test_scoring.py"""
 from scoring import (
     _reco_to_brackets, _gpu_bracket_from_g3d, apply_vram_gate, resolve_gpu,
     resolve_cpu, cpu_genre_tiers, tier_for, combined_score, value_score,
-    classify_device, score_listing, GpuScore, CpuScore,
+    value_per_eur, classify_device, score_listing, GpuScore, CpuScore,
+    load_cpu_index,
 )
 
 fails = 0
@@ -128,6 +129,28 @@ def run():
     comp_vs = value_score(200, None, None, 16885, "component")
     check("value component gpu", comp_vs, round(200 / 16.885, 2))
 
+    # --- value_per_eur: k-points per € (higher = better value).
+    # Pure inverse of value_score (€ per 1k pts) within rounding precision.
+    comb_vs = combined_score("desktop", 34279, 16885, 34279, 16885)
+    vpe = value_per_eur(900, comb_vs, 34279, 16885, "desktop")
+    check("vpe desktop exists", vpe is not None, True)
+    # ratio k-pts/€ = combined/price; value_score = price/combined;
+    # vpe ≈ 1/value_score (k-pts/€ vs €/k-pts)
+    check("vpe desktop ≈ 1/value_score",
+          abs(vpe - 1 / value_score(900, comb_vs, 34279, 16885, "desktop")) < 0.001,
+          True)
+    # a budget PC at half price has roughly 2x the value per €
+    vpe_cheap = value_per_eur(450, comb_vs, 34279, 16885, "desktop")
+    check("vpe halves when price halves", round(vpe_cheap / vpe, 2), 2.0)
+    # component: uses larger of cpu/g3d
+    vpe_comp = value_per_eur(200, None, 19000, 16885, "component")
+    check("vpe component uses larger mark (cpu)", vpe_comp, round(19 / 200, 4))
+    vpe_comp_gpu = value_per_eur(200, None, 10000, 16885, "component")
+    check("vpe component uses larger mark (gpu)", vpe_comp_gpu, round(16.885 / 200, 4))
+    # missing inputs → None
+    check("vpe no price", value_per_eur(0, 20, None, None, "desktop"), None)
+    check("vpe no score", value_per_eur(500, None, None, None, "desktop"), None)
+
     # --- device class
     check("class laptop", classify_device("laptops", "Lenovo Legion Pro 7 i9 4090"), "laptop")
     check("class cpu cat", classify_device("cpus", "AMD Ryzen 5 5600"), "component")
@@ -176,6 +199,66 @@ def run():
     c4 = score_listing(gpu_only, cpu_idx, gpu_idx)
     check("gpu-only pc tier set", c4.tier is not None, True)
     check("gpu-only pc flag", c4.bottleneck, "cpu-missing")
+
+    # --- description-extracted models close the cpu/gpu-missing gap ---
+    # title has NO cpu/gpu; desc_cpu / desc_gpu (from detail-page parsing)
+    # are used as model hints. Result: balanced tier, no missing-flag.
+    prose_only = {"item_id": "5",
+                  "title": "Parduodu kompiuteri", "category": "gaming_pcs",
+                  "price_eur": 700.0,
+                  "desc_cpu": "AMD Ryzen 7 7800X3D", "desc_gpu": "GeForce RTX 4070 Ti"}
+    c5 = score_listing(prose_only, cpu_idx, gpu_idx)
+    check("prose-only cpu model", c5.cpu_model, "AMD Ryzen 7 7800X3D")
+    check("prose-only gpu model", c5.gpu_model, "GeForce RTX 4070 Ti")
+    check("prose-only cpu score", c5.cpu_score, 34279)
+    # RTX 4070 Ti isn't in gpu_idx but the variant lookup finds the same
+    # base key the title-only fixture used (rtx4070 → no, only 4090/3070/3060
+    # in the fixture; the prose-only GPU doesn't resolve → still gpu-missing).
+    # That's the expected partial fix: the *gap detection* closes once the
+    # model is in the index.
+    only_desc = {"item_id": "6",
+                 "title": "Rtx 4090 bare title", "category": "gaming_pcs",
+                 "price_eur": 2000.0,
+                 "desc_cpu": "Intel Core i5-13600K"}
+    c6 = score_listing(only_desc, cpu_idx, gpu_idx)
+    check("title-only gpu + desc cpu → both scored",
+          c6.cpu_model == "Intel Core i5-13600K" and c6.gpu_model == "GeForce RTX 4090",
+          True)
+    check("title+desc no missing flag", c6.bottleneck, None)
+
+    # --- X3D tier-swap fallback (analyzer picks wrong tier from first digit
+    # heuristic; resolve_cpu retries 5/7/9 until it hits a PassMark key)
+    x3d_idx = {
+        "ryzen75800x3d": CpuScore(model="AMD Ryzen 7 5800X3D", cpu_mark=28285),
+        "ryzen79800x3d": CpuScore(model="AMD Ryzen 7 9800X3D", cpu_mark=39915),
+        "ryzen97700x3d": CpuScore(model="AMD Ryzen 7 7700X3D", cpu_mark=32752),
+    }
+    # "5800X3D" first digit = 5 → wrong tier guess, swap to 7 finds it
+    r5 = resolve_cpu("AMD Ryzen 5 5800X3D", x3d_idx)
+    check("x3d tier-swap 5→7 finds 5800X3D", r5.model, "AMD Ryzen 7 5800X3D")
+    check("x3d tier-swap 5→7 score", r5.cpu_mark, 28285)
+    # "9800X3D" first digit = 9 → wrong tier guess (9800X3D is Ryzen 7),
+    # swap to 7 finds it
+    r9 = resolve_cpu("AMD Ryzen 9 9800X3D", x3d_idx)
+    check("x3d tier-swap 9→7 finds 9800X3D", r9.model, "AMD Ryzen 7 9800X3D")
+    # exact match still works (no swap needed)
+    r7 = resolve_cpu("AMD Ryzen 7 7700X3D", x3d_idx)
+    check("x3d exact match", r7.model, "AMD Ryzen 7 7700X3D")
+    # truly missing X3D returns None
+    r_none = resolve_cpu("AMD Ryzen 9 9999X3D", x3d_idx)
+    check("x3d truly missing → None", r_none, None)
+
+    # --- load_cpu_index populates tdp_w from data/cpu_tdp.json
+    cpu_idx = load_cpu_index()
+    tdp_hits = sum(1 for e in cpu_idx.values() if e.tdp_w is not None)
+    # Should pick up at least the well-known NAS chips we hand-listed
+    celeron_n = cpu_idx.get("intelceleron100080ghz")
+    if celeron_n is not None:
+        check("celeron N100 has tdp_w", celeron_n.tdp_w is not None, True)
+    ryzen_5600 = next((e for e in cpu_idx.values() if "Ryzen 5 5600" == e.model), None)
+    if ryzen_5600:
+        check("Ryzen 5 5600 has tdp_w", ryzen_5600.tdp_w is not None, True)
+    check("tdp coverage > 100 models", tdp_hits > 100, True)
 
     print(f"\n{'PASS' if fails == 0 else f'{fails} FAILURES'}")
     return 1 if fails else 0

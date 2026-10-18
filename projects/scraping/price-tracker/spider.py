@@ -15,6 +15,13 @@ Proxy:
   StealthyFetcher: PROXY_SERVER + PROXY_USER + PROXY_PASS (env/.env)
   Fetcher: PROXY_LIST / PROXY_HOSTS + PROXY_USER + PROXY_PASS (legacy URL list)
 
+CF-solve failure bail-out:
+  Scrapling logs "Failed to solve the Cloudflare challenge after 3 attempts"
+  once the stealthy auto-solver gives up on a request. After that, every
+  subsequent page hits the same dead solver — there's no point retrying.
+  A logging handler (`_CFGuard`) catches that message, sets a flag, and
+  the spider returns silently with exit_code 2 (skip, no alert).
+
 Emits item dicts (one per listing) with observed_at timestamp. Storage (P3):
   database.save_items(items) — local Docker Postgres primary + Neon dual-write,
   with data/observations.jsonl kept as a raw crawl backup (re-loadable via
@@ -32,6 +39,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import logging
 import os
 import random
 import re
@@ -162,6 +170,34 @@ def _fallback_proxy_entries(env: dict) -> list[str]:
 CHAMP_FAIL_LIMIT = 2
 
 
+class _CFGuard(logging.Handler):
+    """Watch scrapling's logger for the auto-solver giving up.
+
+    Once scrapling emits "Failed to solve the Cloudflare challenge after 3
+    attempts" every subsequent page will hit the same dead solver — the
+    proxy is rate-limited and retries won't help. We set a flag on the
+    spider and let the next `parse()` call return early, so the crawl
+    ends cleanly with exit_code 2 (silent skip, no alert).
+    """
+    CF_FAIL_MARKER = "Failed to solve the Cloudflare challenge"
+
+    def __init__(self, spider):
+        super().__init__(level=logging.ERROR)
+        self._spider = spider
+
+    def emit(self, record):
+        try:
+            msg = record.getMessage()
+        except Exception:
+            return
+        if self.CF_FAIL_MARKER in msg:
+            if not self._spider._cf_solve_failed:
+                self._spider.logger.warning(
+                    "CF auto-solver exhausted — aborting crawl to skip the dead proxy"
+                )
+            self._spider._cf_solve_failed = True
+
+
 class ProxyHealth:
     """CF-aware selection strategy for scrapling's ProxyRotator.
 
@@ -273,6 +309,7 @@ class SkelbiuSpider(Spider):
         self._fallback_used = False
         self._use_fallback = use_fallback
         self._detail_specs: dict[str, dict] = {}  # item_id → {desc_cpu, desc_gpu, enriched_title}
+        self._cf_solve_failed = False                # set by _CFGuard → bails the crawl
         DATA.mkdir(exist_ok=True)
         super().__init__(crawldir=str(DATA / "crawl_state"), **kw)
 
@@ -281,6 +318,12 @@ class SkelbiuSpider(Spider):
         env = _load_env()
         engine = (env.get("FETCH_ENGINE") or CONFIG.get("fetch_engine", "stealthy")).lower()
         self._fetch_engine = engine
+
+        # Attach the CF-solver guard once per spider instance, regardless of
+        # which engine is configured — both can hit the same dead-solver case.
+        scrapling_logger = logging.getLogger("scrapling")
+        if not any(isinstance(h, _CFGuard) for h in scrapling_logger.handlers):
+            scrapling_logger.addHandler(_CFGuard(self))
 
         proxy_d = _proxy_dict(env)
         proxy_list = _proxy_entries(env)
@@ -392,6 +435,11 @@ class SkelbiuSpider(Spider):
 
     # ---- parse --------------------------------------------------------------
     async def parse(self, response):
+        if self._cf_solve_failed:
+            # _CFGuard tripped — proxy/CF combo is dead for this run, don't
+            # keep wasting requests on pages that will all hit the same wall.
+            return
+
         if self._pages_fetched >= self.max_pages:
             self.logger.info("page budget reached (%d) — stopping", self.max_pages)
             return
@@ -426,10 +474,14 @@ class SkelbiuSpider(Spider):
             self._items_emitted += 1
             yield item
 
-            # if CPU/GPU missing from title, queue detail-page fetch for enrichment
+            # If EITHER cpu or gpu is missing from the title, queue a detail
+            # fetch — most Lithuanian ads bury the missing model in the prose
+            # description ("veikia puikiai zaidimam pats tas rx vega 56"), so
+            # the title alone often leaves one side unscored. Only listings
+            # with BOTH a CPU and GPU in the title skip the detail fetch.
             from specs import analyze_title
             ts = analyze_title(l.title)
-            if not ts.cpus and not ts.gpus:
+            if not ts.cpus or not ts.gpus:
                 need_detail += 1
                 yield Request(
                     l.url,
@@ -480,11 +532,18 @@ class SkelbiuSpider(Spider):
         if gpu_text:
             entry["desc_gpu"] = gpu_text
 
-        # enrich title with found specs so scoring can parse them
+        # enrich title with found specs so scoring can parse them. The
+        # gate ("title already has a CPU/GPU token? skip") is replaced by
+        # analyzing the actual title with the same regex set we use for
+        # scoring — a title that resolves to one CPU model doesn't get a
+        # second CPU glued on, but a title with no CPU at all gets the
+        # description's CPU appended even if it contains a generic word.
+        from specs import analyze_title
+        ts = analyze_title(l.title)
         enriched = l.title
-        if cpu_text and not re.search(r"i[3579][- ]\d{4,5}|ryzen|xeon|epyc", l.title, re.I):
+        if cpu_text and not ts.cpus:
             enriched = f"{enriched} {cpu_text}"
-        if gpu_text and not re.search(r"rtx|gtx|rx\s*\d{3,4}|arc\s+a\d{3}|geforce|radeon", l.title, re.I):
+        if gpu_text and not ts.gpus:
             enriched = f"{enriched} {gpu_text}"
         if enriched != l.title:
             entry["enriched_title"] = enriched
@@ -526,16 +585,24 @@ class SkelbiuSpider(Spider):
             self.logger.info("proxy health: %s", self._proxy_health.snapshot())
         else:
             self.logger.info("engine=%s", self._fetch_engine)
+        if self._cf_solve_failed:
+            self.logger.warning("crawl aborted: CF auto-solver exhausted")
 
 
 def run(max_pages: int | None = None) -> dict:
     """Run one crawl. Returns {exit_code, items, pages, max_block_streak,
     paused, completed, db_ok} for the daily pipeline's break checks.
 
-    Exit codes: 0=success, 1=fail (blocked/error), 2=skip (all proxies failed).
+    Exit codes: 0=success, 1=fail (blocked/error), 2=skip (silent — CF
+    auto-solver exhausted OR all proxies failed).
 
     Fallback logic: if primary proxy (Oxylabs) fails (0 items), retry with
     fallback proxies (LT datacenter). If fallback also fails, skip the run.
+
+    CF-solver abort: if the stealthy fetcher logs "Failed to solve the
+    Cloudflare challenge after 3 attempts", the spider returns immediately
+    with exit_code 2 (skip silently, no alert). Running on a dead proxy
+    just burns the monthly Oxylabs quota without producing any items.
     """
     env = _load_env()
     fallback_entries = _fallback_proxy_entries(env)
@@ -547,6 +614,25 @@ def run(max_pages: int | None = None) -> dict:
 
     # Merge detail-page extracted specs (desc_cpu/desc_gpu/enriched_title)
     items = _merge_detail_specs(items, spider._detail_specs)
+
+    # If CF solver died mid-crawl, no point trying fallback — the solver
+    # is dead for this run. Skip silently with exit_code 2.
+    if spider._cf_solve_failed:
+        print("CF auto-solver exhausted — skipping this run (no alert)")
+        if items:
+            with OBS_PATH.open("a") as f:
+                for it in items:
+                    f.write(json.dumps(it, ensure_ascii=False) + "\n")
+        return {
+            "exit_code": 2,
+            "items": len(items),
+            "pages": spider._pages_fetched,
+            "max_block_streak": spider._max_block_streak,
+            "paused": result.paused,
+            "completed": result.completed,
+            "db_ok": True,
+            "cf_solve_failed": True,
+        }
 
     # If 0 items and fallback proxies available, retry with fallback
     if not items and fallback_entries and not spider._fallback_used:

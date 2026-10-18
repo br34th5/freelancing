@@ -1,11 +1,13 @@
-"""Offline tests for spider.py proxy health (CF-sticky rotator strategy).
+"""Offline tests for spider.py proxy health (CF-sticky rotator strategy)
+and the CF-solver bail-out guard.
 Run: python3 test_spider_health.py"""
 
+import logging
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from spider import ProxyHealth, CHAMP_FAIL_LIMIT
+from spider import ProxyHealth, CHAMP_FAIL_LIMIT, _CFGuard
 
 fails = 0
 
@@ -72,6 +74,27 @@ def run():
     h5.champion = 0
     snap = h5.snapshot()
     check("snapshot redacts creds", "user:pass@" not in snap and "***@" in snap, True)
+
+    # --- CFGuard: scrapling "Failed to solve" log → spider flag
+    class _FakeSpider:
+        def __init__(self):
+            self._cf_solve_failed = False
+            self.logger = logging.getLogger("test_cfguard")
+            self.logger.setLevel(logging.ERROR)
+    sp = _FakeSpider()
+    guard = _CFGuard(sp)
+    rec_ok = logging.LogRecord("scrapling", logging.INFO, "", 0,
+                              "Fetched (200) page", None, None)
+    rec_fail = logging.LogRecord("scrapling", logging.ERROR, "", 0,
+                                "Failed to solve the Cloudflare challenge after 3 attempts",
+                                None, None)
+    guard.emit(rec_ok)
+    check("guard ignores non-CF logs", sp._cf_solve_failed, False)
+    guard.emit(rec_fail)
+    check("guard trips on 'Failed to solve'", sp._cf_solve_failed, True)
+    # second occurrence is idempotent (still tripped)
+    guard.emit(rec_fail)
+    check("guard stays tripped on repeat", sp._cf_solve_failed, True)
 
     print(f"\n{'PASS' if fails == 0 else f'{fails} FAILURES'}")
     return 1 if fails else 0
