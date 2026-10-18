@@ -1,4 +1,8 @@
-"""Daily pipeline (P6 cron entrypoint): crawl → score → report, with alerts.
+"""Scheduled pipeline (cron entrypoint): crawl → score → report, with alerts.
+
+The cadence lives in .github/workflows/price-tracker.yml (currently every
+2 days at 00:00 UTC ≈ 03:00 Europe/Vilnius) — this module is schedule-
+agnostic and just runs one full pass.
 
   python3 -m run_daily              # full run
   python3 -m run_daily --pages 5    # smoke crawl (then still scores + reports)

@@ -1,6 +1,6 @@
 # skelbiu.lt Electronics Price Tracker
 
-Every-3-days polite scrape of skelbiu.lt (desktops, gaming PCs, servers,
+Every-2-days polite scrape of skelbiu.lt (desktops, gaming PCs, servers,
 CPUs, GPUs) → price history (asking + sold/reserved) → performance scoring
 (GPU resolution brackets, CPU genre tiers) → projected buy&sell profit report.
 
@@ -39,19 +39,21 @@ python3 -m benchmarks refresh
 # 4. smoke crawl + score + report
 python3 -m run_daily --pages 3
 
-# 5. full daily run
+# 5. full scheduled run (same as the Actions cron)
 python3 -m run_daily
 ```
 
 ## Scheduling (GitHub Actions)
 
-Runs every 3 days via `.github/workflows/price-tracker.yml` at **00:00 UTC**
-(≈03:00 Europe/Vilnius in summer, ≈02:00 in winter) + `workflow_dispatch`
-for manual runs. No local cron — the dev machine doesn't need to be on.
+Runs every 2 days via `.github/workflows/price-tracker.yml` at **00:00 UTC**
+(=03:00 Europe/Vilnius in summer EEST, ≈02:00 in winter EET — a single UTC
+cron can't follow DST) + `workflow_dispatch` for manual runs. No local cron —
+the dev machine doesn't need to be on.
 
-Every-3-days cadence: Oxylabs is $5/month and laptops is excluded (see
-below), so three days is enough cadence for sold-state transitions to
-accumulate without burning quota on idle scrapes.
+Every-2-days cadence: Oxylabs is $5/month and laptops is excluded (see
+below), so two days is enough cadence for sold-state transitions to
+accumulate without burning quota on idle scrapes
+(~15 runs/month × ~$0.03 ≈ $0.45/month).
 
 **Manual laptops scrape:**
 
@@ -131,7 +133,7 @@ python3 test_report.py     # profit engine + report rendering (offline)
 
 ## Politeness budget
 
-Every 3 days · ~25 pages × 3–5s delay ≈ 7–10 min · serial concurrency ·
+Every 2 days · ~25 pages × 3–5s delay ≈ 7–10 min · serial concurrency ·
 AutoThrottle · robots path-URLs only · TLS impersonation (no browser for
 the manual laptops script, real Chrome for the daily stealthy run) ·
 `?type=1` (Siūlo only) · alert-only-on-failure · `max_pages_per_run`
