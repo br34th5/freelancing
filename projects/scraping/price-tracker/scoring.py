@@ -528,6 +528,7 @@ def fetch_listings(conn) -> list[dict]:
     with conn.cursor() as cur:
         cur.execute(f"""
             SELECT l.item_id, l.title, l.category, l.last_state,
+                   l.enriched_title, l.desc_cpu, l.desc_gpu,
                    (SELECT o.price_eur FROM {SCHEMA}.observations o
                     WHERE o.item_id = l.item_id
                     ORDER BY o.observed_at DESC LIMIT 1) AS price_eur

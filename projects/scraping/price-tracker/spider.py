@@ -10,6 +10,9 @@ Politeness budget:
   - AutoThrottle on, backs off on blocks
   - robots_txt_obey = True
   - max_pages_per_run kill-switch (default 80 ≈ 6 subcats × 5 + watched slugs)
+  - detail pages: dedup against listing_specs (already-scored items are never
+    refetched — desc specs persist in `listings`) + per-run budget cap
+    (max_detail_fetches_per_run)
 
 Proxy:
   StealthyFetcher: PROXY_SERVER + PROXY_USER + PROXY_PASS (env/.env)
@@ -46,6 +49,7 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 from scrapling.fetchers import AsyncStealthySession, FetcherSession
 from scrapling.spiders import Request, Spider
@@ -310,6 +314,13 @@ class SkelbiuSpider(Spider):
         self._use_fallback = use_fallback
         self._detail_specs: dict[str, dict] = {}  # item_id → {desc_cpu, desc_gpu, enriched_title}
         self._cf_solve_failed = False                # set by _CFGuard → bails the crawl
+        self._warned_mobile = False                  # m.skelbiu.lt redirect detector (warn once)
+        # detail-fetch discipline (previously unbounded — see docs/site_structure.md)
+        self.max_detail_fetches = int(CONFIG.get("max_detail_fetches_per_run", 60))
+        self._detail_queued = 0                      # detail requests queued this run
+        self._detail_cached = 0                      # skipped: item already scored earlier
+        self._detail_capped = 0                      # skipped: per-run budget exhausted
+        self._scored_cache: set[str] | None = None   # lazily loaded listing_specs item_ids
         DATA.mkdir(exist_ok=True)
         super().__init__(crawldir=str(DATA / "crawl_state"), **kw)
 
@@ -452,6 +463,17 @@ class SkelbiuSpider(Spider):
             self.logger.warning("HTTP %s on %s (page %d)", response.status, response.url, page_no)
             return
 
+        # Mobile-version detector: the desktop page's JS redirects to
+        # m.skelbiu.lt when viewport width < 1280 (see docs/site_structure.md).
+        # Card selectors still match on mobile, but rel=next pagination is
+        # absent there, so the crawl would silently degrade to 1 page/category.
+        if urlparse(response.url).netloc == "m.skelbiu.lt" and not self._warned_mobile:
+            self._warned_mobile = True
+            self.logger.warning(
+                "MOBILE version served (m.skelbiu.lt) — pagination selectors "
+                "will not match. Check fetcher viewport >= 1280x720."
+            )
+
         self._block_streak = 0  # a clean 200 breaks any CF-block streak
         if self._proxy_health is not None:
             self._proxy_health.report_ok()  # this proxy cleared CF — crown it
@@ -482,12 +504,22 @@ class SkelbiuSpider(Spider):
             from specs import analyze_title
             ts = analyze_title(l.title)
             if not ts.cpus or not ts.gpus:
-                need_detail += 1
-                yield Request(
-                    l.url,
-                    callback=self.parse_detail,
-                    meta={"category": cat, "listing": l, "now": now},
-                )
+                if l.item_id in self._scored_ids():
+                    # detail page was already fetched in a previous run and the
+                    # desc specs persist in `listings` — refetch adds nothing
+                    self._detail_cached += 1
+                elif self._detail_queued >= self.max_detail_fetches:
+                    # per-run budget: newest ads come first in listing order,
+                    # so the cap naturally prioritizes fresh listings
+                    self._detail_capped += 1
+                else:
+                    need_detail += 1
+                    self._detail_queued += 1
+                    yield Request(
+                        l.url,
+                        callback=self.parse_detail,
+                        meta={"category": cat, "listing": l, "now": now},
+                    )
 
         self.logger.info(
             "%s page %d: %d listings (%d kept, %d detail-queued), next=%s",
@@ -559,6 +591,27 @@ class SkelbiuSpider(Spider):
         if False:  # pragma: no cover  # makes this an async generator
             yield
 
+    def _scored_ids(self) -> set[str]:
+        """item_ids with a listing_specs row — their detail page was already
+        fetched in a previous run and desc specs persist in `listings`.
+
+        Lazily loaded once per run from the primary DB. On lookup failure the
+        dedup degrades to disabled (empty set) — refetching, never skipping.
+        """
+        if self._scored_cache is None:
+            self._scored_cache = set()
+            try:
+                from database import fetch_scored_item_ids
+                self._scored_cache = fetch_scored_item_ids()
+                self.logger.info(
+                    "detail dedup: %d already-scored item_ids cached", len(self._scored_cache)
+                )
+            except Exception as e:
+                self.logger.warning(
+                    "listing_specs lookup failed — detail dedup disabled: %s", e
+                )
+        return self._scored_cache
+
     @staticmethod
     def _build_item(l, cat: str, now: str, source_page: str) -> dict:
         return {
@@ -580,6 +633,11 @@ class SkelbiuSpider(Spider):
     async def on_close(self):
         self.logger.info(
             "crawl finished: %d pages, %d items", self._pages_fetched, self._items_emitted
+        )
+        self.logger.info(
+            "detail fetches: %d queued, %d skipped (already scored), %d skipped (budget %d)",
+            self._detail_queued, self._detail_cached, self._detail_capped,
+            self.max_detail_fetches,
         )
         if self._proxy_health is not None:
             self.logger.info("proxy health: %s", self._proxy_health.snapshot())

@@ -10,6 +10,7 @@
   "watched_slugs": [],
   "pages_per_subcat": 5,
   "max_pages_per_run": 80,
+  "max_detail_fetches_per_run": 60,
   "delay_seconds": [3, 5],
   "fetch_engine": "stealthy",
   "fetch_impersonate": "chrome131",
