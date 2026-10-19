@@ -6,6 +6,7 @@ __pycache__/
 .pytest_cache/
 data/
 *.log
+projects/scraping/price-tracker/docs/
 .learning/
 projects/scraping/scheduled-hn/data/*.json
 projects/scraping/scheduled-hn/hn_scraper.log
