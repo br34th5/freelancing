@@ -57,6 +57,9 @@ CREATE TABLE IF NOT EXISTS {s}.listings (
     source      TEXT,
     location    TEXT,
     condition   TEXT,
+    enriched_title TEXT,
+    desc_cpu    TEXT,
+    desc_gpu    TEXT,
     first_seen  TIMESTAMPTZ NOT NULL,
     last_seen   TIMESTAMPTZ NOT NULL,
     last_state  TEXT NOT NULL DEFAULT 'active'
@@ -125,6 +128,11 @@ CREATE TABLE IF NOT EXISTS {s}.listing_specs (
 );
 
 CREATE INDEX IF NOT EXISTS idx_{s}_specs_tier ON {s}.listing_specs (tier);
+
+-- detail-page desc-enrichment columns (2026-10-19): ALTERs keep existing DBs in sync
+ALTER TABLE {s}.listings ADD COLUMN IF NOT EXISTS enriched_title TEXT;
+ALTER TABLE {s}.listings ADD COLUMN IF NOT EXISTS desc_cpu TEXT;
+ALTER TABLE {s}.listings ADD COLUMN IF NOT EXISTS desc_gpu TEXT;
 """
 
 INSERT_OBS = """
@@ -137,6 +145,7 @@ ON CONFLICT (item_id, observed_at) DO NOTHING
 UPSERT_LISTING = """
 INSERT INTO {s}.listings
     (item_id, url, title, category, source, location, condition,
+     enriched_title, desc_cpu, desc_gpu,
      first_seen, last_seen, last_state)
 VALUES %s
 ON CONFLICT (item_id) DO UPDATE SET
@@ -152,7 +161,11 @@ ON CONFLICT (item_id) DO UPDATE SET
     location   = CASE WHEN EXCLUDED.last_seen >= {s}.listings.last_seen
                       THEN EXCLUDED.location ELSE {s}.listings.location END,
     condition  = CASE WHEN EXCLUDED.last_seen >= {s}.listings.last_seen
-                      THEN EXCLUDED.condition ELSE {s}.listings.condition END
+                      THEN EXCLUDED.condition ELSE {s}.listings.condition END,
+    -- desc enrichment: keep the last known value when this crawl came up empty
+    enriched_title = COALESCE(EXCLUDED.enriched_title, {s}.listings.enriched_title),
+    desc_cpu = COALESCE(EXCLUDED.desc_cpu, {s}.listings.desc_cpu),
+    desc_gpu = COALESCE(EXCLUDED.desc_gpu, {s}.listings.desc_gpu)
 """
 
 INSERT_TRANS = """
@@ -296,6 +309,7 @@ def load_items(conn, items: list[dict], schema: str = SCHEMA) -> LoadStats:
         list_rows = [
             (r["item_id"], r.get("url"), r.get("title"), r.get("category"),
              r.get("source_page"), r.get("location"), r.get("condition"),
+             r.get("enriched_title"), r.get("desc_cpu"), r.get("desc_gpu"),
              r["observed_at"], r["observed_at"], r["state"])
             for r in newest.values()
         ]
@@ -372,8 +386,25 @@ def save_listing_specs(rows: list[tuple]) -> dict[str, int]:
     """(item_id, device_class, cpu_model, cpu_score, gpu_model, gpu_score,
      canonical_model, res_brackets, genre_tiers, bottleneck, combined_score,
      tier, value_score, spec_confidence, scored_at) — jsonb fields passed as
-     JSON strings via _jsonb()."""
+    JSON strings via _jsonb()."""
     return _load_to_all(UPSERT_LISTING_SPEC, rows, "listing_specs")
+
+
+def fetch_scored_item_ids() -> set[str]:
+    """item_ids that already have a listing_specs row (scored in a previous run).
+
+    Used by the spider to skip detail-page refetches: any previously scored
+    item already had its detail page fetched once, and its desc enrichment
+    persists in `listings` (desc_cpu/desc_gpu/enriched_title), so refetching
+    adds nothing and only burns request budget / proxy quota.
+    """
+    conn = _primary_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT item_id FROM {SCHEMA}.listing_specs")
+            return {r[0] for r in cur.fetchall()}
+    finally:
+        conn.close()
 
 
 def _primary_conn():
