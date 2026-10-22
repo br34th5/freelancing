@@ -2,8 +2,9 @@
 name: anti-bot-escalation
 description: When a target site blocks requests, apply the escalation ladder in order — classify the 403, slow down, rotate UA, proxy, then stop. Use on 403/429/captcha or sudden request failures while scraping.
 owner: recon-planner
-verified: true
+verified: false
 ---
+still testing
 
 # Anti-bot escalation ladder
 
