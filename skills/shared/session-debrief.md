@@ -52,3 +52,16 @@ says "no new learnings").
 - Wrote to: this file + commit 8894af8
 - Follow-up: fill TODO stubs in legal-tos-check, data-schema, selector-map-protocol,
   change-detection, alert-protocol; decide proxy conventions in anti-bot-escalation.
+
+## 2026-10-22 - (system + scraper ops) - fill 3 stubs, disable failing Actions cron
+- Learned: owner filled anti-bot-escalation (Webshare=WEB default, Oxylabs=OXY
+  scarce/quota-gated), legal-tos-check (standing policy incl. GDPR-ASK-USER gate),
+  data-schema (Neon primary, JSONL first, local Postgres best-effort mirror).
+  price-tracker scheduled workflow had no successful runs.
+- Evidence: git diff skills/; .github/workflows/price-tracker.yml (cron only, 30-min job).
+- Verified?: partial — 2 skills owner-marked verified: true; data-schema still UNVERIFIED
+  (needs one live JSONL→Neon run), so left at false.
+- Wrote to: knowledge/TODO.md (open work), this log.
+- Follow-up (NEXT SESSION START HERE): knowledge/TODO.md — fill remaining 3 stubs
+  (selector-map-protocol, change-detection, alert-protocol), diagnose price-tracker
+  failures, re-enable cron when green.

@@ -2,6 +2,8 @@
 
 Read this first, every task. Pick one agent. Load only its skills + /skills/shared/. See /AGENTS.md.
 
+**Also read /knowledge/TODO.md at session start — it lists open work (unfilled stubs, disabled scraper).**
+
 ## Agents (specialization domains)
 - **recon-planner** — domain: scraping. Site recon, anti-bot strategy, legal/TOS gates, site-quirk capture.
 - **scraper-builder** — domain: scraping. Builds and repairs scrapers: data schemas, selector maps, extraction code.

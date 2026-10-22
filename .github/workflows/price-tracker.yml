@@ -1,12 +1,15 @@
 name: skelbiu Price Tracker
 
 on:
-  schedule:
-    # Every 2 days at 00:00 UTC = 03:00 Vilnius (EEST, summer) / 02:00
-    # Vilnius (EET, winter) — single UTC cron can't follow DST.
-    # Laptops is excluded from this run — scrape that category manually
-    # (`python -m scrape_laptops`) from your own IP without a proxy.
-    - cron: '0 0 */2 * *'
+  # 2026-10-22: scheduled runs DISABLED — no successful runs so far, scraper
+  # needs adjustments (see knowledge/TODO.md). Re-enable the cron below once
+  # the pipeline succeeds locally; workflow_dispatch stays available for tests.
+  # schedule:
+  #   # Every 2 days at 00:00 UTC = 03:00 Vilnius (EEST, summer) / 02:00
+  #   # Vilnius (EET, winter) — single UTC cron can't follow DST.
+  #   # Laptops is excluded from this run — scrape that category manually
+  #   # (`python -m scrape_laptops`) from your own IP without a proxy.
+  #   - cron: '0 0 */2 * *'
   workflow_dispatch:
 
 jobs:

@@ -2,7 +2,7 @@
 name: anti-bot-escalation
 description: When a target site blocks requests, apply the escalation ladder in order — classify the 403, slow down, rotate UA, proxy, then stop. Use on 403/429/captcha or sudden request failures while scraping.
 owner: recon-planner
-verified: false
+verified: true
 ---
 
 # Anti-bot escalation ladder
@@ -37,11 +37,36 @@ progress. Log every step with timestamps so a later session can resume.
 - Still blocked → the site fingerprints beyond UA (TLS/JA3, JS challenge). Do not
   rotate faster; go to step 4.
 
-### 4. Proxy
-- Move to a residential/mobile proxy pool; sticky session per logical browse session.
-- One proxy IP per concurrent session; never share across rate-limited hosts.
-- Re-run the step-2 cool-off test through the new egress.
-- TODO: document my proxy provider, pool size, and sticky-session conventions here.
+### 4. Proxy (my infra)
+**Providers:**
+- WEB = Webshare.io — small pool (a few IPs), my default egress
+- OXY = Oxylabs residential — 1 rotating residential IP, LIMITED FREE
+  QUOTA. Treat as a scarce resource, not a default.
+
+**Routing rules (in order):**
+1. Default: direct connection. Only move to proxy after the direct
+   cool-off test fails twice (see escalation ladder step 2).
+2. Direct fails → WEB pool, sticky session: one proxy IP per logical
+   browse session; keep the same IP for the whole site run.
+3. One proxy IP per concurrent session. Never share one WEB IP across
+   two rate-limited hosts at once.
+4. WEB also failing (blocks at multiple IPs) → OXY, and BEFORE using it:
+   check remaining quota. If run would consume >20% of remaining quota,
+   STOP and ask me. If quota < 10% remaining, never start an OXY run —
+   ask me instead.
+5. Never rotate OXY mid-run unless a block is hit; residential rotation
+   wastes quota.
+
+**Cool-off validation:** after any egress change, re-run the step-2
+cool-off test through the new egress before resuming the scrape.
+
+**Per-site convention:** record the egress class used in
+site-quirks-<domain>.md (direct / WEB / OXY) so the next session
+starts at the tier that worked, instead of re-climbing the ladder.
+
+**Quota logging:** every OXY run appends date + approx. usage to
+knowledge/proxy/oxylabs-quota.md so the agent can check balance
+history, not guess.
 
 ### 5. STOP
 - Halt all automated traffic to that host.
